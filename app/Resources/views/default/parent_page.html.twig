@@ -1,0 +1,23 @@
+{% extends 'default/layout.html.twig' %}
+
+{% block stylesheets %}
+	 {{ parent() }}
+	<link rel="stylesheet" type="text/css" href="{{asset('css/pageWith-style.css')}}">
+	<link rel="stylesheet" media="(max-width: 640px)" href="{{asset('css/pageWith-style-max640px.css')}}" type="text/css" />
+{% endblock %}
+
+{% block content %}
+	<h1>{{page.name}}</h1>
+	<div id="secondaryNav">
+		<ul id="secondaryMenu">
+			{% for link in page.children %}
+				<li><a href=" {{ path('childPage', { 'parent': link.parent.slug, 'slug': link.slug }) }} ">{{ link.name }}</a></li>
+			{% endfor%}
+		</ul>
+	</div>
+	<div id="article">
+		{{page.content | raw}}
+	</div>
+	<div style="clear: both"></div>
+{% endblock %}
+

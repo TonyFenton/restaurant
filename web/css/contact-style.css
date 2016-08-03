@@ -1,0 +1,29 @@
+/*tylko contact */
+
+#contactForm {
+	max-width: 960px;
+	margin-left: auto;
+	margin-right: auto;
+}
+#contactForm input,
+#contactForm textarea {
+	width: 100%;
+
+}
+#from div{
+	float: left;
+	width: 42%;
+	padding-left: 4%;
+	padding-right: 4%;
+}
+.otherDiv {
+	padding-left: 4%;
+	padding-right: 4%;
+}
+#contactForm li {
+	color:red;
+}
+
+#contactForm button {
+
+}

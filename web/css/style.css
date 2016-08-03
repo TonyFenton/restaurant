@@ -1,0 +1,98 @@
+/* Wspolne wlasciwosci*/
+body {
+	/* Background pattern from subtlepatterns.com */
+	background-image: url("../images/witewall_3_@2X.png");
+	font-family: 'Lato', sans-serif;
+	font-size: 14px;
+}
+h1 {
+	font-weight: normal;
+}
+#header, #footer, #content, #footer {
+	max-width: 960px;
+	margin-left: auto;
+	margin-right: auto;
+}
+#header {
+	overflow: auto;
+	margin-top: 20px;
+}
+#logo {
+	width: 150px;
+	height: 50px;
+	float:left;
+}
+#nav {
+	float:right;
+	padding: 0px;
+	margin: 15px 0 0 0;
+}
+#nav li {
+	display: inline-block;
+	list-style-type: none;
+	padding:10px;
+}
+a {
+	text-decoration: none;
+	color: black;
+}
+#nav a {
+	font-size:20px;
+}
+a:hover, a:active  {
+	color: #ff9900;
+}
+#nav ul {
+
+	display: none;
+	clear:both;
+	padding: 0px;
+	margin: 0px;
+	position: absolute;
+	z-index: 100;
+	/* Background pattern from subtlepatterns.com */
+	background-image: url("../images/witewall_3_@2X.png");
+}
+#nav ul li {
+	display: block;
+	margin: 0px;
+	padding:0px;
+}
+#nav li:hover ul{
+	display: block;
+}
+
+
+#picture {
+	width:100%;
+	display: block;
+	clear: both;
+	margin-top: 90px
+}
+#header h1 {
+	text-align: center;
+	letter-spacing: 2px;
+	text-align: left;
+}
+#content {
+	text-align: justify;
+	line-height: 25px;
+}
+#footer {
+	margin-top: 20px;
+	margin-bottom: 20px;
+	
+	color: #808080;
+}
+.current {
+	text-decoration: underline;
+}
+
+
+
+
+
+
+
+
+

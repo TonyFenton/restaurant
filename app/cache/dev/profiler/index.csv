@@ -1,0 +1,4 @@
+864cb8,127.0.0.1,GET,http://127.0.0.1:8080/restaurant4/web/app_dev.php/_fragment?_path=_format%3Dhtml%26_locale%3Den%26_controller%3DAppBundle%253ADefault%253AmainMenu,1470229895,7f7372,200
+7f7372,127.0.0.1,GET,http://127.0.0.1:8080/restaurant4/web/app_dev.php/,1470229895,,200
+f12adc,127.0.0.1,GET,http://127.0.0.1:8080/restaurant4/web/app_dev.php/_fragment?_path=_format%3Dhtml%26_locale%3Den%26_controller%3DAppBundle%253ADefault%253AmainMenu,1470229906,760330,200
+760330,127.0.0.1,GET,http://127.0.0.1:8080/restaurant4/web/app_dev.php/o-nas,1470229906,,200

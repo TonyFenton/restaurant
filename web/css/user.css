@@ -1,0 +1,14 @@
+#content li {
+	list-style-type: none;
+	padding: 5px 0px 5px 0px;
+}
+#content ul {
+	margin: 0px;
+	padding: 0px;
+}
+#content td {
+	padding: 10px;
+}
+#user div {
+	margin: 10px 10px 10px 10px;
+}
