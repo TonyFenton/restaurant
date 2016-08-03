@@ -17,7 +17,7 @@ body {
 }
 #nav {
 	float:left;
-	width: 19%;
+	width: 14%;
 	padding: 3%;
 	text-align: center;
 }
@@ -39,13 +39,28 @@ a:hover,a:active {
 #content {
 	float:left;
 	padding: 3%;
-	width: 69%;
+	width: 72%;
+	border-left-style: solid;
+	border-width: 1%;
+	border-color: #2d6fd2;
 }
 #footer {
 	clear: both;
 }
-
-
+#content li {
+	list-style-type: none;
+	padding: 5px 0px 5px 0px;
+}
+#content ul {
+	margin: 0px;
+	padding: 0px;
+}
+#content td {
+	padding: 10px;
+}
+#user div {
+	margin: 10px 10px 10px 10px;
+}
 
 
 

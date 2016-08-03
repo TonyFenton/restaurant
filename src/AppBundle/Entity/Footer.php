@@ -91,4 +91,9 @@ class Footer
     {
         return $this->footer;
     }
+	
+	public function __toString()
+	{
+		return $this->getName();
+	}
 }

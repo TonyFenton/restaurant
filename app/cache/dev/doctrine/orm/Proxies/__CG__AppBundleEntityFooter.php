@@ -232,4 +232,15 @@ class Footer extends \AppBundle\Entity\Footer implements \Doctrine\ORM\Proxy\Pro
         return parent::getFooter();
     }
 
+    /**
+     * {@inheritDoc}
+     */
+    public function __toString()
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, '__toString', array());
+
+        return parent::__toString();
+    }
+
 }
