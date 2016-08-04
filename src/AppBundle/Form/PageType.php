@@ -5,6 +5,8 @@ namespace AppBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use AppBundle\Form\DescriptionType;
+
 
 class PageType extends AbstractType
 {
@@ -22,7 +24,7 @@ class PageType extends AbstractType
             ->add('content')
             ->add('footer')
             ->add('parent')
-            ->add('description')
+            ->add('description', DescriptionType::class)
         ;
     }
     

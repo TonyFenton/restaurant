@@ -7,6 +7,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use AppBundle\Entity\Page;
+use AppBundle\Entity\Description;
 use AppBundle\Form\PageType;
 
 /**
@@ -81,14 +82,26 @@ class PageController extends Controller
      * @Route("/{id}/edit", name="admin_page_edit")
      * @Method({"GET", "POST"})
      */
-    public function editAction(Request $request, Page $page)
+    public function editAction(Request $request, Page $page, $id)
     {
         $deleteForm = $this->createDeleteForm($page);
         $editForm = $this->createForm('AppBundle\Form\PageType', $page);
         $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
-            $em = $this->getDoctrine()->getManager();
+			$em = $this->getDoctrine()->getManager();
+
+			$existDescription = $em->getRepository('AppBundle:Description')->findOneByPage($page->getId());
+			if(!$existDescription) {
+				$description = new description();
+				$description->setDescription($page->getDescription());
+				$description->setPage($page);
+				$em->persist($description);
+				$page->setDescription(null);
+			}else if (empty($page->getDescription()->getDescription())) {
+				$em->remove($existDescription);
+			}
+			
             $em->persist($page);
             $em->flush();
 
