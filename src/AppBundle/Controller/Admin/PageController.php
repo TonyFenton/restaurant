@@ -94,7 +94,7 @@ class PageController extends Controller
 			$existDescription = $em->getRepository('AppBundle:Description')->findOneByPage($page->getId());
 			if(!$existDescription) {
 				$description = new description();
-				$description->setDescription($page->getDescription());
+				$description->setDescription($page->getDescription()->getDescription());
 				$description->setPage($page);
 				$em->persist($description);
 				$page->setDescription(null);
