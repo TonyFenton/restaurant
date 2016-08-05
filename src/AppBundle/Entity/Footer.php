@@ -3,6 +3,7 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Footer
@@ -25,6 +26,9 @@ class Footer
      * @var string
      *
      * @ORM\Column(name="name", type="string", length=50)
+	 *
+	 * @Assert\NotBlank()
+	 * @Assert\Length(max = 50)
      */
     private $name;
 
@@ -32,6 +36,8 @@ class Footer
      * @var string
      *
      * @ORM\Column(name="footer", type="text")
+	 *
+	 * @Assert\NotBlank()
      */
     private $footer;
 

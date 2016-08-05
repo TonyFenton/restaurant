@@ -1,6 +1,7 @@
 <?php
 
 namespace AppBundle\Entity;
+use Symfony\Component\Validator\Constraints as Assert;
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -25,6 +26,10 @@ class Page
      * @var string
      *
      * @ORM\Column(name="slug", type="string", length=50)
+	 *
+     * @Assert\Regex("/^[a-z0-9-]+$/")
+	 * @Assert\NotBlank()
+	 * @Assert\Length(max = 50)
      */
     private $slug;
 
@@ -32,6 +37,9 @@ class Page
      * @var string
      *
      * @ORM\Column(name="name", type="string", length=50)
+	 *
+	 * @Assert\NotBlank()
+	 * @Assert\Length(max = 50)
      */
     private $name;
 
@@ -39,6 +47,9 @@ class Page
      * @var string
      *
      * @ORM\Column(name="title", type="string", length=255)
+	 *
+	 * @Assert\NotBlank()
+	 * @Assert\Length(max = 255)
      */
     private $title;
 
@@ -46,6 +57,9 @@ class Page
      * @var string
      *
      * @ORM\Column(name="picture", type="string", length=255)
+	 *
+	 * @Assert\NotBlank()
+	 * @Assert\Length(max = 255)
      */
     private $picture;
 
@@ -60,6 +74,8 @@ class Page
      * @var string
      *
      * @ORM\Column(name="content", type="text")
+	 *
+	 * @Assert\NotBlank()
      */
     private $content;
 

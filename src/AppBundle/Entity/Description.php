@@ -3,6 +3,7 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Description
@@ -25,6 +26,8 @@ class Description
      * @var string
      *
      * @ORM\Column(name="description", type="string", length=500)
+	 * @Assert\NotBlank()
+	 * @Assert\Length(max = 500)
      */
     private $description;
 
