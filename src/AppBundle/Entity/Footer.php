@@ -35,7 +35,6 @@ class Footer
      */
     private $footer;
 
-
     /**
      * Get id
      *

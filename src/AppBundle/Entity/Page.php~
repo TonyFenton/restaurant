@@ -67,7 +67,7 @@ class Page
      * @var int
      *
 	 * @ORM\ManyToOne(targetEntity="Footer")
-	 * @ORM\JoinColumn(name="footer_id", referencedColumnName="id")
+	 * @ORM\JoinColumn(name="footer_id", referencedColumnName="id", onDelete="SET NULL")
      */
     private $footer;
 
@@ -89,7 +89,7 @@ class Page
     private $parent;
 	
 	/**
-     * @ORM\OneToOne(targetEntity="Description", mappedBy="page")
+     * @ORM\OneToOne(targetEntity="Description", mappedBy="page", cascade={"remove", "persist"}))
      */
     private $description;
 	
@@ -353,4 +353,9 @@ class Page
     {
         return $this->description;
     }
+	
+	public function __toString()
+	{
+		return $this->getName();
+	}
 }

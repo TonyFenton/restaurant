@@ -92,4 +92,9 @@ class Description
     {
         return $this->page;
     }
+	
+	public function __toString()
+	{
+		return $this->getDescription();
+	}
 }

@@ -67,7 +67,7 @@ class Page
      * @var int
      *
 	 * @ORM\ManyToOne(targetEntity="Footer")
-	 * @ORM\JoinColumn(name="footer_id", referencedColumnName="id")
+	 * @ORM\JoinColumn(name="footer_id", referencedColumnName="id", onDelete="SET NULL")
      */
     private $footer;
 
@@ -75,7 +75,7 @@ class Page
 	/**
 	 * @var int
 	 *
-     * @ORM\OneToMany(targetEntity="Page", mappedBy="parent")
+     * @ORM\OneToMany(targetEntity="Page", mappedBy="parent", cascade={"remove"})
 	 * @ORM\OrderBy({"sequence" = "ASC"})
      */
     private $children;

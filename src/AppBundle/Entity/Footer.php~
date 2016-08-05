@@ -35,7 +35,6 @@ class Footer
      */
     private $footer;
 
-
     /**
      * Get id
      *
@@ -91,4 +90,9 @@ class Footer
     {
         return $this->footer;
     }
+	
+	public function __toString()
+	{
+		return $this->getName();
+	}
 }

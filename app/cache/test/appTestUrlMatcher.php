@@ -105,65 +105,108 @@ class appTestUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirecta
 
         }
 
-        if (0 === strpos($pathinfo, '/admin/page')) {
-            // admin_page_index
-            if (rtrim($pathinfo, '/') === '/admin/page') {
-                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
-                    $allow = array_merge($allow, array('GET', 'HEAD'));
-                    goto not_admin_page_index;
-                }
+        if (0 === strpos($pathinfo, '/admin')) {
+            if (0 === strpos($pathinfo, '/admin/footer')) {
+                // admin_footer_index
+                if (rtrim($pathinfo, '/') === '/admin/footer') {
+                    if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                        $allow = array_merge($allow, array('GET', 'HEAD'));
+                        goto not_admin_footer_index;
+                    }
 
-                if (substr($pathinfo, -1) !== '/') {
-                    return $this->redirect($pathinfo.'/', 'admin_page_index');
-                }
+                    if (substr($pathinfo, -1) !== '/') {
+                        return $this->redirect($pathinfo.'/', 'admin_footer_index');
+                    }
 
-                return array (  '_controller' => 'AppBundle\\Controller\\Admin\\PageController::indexAction',  '_route' => 'admin_page_index',);
+                    return array (  '_controller' => 'AppBundle\\Controller\\Admin\\FooterController::indexAction',  '_route' => 'admin_footer_index',);
+                }
+                not_admin_footer_index:
+
+                // admin_footer_new
+                if ($pathinfo === '/admin/footer/new') {
+                    if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
+                        $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
+                        goto not_admin_footer_new;
+                    }
+
+                    return array (  '_controller' => 'AppBundle\\Controller\\Admin\\FooterController::newAction',  '_route' => 'admin_footer_new',);
+                }
+                not_admin_footer_new:
+
+                // admin_footer_edit
+                if (preg_match('#^/admin/footer/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
+                    if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
+                        $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
+                        goto not_admin_footer_edit;
+                    }
+
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'admin_footer_edit')), array (  '_controller' => 'AppBundle\\Controller\\Admin\\FooterController::editAction',));
+                }
+                not_admin_footer_edit:
+
+                // admin_footer_delete
+                if (preg_match('#^/admin/footer/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                    if ($this->context->getMethod() != 'DELETE') {
+                        $allow[] = 'DELETE';
+                        goto not_admin_footer_delete;
+                    }
+
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'admin_footer_delete')), array (  '_controller' => 'AppBundle\\Controller\\Admin\\FooterController::deleteAction',));
+                }
+                not_admin_footer_delete:
+
             }
-            not_admin_page_index:
 
-            // admin_page_new
-            if ($pathinfo === '/admin/page/new') {
-                if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
-                    $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
-                    goto not_admin_page_new;
+            if (0 === strpos($pathinfo, '/admin/page')) {
+                // admin_page_index
+                if (rtrim($pathinfo, '/') === '/admin/page') {
+                    if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                        $allow = array_merge($allow, array('GET', 'HEAD'));
+                        goto not_admin_page_index;
+                    }
+
+                    if (substr($pathinfo, -1) !== '/') {
+                        return $this->redirect($pathinfo.'/', 'admin_page_index');
+                    }
+
+                    return array (  '_controller' => 'AppBundle\\Controller\\Admin\\PageController::indexAction',  '_route' => 'admin_page_index',);
                 }
+                not_admin_page_index:
 
-                return array (  '_controller' => 'AppBundle\\Controller\\Admin\\PageController::newAction',  '_route' => 'admin_page_new',);
-            }
-            not_admin_page_new:
+                // admin_page_new
+                if ($pathinfo === '/admin/page/new') {
+                    if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
+                        $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
+                        goto not_admin_page_new;
+                    }
 
-            // admin_page_show
-            if (preg_match('#^/admin/page/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
-                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
-                    $allow = array_merge($allow, array('GET', 'HEAD'));
-                    goto not_admin_page_show;
+                    return array (  '_controller' => 'AppBundle\\Controller\\Admin\\PageController::newAction',  '_route' => 'admin_page_new',);
                 }
+                not_admin_page_new:
 
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'admin_page_show')), array (  '_controller' => 'AppBundle\\Controller\\Admin\\PageController::showAction',));
-            }
-            not_admin_page_show:
+                // admin_page_edit
+                if (preg_match('#^/admin/page/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
+                    if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
+                        $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
+                        goto not_admin_page_edit;
+                    }
 
-            // admin_page_edit
-            if (preg_match('#^/admin/page/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
-                if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
-                    $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
-                    goto not_admin_page_edit;
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'admin_page_edit')), array (  '_controller' => 'AppBundle\\Controller\\Admin\\PageController::editAction',));
                 }
+                not_admin_page_edit:
 
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'admin_page_edit')), array (  '_controller' => 'AppBundle\\Controller\\Admin\\PageController::editAction',));
-            }
-            not_admin_page_edit:
+                // admin_page_delete
+                if (preg_match('#^/admin/page/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                    if ($this->context->getMethod() != 'DELETE') {
+                        $allow[] = 'DELETE';
+                        goto not_admin_page_delete;
+                    }
 
-            // admin_page_delete
-            if (preg_match('#^/admin/page/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
-                if ($this->context->getMethod() != 'DELETE') {
-                    $allow[] = 'DELETE';
-                    goto not_admin_page_delete;
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'admin_page_delete')), array (  '_controller' => 'AppBundle\\Controller\\Admin\\PageController::deleteAction',));
                 }
+                not_admin_page_delete:
 
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'admin_page_delete')), array (  '_controller' => 'AppBundle\\Controller\\Admin\\PageController::deleteAction',));
             }
-            not_admin_page_delete:
 
         }
 

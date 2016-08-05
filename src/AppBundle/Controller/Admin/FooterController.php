@@ -50,7 +50,7 @@ class FooterController extends Controller
             $em->persist($footer);
             $em->flush();
 
-            return $this->redirectToRoute('admin_footer_edit', array('id' => $footer->getId()));
+            return $this->redirectToRoute('admin_footer_index');
         }
 
         return $this->render('admin/footer/new.html.twig', array(

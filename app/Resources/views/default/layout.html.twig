@@ -29,9 +29,11 @@
 	<div id="content">
 		{% block content %}{% endblock %}
 	</div>
-	<div id="footer">
-		{{ page.footer.footer | raw}}
-	</div>
+	{% if page.footer.footer is defined %}
+		<div id="footer">
+			{{ page.footer.footer | raw}}
+		</div>
+	{% endif %}
 {% endblock %}
 
 {% block javascripts %}
