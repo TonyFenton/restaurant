@@ -58,28 +58,12 @@ class PageController extends Controller
             $em->persist($page);
             $em->flush();
 
-            return $this->redirectToRoute('admin_page_show', array('id' => $page->getId()));
+            return $this->redirectToRoute('admin_page_edit', array('id' => $page->getId()));
         }
 
         return $this->render('admin/page/new.html.twig', array(
             'page' => $page,
             'form' => $form->createView(),
-        ));
-    }
-
-    /**
-     * Finds and displays a Page entity.
-     *
-     * @Route("/{id}", name="admin_page_show")
-     * @Method("GET")
-     */
-    public function showAction(Page $page)
-    {
-        $deleteForm = $this->createDeleteForm($page);
-
-        return $this->render('admin/page/show.html.twig', array(
-            'page' => $page,
-            'delete_form' => $deleteForm->createView(),
         ));
     }
 

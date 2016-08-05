@@ -13,12 +13,9 @@
         <tbody>
         {% for page in pages %}
             <tr>
-                <td><a href="{{ path('admin_page_show', { 'id': page.id }) }}">{{ page.name }}</a></td>
+                <td><a href="{{ path('admin_page_edit', { 'id': page.id }) }}">{{ page.name }}</a></td>
                 <td>
                     <ul>
-                        <li>
-                            <a href="{{ path('admin_page_show', { 'id': page.id }) }}">show</a>
-                        </li>
                         <li>
                             <a href="{{ path('admin_page_edit', { 'id': page.id }) }}">edit</a>
                         </li>
