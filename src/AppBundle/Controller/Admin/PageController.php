@@ -91,17 +91,15 @@ class PageController extends Controller
         if ($editForm->isSubmitted() && $editForm->isValid()) {
 			$em = $this->getDoctrine()->getManager();
 
-			$existDescription = $em->getRepository('AppBundle:Description')->findOneByPage($page->getId());
-			if(!$existDescription) {
-				$description = new description();
-				$description->setDescription($page->getDescription()->getDescription());
-				$description->setPage($page);
-				$em->persist($description);
+			if (empty($page->getDescription()->getDescription()) && $page->getDescription()->getPage()) {
+				$em->remove($page->getDescription());
 				$page->setDescription(null);
 			}else if (empty($page->getDescription()->getDescription())) {
-				$em->remove($existDescription);
+				$page->setDescription(null);
+			}else {
+				$page->getDescription()->setPage($page);
 			}
-			
+	
             $em->persist($page);
             $em->flush();
 

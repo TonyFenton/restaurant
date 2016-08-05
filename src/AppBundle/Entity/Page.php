@@ -89,7 +89,7 @@ class Page
     private $parent;
 	
 	/**
-     * @ORM\OneToOne(targetEntity="Description", mappedBy="page")
+     * @ORM\OneToOne(targetEntity="Description", mappedBy="page", cascade={"remove", "persist"}))
      */
     private $description;
 	
