@@ -1,0 +1,26 @@
+{% extends 'admin/layout.html.twig' %}
+
+{% block content %}
+    <h1>Footer list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for footer in footers %}
+            <tr>
+                <td><a href="{{ path('admin_footer_edit', { 'id': footer.id }) }}">{{ footer.name }}</a></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('admin_footer_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+{% endblock %}
