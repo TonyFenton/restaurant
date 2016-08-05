@@ -31,10 +31,16 @@ class PageType extends AbstractType
             ->add('parent', EntityType::class, array(
 				'class' => 'AppBundle:Page',
 				'query_builder' => function (EntityRepository $er) use($options) {
+					if ($options['data']->getId()) {
+						$id = $options['data']->getId();
+					}else{
+						$id = 0;
+					}
+					
 					return $er->createQueryBuilder('p')
 						->where('p.id != ?1')
 						->andwhere('p.parent is null')
-						->setParameter(1, $options['data']->getId())
+						->setParameter(1, $id)
 					;
 				},
 				'empty_value' => '',

@@ -48,6 +48,13 @@ class PageController extends Controller
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
+			
+			if (empty($page->getDescription()->getDescription())) {
+				$page->setDescription(null);
+			}else{
+				$page->getDescription()->setPage($page);
+			}
+			
             $em->persist($page);
             $em->flush();
 
