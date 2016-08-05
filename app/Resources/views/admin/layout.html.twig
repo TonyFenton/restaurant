@@ -21,6 +21,10 @@
 			</ul>
 		</div>
 		<div id="content">
+			<div id="breadcrumb">
+				<a href=#>Panel</a>
+				{% block breadcrumb %}{% endblock %}
+			</div>
 			{% block content %}content{% endblock %}
 		</div>
 		<div id="footer">

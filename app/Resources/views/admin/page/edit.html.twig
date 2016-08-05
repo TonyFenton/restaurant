@@ -1,5 +1,12 @@
 {% extends 'admin/layout.html.twig' %}
 
+{% block breadcrumb %}
+	/
+	<a href="{{ path('admin_page_index') }}">Strony</a>
+	/
+	<a href="{{ path('admin_page_edit', { 'id': page.id }) }}">{{ page.name }}</a>
+{% endblock %}
+
 {% block content %}
     <h1>Page edit</h1>
 

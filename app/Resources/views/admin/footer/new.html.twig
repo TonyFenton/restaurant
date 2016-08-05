@@ -1,5 +1,12 @@
 {% extends 'admin/layout.html.twig' %}
 
+{% block breadcrumb %}
+	/
+	<a href="{{ path('admin_footer_index') }}">Stopki</a>
+	/
+	<a href="{{ path('admin_footer_new') }}">Nowa</a>
+{% endblock %}
+
 {% block content %}
     <h1>Footer creation</h1>
 
