@@ -75,7 +75,12 @@ class PageController extends Controller
      */
     public function editAction(Request $request, Page $page, $id)
     {
-        $deleteForm = $this->createDeleteForm($page);
+		if (!empty($page->getSlug())) {
+			$deleteForm = $this->createDeleteForm($page)->createView();
+		}else{
+			$deleteForm= null;
+		}
+        
         $editForm = $this->createForm('AppBundle\Form\PageType', $page);
         $editForm->handleRequest($request);
 
@@ -87,7 +92,7 @@ class PageController extends Controller
 				$page->setDescription(null);
 			}else if (empty($page->getDescription()->getDescription())) {
 				$page->setDescription(null);
-			}else {
+			}else{
 				$page->getDescription()->setPage($page);
 			}
 	
@@ -100,7 +105,7 @@ class PageController extends Controller
         return $this->render('admin/page/edit.html.twig', array(
             'page' => $page,
             'edit_form' => $editForm->createView(),
-            'delete_form' => $deleteForm->createView(),
+            'delete_form' => $deleteForm,
         ));
     }
 

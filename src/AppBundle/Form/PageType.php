@@ -17,37 +17,42 @@ class PageType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
+		if ($options['data']->getId()) {
+			$id = $options['data']->getId();
+			$slug = $options['data']->getSlug();
+		}else{
+			$id = 0;
+			$slug = 'not empty';
+		}
 		
-        $builder
-            ->add('slug')
+		if (!empty($slug)) {
+			$builder
+				->add('parent', EntityType::class, array(
+					'class' => 'AppBundle:Page',
+					'query_builder' => function (EntityRepository $er) use($id) {	
+						return $er->createQueryBuilder('p')
+							->where('p.id != ?1')
+							->andwhere('p.parent is null')
+							->andwhere("p.slug != ''")
+							->setParameter(1, $id)
+						;
+					},
+					'empty_value' => '',
+					'required' => false,
+				))
+				->add('slug')
+			;
+		}
+			
+		$builder
             ->add('name')
             ->add('title')
-            ->add('picture')
-            ->add('content')
 			->add('description', DescriptionType::class, array(
 				'label' => false,
 			))
+            ->add('picture')
+            ->add('content')
             ->add('footer')
-            ->add('parent', EntityType::class, array(
-				'class' => 'AppBundle:Page',
-				'query_builder' => function (EntityRepository $er) use($options) {
-					if ($options['data']->getId()) {
-						$id = $options['data']->getId();
-					}else{
-						$id = 0;
-					}
-					
-					return $er->createQueryBuilder('p')
-						->where('p.id != ?1')
-						->andwhere('p.parent is null')
-						->setParameter(1, $id)
-					;
-				},
-				'empty_value' => '',
-				'required' => false,
-			))
-			
-
         ;
     }
     

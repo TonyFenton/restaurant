@@ -22,20 +22,20 @@ class __TwigTemplate_a39ec2eebe703d557756e808a0fbfe97275e9fb2c5e4950ce8531152141
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_ef6693fd38a7de0aaada0409e1a05cb36d4f9534c4b6965f7d57fd01d5527c95 = $this->env->getExtension("native_profiler");
-        $__internal_ef6693fd38a7de0aaada0409e1a05cb36d4f9534c4b6965f7d57fd01d5527c95->enter($__internal_ef6693fd38a7de0aaada0409e1a05cb36d4f9534c4b6965f7d57fd01d5527c95_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "admin/page/edit.html.twig"));
+        $__internal_97d06a894a80565f8b6b511871f9189bbf0245d5594457c93652d0d6d8336ae0 = $this->env->getExtension("native_profiler");
+        $__internal_97d06a894a80565f8b6b511871f9189bbf0245d5594457c93652d0d6d8336ae0->enter($__internal_97d06a894a80565f8b6b511871f9189bbf0245d5594457c93652d0d6d8336ae0_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "admin/page/edit.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_ef6693fd38a7de0aaada0409e1a05cb36d4f9534c4b6965f7d57fd01d5527c95->leave($__internal_ef6693fd38a7de0aaada0409e1a05cb36d4f9534c4b6965f7d57fd01d5527c95_prof);
+        $__internal_97d06a894a80565f8b6b511871f9189bbf0245d5594457c93652d0d6d8336ae0->leave($__internal_97d06a894a80565f8b6b511871f9189bbf0245d5594457c93652d0d6d8336ae0_prof);
 
     }
 
     // line 3
     public function block_breadcrumb($context, array $blocks = array())
     {
-        $__internal_65122504ceb243d0f9bbd92eac38d52f1106be61ab3ac29fbb0ad162b99cf557 = $this->env->getExtension("native_profiler");
-        $__internal_65122504ceb243d0f9bbd92eac38d52f1106be61ab3ac29fbb0ad162b99cf557->enter($__internal_65122504ceb243d0f9bbd92eac38d52f1106be61ab3ac29fbb0ad162b99cf557_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "breadcrumb"));
+        $__internal_4e6eb7f9c3e91194f3add308daa9218f9916780208e1e506c4b791b19ef9bee2 = $this->env->getExtension("native_profiler");
+        $__internal_4e6eb7f9c3e91194f3add308daa9218f9916780208e1e506c4b791b19ef9bee2->enter($__internal_4e6eb7f9c3e91194f3add308daa9218f9916780208e1e506c4b791b19ef9bee2_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "breadcrumb"));
 
         // line 4
         echo "\t/
@@ -52,15 +52,15 @@ class __TwigTemplate_a39ec2eebe703d557756e808a0fbfe97275e9fb2c5e4950ce8531152141
         echo "</a>
 ";
         
-        $__internal_65122504ceb243d0f9bbd92eac38d52f1106be61ab3ac29fbb0ad162b99cf557->leave($__internal_65122504ceb243d0f9bbd92eac38d52f1106be61ab3ac29fbb0ad162b99cf557_prof);
+        $__internal_4e6eb7f9c3e91194f3add308daa9218f9916780208e1e506c4b791b19ef9bee2->leave($__internal_4e6eb7f9c3e91194f3add308daa9218f9916780208e1e506c4b791b19ef9bee2_prof);
 
     }
 
     // line 10
     public function block_content($context, array $blocks = array())
     {
-        $__internal_91b364ac329d7ec15fb8830e4b6b35e406b3352eadd2f51e7364d682f59c3c09 = $this->env->getExtension("native_profiler");
-        $__internal_91b364ac329d7ec15fb8830e4b6b35e406b3352eadd2f51e7364d682f59c3c09->enter($__internal_91b364ac329d7ec15fb8830e4b6b35e406b3352eadd2f51e7364d682f59c3c09_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
+        $__internal_1db87a4c8ae0d059041be7031cd373acdd6511297397a44688dcf3cbe4289d1a = $this->env->getExtension("native_profiler");
+        $__internal_1db87a4c8ae0d059041be7031cd373acdd6511297397a44688dcf3cbe4289d1a->enter($__internal_1db87a4c8ae0d059041be7031cd373acdd6511297397a44688dcf3cbe4289d1a_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
 
         // line 11
         echo "    <h1>Page edit</h1>
@@ -87,20 +87,26 @@ class __TwigTemplate_a39ec2eebe703d557756e808a0fbfe97275e9fb2c5e4950ce8531152141
         echo "\">Back to the list</a>
         </li>
         <li>
-            ";
+\t\t\t";
         // line 23
-        echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["delete_form"]) ? $context["delete_form"] : $this->getContext($context, "delete_form")), 'form_start');
-        echo "
-                <input type=\"submit\" value=\"Delete\">
-            ";
-        // line 25
-        echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["delete_form"]) ? $context["delete_form"] : $this->getContext($context, "delete_form")), 'form_end');
-        echo "
-        </li>
+        if ( !(null === (isset($context["delete_form"]) ? $context["delete_form"] : $this->getContext($context, "delete_form")))) {
+            // line 24
+            echo "\t\t\t\t";
+            echo             $this->env->getExtension('form')->renderer->renderBlock((isset($context["delete_form"]) ? $context["delete_form"] : $this->getContext($context, "delete_form")), 'form_start');
+            echo "
+\t\t\t\t\t<input type=\"submit\" value=\"Delete\">
+\t\t\t\t";
+            // line 26
+            echo             $this->env->getExtension('form')->renderer->renderBlock((isset($context["delete_form"]) ? $context["delete_form"] : $this->getContext($context, "delete_form")), 'form_end');
+            echo "
+\t\t\t";
+        }
+        // line 28
+        echo "        </li>
     </ul>
 ";
         
-        $__internal_91b364ac329d7ec15fb8830e4b6b35e406b3352eadd2f51e7364d682f59c3c09->leave($__internal_91b364ac329d7ec15fb8830e4b6b35e406b3352eadd2f51e7364d682f59c3c09_prof);
+        $__internal_1db87a4c8ae0d059041be7031cd373acdd6511297397a44688dcf3cbe4289d1a->leave($__internal_1db87a4c8ae0d059041be7031cd373acdd6511297397a44688dcf3cbe4289d1a_prof);
 
     }
 
@@ -116,7 +122,7 @@ class __TwigTemplate_a39ec2eebe703d557756e808a0fbfe97275e9fb2c5e4950ce8531152141
 
     public function getDebugInfo()
     {
-        return array (  97 => 25,  92 => 23,  86 => 20,  79 => 16,  74 => 14,  70 => 13,  66 => 11,  60 => 10,  49 => 7,  44 => 5,  41 => 4,  35 => 3,  11 => 1,);
+        return array (  105 => 28,  100 => 26,  94 => 24,  92 => 23,  86 => 20,  79 => 16,  74 => 14,  70 => 13,  66 => 11,  60 => 10,  49 => 7,  44 => 5,  41 => 4,  35 => 3,  11 => 1,);
     }
 }
 /* {% extends 'admin/layout.html.twig' %}*/
@@ -141,9 +147,11 @@ class __TwigTemplate_a39ec2eebe703d557756e808a0fbfe97275e9fb2c5e4950ce8531152141
 /*             <a href="{{ path('admin_page_index') }}">Back to the list</a>*/
 /*         </li>*/
 /*         <li>*/
-/*             {{ form_start(delete_form) }}*/
-/*                 <input type="submit" value="Delete">*/
-/*             {{ form_end(delete_form) }}*/
+/* 			{% if delete_form is not null %}*/
+/* 				{{ form_start(delete_form) }}*/
+/* 					<input type="submit" value="Delete">*/
+/* 				{{ form_end(delete_form) }}*/
+/* 			{% endif %}*/
 /*         </li>*/
 /*     </ul>*/
 /* {% endblock %}*/
