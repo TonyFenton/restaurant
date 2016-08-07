@@ -22,20 +22,20 @@ class __TwigTemplate_ab24e9a9ca00205a4c946bfeaf5478d8d5826149aa3a308b33cbbae1f52
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_10fd70103ecfcacb5d22bcd13140156cde0e37f2299627d387336b85e41b1948 = $this->env->getExtension("native_profiler");
-        $__internal_10fd70103ecfcacb5d22bcd13140156cde0e37f2299627d387336b85e41b1948->enter($__internal_10fd70103ecfcacb5d22bcd13140156cde0e37f2299627d387336b85e41b1948_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "admin/page/index.html.twig"));
+        $__internal_6a761fbec0a72e2a46a491e753f21d479a03b854ab7366ed3bcb9e0a01dd2ff9 = $this->env->getExtension("native_profiler");
+        $__internal_6a761fbec0a72e2a46a491e753f21d479a03b854ab7366ed3bcb9e0a01dd2ff9->enter($__internal_6a761fbec0a72e2a46a491e753f21d479a03b854ab7366ed3bcb9e0a01dd2ff9_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "admin/page/index.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_10fd70103ecfcacb5d22bcd13140156cde0e37f2299627d387336b85e41b1948->leave($__internal_10fd70103ecfcacb5d22bcd13140156cde0e37f2299627d387336b85e41b1948_prof);
+        $__internal_6a761fbec0a72e2a46a491e753f21d479a03b854ab7366ed3bcb9e0a01dd2ff9->leave($__internal_6a761fbec0a72e2a46a491e753f21d479a03b854ab7366ed3bcb9e0a01dd2ff9_prof);
 
     }
 
     // line 3
     public function block_breadcrumb($context, array $blocks = array())
     {
-        $__internal_22244858cc3cc1a691fe2e2470f484fb9cc3c5c0cc9d97779aae140c3242c2b5 = $this->env->getExtension("native_profiler");
-        $__internal_22244858cc3cc1a691fe2e2470f484fb9cc3c5c0cc9d97779aae140c3242c2b5->enter($__internal_22244858cc3cc1a691fe2e2470f484fb9cc3c5c0cc9d97779aae140c3242c2b5_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "breadcrumb"));
+        $__internal_c227bfd8cda57826923072a6a0141810322e259cf6efd3505bc502945eec03b9 = $this->env->getExtension("native_profiler");
+        $__internal_c227bfd8cda57826923072a6a0141810322e259cf6efd3505bc502945eec03b9->enter($__internal_c227bfd8cda57826923072a6a0141810322e259cf6efd3505bc502945eec03b9_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "breadcrumb"));
 
         // line 4
         echo "\t/
@@ -45,18 +45,38 @@ class __TwigTemplate_ab24e9a9ca00205a4c946bfeaf5478d8d5826149aa3a308b33cbbae1f52
         echo "\">Strony</a>
 ";
         
-        $__internal_22244858cc3cc1a691fe2e2470f484fb9cc3c5c0cc9d97779aae140c3242c2b5->leave($__internal_22244858cc3cc1a691fe2e2470f484fb9cc3c5c0cc9d97779aae140c3242c2b5_prof);
+        $__internal_c227bfd8cda57826923072a6a0141810322e259cf6efd3505bc502945eec03b9->leave($__internal_c227bfd8cda57826923072a6a0141810322e259cf6efd3505bc502945eec03b9_prof);
 
     }
 
     // line 8
     public function block_content($context, array $blocks = array())
     {
-        $__internal_5aa61c9a52da28e24317b42674fec9353d79bc681bb45867eed9c46adf3c4404 = $this->env->getExtension("native_profiler");
-        $__internal_5aa61c9a52da28e24317b42674fec9353d79bc681bb45867eed9c46adf3c4404->enter($__internal_5aa61c9a52da28e24317b42674fec9353d79bc681bb45867eed9c46adf3c4404_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
+        $__internal_a81ad64325129e7701ff81a6721520465d64415c7b1f88a9de30fc686c9d779b = $this->env->getExtension("native_profiler");
+        $__internal_a81ad64325129e7701ff81a6721520465d64415c7b1f88a9de30fc686c9d779b->enter($__internal_a81ad64325129e7701ff81a6721520465d64415c7b1f88a9de30fc686c9d779b_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
 
         // line 9
-        echo "    <h1>Page list</h1>
+        echo "
+\t";
+        // line 10
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable($this->getAttribute($this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "session", array()), "flashBag", array()), "get", array(0 => "notice"), "method"));
+        foreach ($context['_seq'] as $context["_key"] => $context["flash_message"]) {
+            // line 11
+            echo "\t\t<div class=\"flash-notice\">
+\t\t\t";
+            // line 12
+            echo twig_escape_filter($this->env, $context["flash_message"], "html", null, true);
+            echo "
+\t\t</div>
+\t";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['flash_message'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 15
+        echo "
+    <h1>Page list</h1>
 
     <table>
         <thead>
@@ -67,14 +87,14 @@ class __TwigTemplate_ab24e9a9ca00205a4c946bfeaf5478d8d5826149aa3a308b33cbbae1f52
         </thead>
         <tbody>
         ";
-        // line 19
+        // line 26
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["pages"]) ? $context["pages"] : $this->getContext($context, "pages")));
         foreach ($context['_seq'] as $context["_key"] => $context["page"]) {
-            // line 20
+            // line 27
             echo "            <tr>
                 <td><a href=\"";
-            // line 21
+            // line 28
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("admin_page_edit", array("id" => $this->getAttribute($context["page"], "id", array()))), "html", null, true);
             echo "\">";
             echo twig_escape_filter($this->env, $this->getAttribute($context["page"], "name", array()), "html", null, true);
@@ -83,21 +103,21 @@ class __TwigTemplate_ab24e9a9ca00205a4c946bfeaf5478d8d5826149aa3a308b33cbbae1f52
                     <ul>
                         <li>
 \t\t\t\t\t\t\t";
-            // line 25
+            // line 32
             if ( !twig_test_empty($this->getAttribute($context["page"], "parent", array()))) {
-                // line 26
+                // line 33
                 echo "\t\t\t\t\t\t\t\t";
                 echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("childPage", array("slug" => $this->getAttribute($context["page"], "slug", array()), "parent" => $this->getAttribute($this->getAttribute($context["page"], "parent", array()), "slug", array()))), "html", null, true);
                 echo "
 \t\t\t\t\t\t\t";
             } else {
-                // line 28
+                // line 35
                 echo "\t\t\t\t\t\t\t\t";
                 echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("mainPage", array("slug" => $this->getAttribute($context["page"], "slug", array()))), "html", null, true);
                 echo "
 \t\t\t\t\t\t\t";
             }
-            // line 30
+            // line 37
             echo "                        </li>
                     </ul>
                 </td>
@@ -107,21 +127,21 @@ class __TwigTemplate_ab24e9a9ca00205a4c946bfeaf5478d8d5826149aa3a308b33cbbae1f52
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['page'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 35
+        // line 42
         echo "        </tbody>
     </table>
 
     <ul>
         <li>
             <a href=\"";
-        // line 40
+        // line 47
         echo $this->env->getExtension('routing')->getPath("admin_page_new");
-        echo "\">Create a new entry</a>
+        echo "\">Dodaj stronę</a>
         </li>
     </ul>
 ";
         
-        $__internal_5aa61c9a52da28e24317b42674fec9353d79bc681bb45867eed9c46adf3c4404->leave($__internal_5aa61c9a52da28e24317b42674fec9353d79bc681bb45867eed9c46adf3c4404_prof);
+        $__internal_a81ad64325129e7701ff81a6721520465d64415c7b1f88a9de30fc686c9d779b->leave($__internal_a81ad64325129e7701ff81a6721520465d64415c7b1f88a9de30fc686c9d779b_prof);
 
     }
 
@@ -137,7 +157,7 @@ class __TwigTemplate_ab24e9a9ca00205a4c946bfeaf5478d8d5826149aa3a308b33cbbae1f52
 
     public function getDebugInfo()
     {
-        return array (  118 => 40,  111 => 35,  101 => 30,  95 => 28,  89 => 26,  87 => 25,  78 => 21,  75 => 20,  71 => 19,  59 => 9,  53 => 8,  44 => 5,  41 => 4,  35 => 3,  11 => 1,);
+        return array (  138 => 47,  131 => 42,  121 => 37,  115 => 35,  109 => 33,  107 => 32,  98 => 28,  95 => 27,  91 => 26,  78 => 15,  69 => 12,  66 => 11,  62 => 10,  59 => 9,  53 => 8,  44 => 5,  41 => 4,  35 => 3,  11 => 1,);
     }
 }
 /* {% extends 'admin/layout.html.twig' %}*/
@@ -148,6 +168,13 @@ class __TwigTemplate_ab24e9a9ca00205a4c946bfeaf5478d8d5826149aa3a308b33cbbae1f52
 /* {% endblock %}*/
 /* */
 /* {% block content %}*/
+/* */
+/* 	{% for flash_message in app.session.flashBag.get('notice') %}*/
+/* 		<div class="flash-notice">*/
+/* 			{{ flash_message }}*/
+/* 		</div>*/
+/* 	{% endfor %}*/
+/* */
 /*     <h1>Page list</h1>*/
 /* */
 /*     <table>*/
@@ -179,7 +206,7 @@ class __TwigTemplate_ab24e9a9ca00205a4c946bfeaf5478d8d5826149aa3a308b33cbbae1f52
 /* */
 /*     <ul>*/
 /*         <li>*/
-/*             <a href="{{ path('admin_page_new') }}">Create a new entry</a>*/
+/*             <a href="{{ path('admin_page_new') }}">Dodaj stronę</a>*/
 /*         </li>*/
 /*     </ul>*/
 /* {% endblock %}*/

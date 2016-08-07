@@ -6,6 +6,13 @@
 {% endblock %}
 
 {% block content %}
+
+	{% for flash_message in app.session.flashBag.get('notice') %}
+		<div class="flash-notice">
+			{{ flash_message }}
+		</div>
+	{% endfor %}
+
     <h1>Page list</h1>
 
     <table>
@@ -37,7 +44,7 @@
 
     <ul>
         <li>
-            <a href="{{ path('admin_page_new') }}">Create a new entry</a>
+            <a href="{{ path('admin_page_new') }}">Dodaj stronę</a>
         </li>
     </ul>
 {% endblock %}

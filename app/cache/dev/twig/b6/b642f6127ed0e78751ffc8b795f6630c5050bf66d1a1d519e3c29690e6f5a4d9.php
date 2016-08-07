@@ -22,20 +22,20 @@ class __TwigTemplate_cc1ab58422ec9e1f4c90ad396316b18dd1d4f3acf8e794db45826af2b44
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_c95f244f2a0dc0afd588674b1160df6cbb4cae68147989688c68ddd2c20697e7 = $this->env->getExtension("native_profiler");
-        $__internal_c95f244f2a0dc0afd588674b1160df6cbb4cae68147989688c68ddd2c20697e7->enter($__internal_c95f244f2a0dc0afd588674b1160df6cbb4cae68147989688c68ddd2c20697e7_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "admin/footer/index.html.twig"));
+        $__internal_335d28439d8e130de03eb9124a7d44d4c709654aa398905409efa1f472922885 = $this->env->getExtension("native_profiler");
+        $__internal_335d28439d8e130de03eb9124a7d44d4c709654aa398905409efa1f472922885->enter($__internal_335d28439d8e130de03eb9124a7d44d4c709654aa398905409efa1f472922885_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "admin/footer/index.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_c95f244f2a0dc0afd588674b1160df6cbb4cae68147989688c68ddd2c20697e7->leave($__internal_c95f244f2a0dc0afd588674b1160df6cbb4cae68147989688c68ddd2c20697e7_prof);
+        $__internal_335d28439d8e130de03eb9124a7d44d4c709654aa398905409efa1f472922885->leave($__internal_335d28439d8e130de03eb9124a7d44d4c709654aa398905409efa1f472922885_prof);
 
     }
 
     // line 3
     public function block_breadcrumb($context, array $blocks = array())
     {
-        $__internal_de25aab46c201afbbfff98444c3c5b7e237a51fff12c5a739b7cece8235e1bbf = $this->env->getExtension("native_profiler");
-        $__internal_de25aab46c201afbbfff98444c3c5b7e237a51fff12c5a739b7cece8235e1bbf->enter($__internal_de25aab46c201afbbfff98444c3c5b7e237a51fff12c5a739b7cece8235e1bbf_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "breadcrumb"));
+        $__internal_d9bc5b0ed8ed1dc7254c58318adba4901da7d7b0e0c0bccddbda98a3affe7293 = $this->env->getExtension("native_profiler");
+        $__internal_d9bc5b0ed8ed1dc7254c58318adba4901da7d7b0e0c0bccddbda98a3affe7293->enter($__internal_d9bc5b0ed8ed1dc7254c58318adba4901da7d7b0e0c0bccddbda98a3affe7293_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "breadcrumb"));
 
         // line 4
         echo "\t/
@@ -45,18 +45,38 @@ class __TwigTemplate_cc1ab58422ec9e1f4c90ad396316b18dd1d4f3acf8e794db45826af2b44
         echo "\">Stopki</a>
 ";
         
-        $__internal_de25aab46c201afbbfff98444c3c5b7e237a51fff12c5a739b7cece8235e1bbf->leave($__internal_de25aab46c201afbbfff98444c3c5b7e237a51fff12c5a739b7cece8235e1bbf_prof);
+        $__internal_d9bc5b0ed8ed1dc7254c58318adba4901da7d7b0e0c0bccddbda98a3affe7293->leave($__internal_d9bc5b0ed8ed1dc7254c58318adba4901da7d7b0e0c0bccddbda98a3affe7293_prof);
 
     }
 
     // line 8
     public function block_content($context, array $blocks = array())
     {
-        $__internal_3e16ab634dbad8d069edd056b46c98a7ac2b824c533ab0bbcb401843861e55c3 = $this->env->getExtension("native_profiler");
-        $__internal_3e16ab634dbad8d069edd056b46c98a7ac2b824c533ab0bbcb401843861e55c3->enter($__internal_3e16ab634dbad8d069edd056b46c98a7ac2b824c533ab0bbcb401843861e55c3_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
+        $__internal_2ceb52c79d294edd60312b8b865b6489f83d8f7481c48b3e2cc504fd2f291a31 = $this->env->getExtension("native_profiler");
+        $__internal_2ceb52c79d294edd60312b8b865b6489f83d8f7481c48b3e2cc504fd2f291a31->enter($__internal_2ceb52c79d294edd60312b8b865b6489f83d8f7481c48b3e2cc504fd2f291a31_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
 
         // line 9
-        echo "    <h1>Footer list</h1>
+        echo "
+\t";
+        // line 10
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable($this->getAttribute($this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "session", array()), "flashBag", array()), "get", array(0 => "notice"), "method"));
+        foreach ($context['_seq'] as $context["_key"] => $context["flash_message"]) {
+            // line 11
+            echo "\t\t<div class=\"flash-notice\">
+\t\t\t";
+            // line 12
+            echo twig_escape_filter($this->env, $context["flash_message"], "html", null, true);
+            echo "
+\t\t</div>
+\t";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['flash_message'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 15
+        echo "\t
+    <h1>Footer list</h1>
 
     <table>
         <thead>
@@ -66,14 +86,14 @@ class __TwigTemplate_cc1ab58422ec9e1f4c90ad396316b18dd1d4f3acf8e794db45826af2b44
         </thead>
         <tbody>
         ";
-        // line 18
+        // line 25
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["footers"]) ? $context["footers"] : $this->getContext($context, "footers")));
         foreach ($context['_seq'] as $context["_key"] => $context["footer"]) {
-            // line 19
+            // line 26
             echo "            <tr>
                 <td><a href=\"";
-            // line 20
+            // line 27
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("admin_footer_edit", array("id" => $this->getAttribute($context["footer"], "id", array()))), "html", null, true);
             echo "\">";
             echo twig_escape_filter($this->env, $this->getAttribute($context["footer"], "name", array()), "html", null, true);
@@ -84,21 +104,21 @@ class __TwigTemplate_cc1ab58422ec9e1f4c90ad396316b18dd1d4f3acf8e794db45826af2b44
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['footer'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 23
+        // line 30
         echo "        </tbody>
     </table>
 
     <ul>
         <li>
             <a href=\"";
-        // line 28
+        // line 35
         echo $this->env->getExtension('routing')->getPath("admin_footer_new");
-        echo "\">Create a new entry</a>
+        echo "\">Dodaj stopkę</a>
         </li>
     </ul>
 ";
         
-        $__internal_3e16ab634dbad8d069edd056b46c98a7ac2b824c533ab0bbcb401843861e55c3->leave($__internal_3e16ab634dbad8d069edd056b46c98a7ac2b824c533ab0bbcb401843861e55c3_prof);
+        $__internal_2ceb52c79d294edd60312b8b865b6489f83d8f7481c48b3e2cc504fd2f291a31->leave($__internal_2ceb52c79d294edd60312b8b865b6489f83d8f7481c48b3e2cc504fd2f291a31_prof);
 
     }
 
@@ -114,7 +134,7 @@ class __TwigTemplate_cc1ab58422ec9e1f4c90ad396316b18dd1d4f3acf8e794db45826af2b44
 
     public function getDebugInfo()
     {
-        return array (  95 => 28,  88 => 23,  77 => 20,  74 => 19,  70 => 18,  59 => 9,  53 => 8,  44 => 5,  41 => 4,  35 => 3,  11 => 1,);
+        return array (  115 => 35,  108 => 30,  97 => 27,  94 => 26,  90 => 25,  78 => 15,  69 => 12,  66 => 11,  62 => 10,  59 => 9,  53 => 8,  44 => 5,  41 => 4,  35 => 3,  11 => 1,);
     }
 }
 /* {% extends 'admin/layout.html.twig' %}*/
@@ -125,6 +145,13 @@ class __TwigTemplate_cc1ab58422ec9e1f4c90ad396316b18dd1d4f3acf8e794db45826af2b44
 /* {% endblock %}*/
 /* 	*/
 /* {% block content %}*/
+/* */
+/* 	{% for flash_message in app.session.flashBag.get('notice') %}*/
+/* 		<div class="flash-notice">*/
+/* 			{{ flash_message }}*/
+/* 		</div>*/
+/* 	{% endfor %}*/
+/* 	*/
 /*     <h1>Footer list</h1>*/
 /* */
 /*     <table>*/
@@ -144,7 +171,7 @@ class __TwigTemplate_cc1ab58422ec9e1f4c90ad396316b18dd1d4f3acf8e794db45826af2b44
 /* */
 /*     <ul>*/
 /*         <li>*/
-/*             <a href="{{ path('admin_footer_new') }}">Create a new entry</a>*/
+/*             <a href="{{ path('admin_footer_new') }}">Dodaj stopkę</a>*/
 /*         </li>*/
 /*     </ul>*/
 /* {% endblock %}*/

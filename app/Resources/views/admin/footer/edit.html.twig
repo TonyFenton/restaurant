@@ -9,6 +9,12 @@
 
 {% block content %}
     <h1>Footer edit</h1>
+	
+	{% for flash_message in app.session.flashBag.get('notice') %}
+		<div class="flash-notice">
+			{{ flash_message }}
+		</div>
+	{% endfor %}
 
     {{ form_start(edit_form) }}
         {{ form_widget(edit_form) }}

@@ -49,8 +49,13 @@ class FooterController extends Controller
             $em = $this->getDoctrine()->getManager();
             $em->persist($footer);
             $em->flush();
+			
+			$this->addFlash(
+				'notice',
+				'Stopka została utworzona'
+			);
 
-            return $this->redirectToRoute('admin_footer_index');
+            return $this->redirectToRoute('admin_footer_edit', array('id' => $footer->getId()));
         }
 
         return $this->render('admin/footer/new.html.twig', array(
@@ -75,6 +80,11 @@ class FooterController extends Controller
             $em = $this->getDoctrine()->getManager();
             $em->persist($footer);
             $em->flush();
+			
+			$this->addFlash(
+				'notice',
+				'Zmiany zostały zapisane'
+			);
 
             return $this->redirectToRoute('admin_footer_edit', array('id' => $footer->getId()));
         }
@@ -101,6 +111,11 @@ class FooterController extends Controller
             $em = $this->getDoctrine()->getManager();
             $em->remove($footer);
             $em->flush();
+			
+			$this->addFlash(
+				'notice',
+				'Stopka została usunięta'
+			);
         }
 
         return $this->redirectToRoute('admin_footer_index');

@@ -57,8 +57,13 @@ class PageController extends Controller
 			
             $em->persist($page);
             $em->flush();
+			
+			$this->addFlash(
+				'notice',
+				'Strona została utworzona'
+			);
 
-            return $this->redirectToRoute('admin_page_index');
+            return $this->redirectToRoute('admin_page_edit', array('id' => $page->getId()));
         }
 
         return $this->render('admin/page/new.html.twig', array(
@@ -99,6 +104,11 @@ class PageController extends Controller
             $em->persist($page);
             $em->flush();
 
+			$this->addFlash(
+				'notice',
+				'Zmiany zostały zapisane'
+			);
+			
             return $this->redirectToRoute('admin_page_edit', array('id' => $page->getId()));
         }
 
@@ -124,6 +134,11 @@ class PageController extends Controller
             $em = $this->getDoctrine()->getManager();
             $em->remove($page);
             $em->flush();
+			
+			$this->addFlash(
+				'notice',
+				'Strona została usunięta'
+			);
         }
 
         return $this->redirectToRoute('admin_page_index');

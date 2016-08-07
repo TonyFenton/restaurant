@@ -37,7 +37,7 @@ class PageType extends AbstractType
 							->setParameter(1, $id)
 						;
 					},
-					'empty_value' => '',
+					'placeholder' => '',
 					'required' => false,
 				))
 				->add('slug')
