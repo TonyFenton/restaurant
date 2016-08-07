@@ -75,7 +75,7 @@ class PageController extends Controller
      */
     public function editAction(Request $request, Page $page, $id)
     {
-		if (!empty($page->getSlug())) {
+		if ($page->getSlug() != 'homepage') {
 			$deleteForm = $this->createDeleteForm($page)->createView();
 		}else{
 			$deleteForm= null;

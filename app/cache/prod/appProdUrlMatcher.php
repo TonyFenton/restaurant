@@ -139,7 +139,7 @@ class appProdUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirecta
                 goto not_mainPage;
             }
 
-            return $this->mergeDefaults(array_replace($matches, array('_route' => 'mainPage')), array (  'slug' => '',  '_controller' => 'AppBundle\\Controller\\DefaultController::mainPageAction',));
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'mainPage')), array (  'slug' => 'homepage',  '_controller' => 'AppBundle\\Controller\\DefaultController::mainPageAction',));
         }
         not_mainPage:
 

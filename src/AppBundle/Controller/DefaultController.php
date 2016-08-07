@@ -9,7 +9,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 class DefaultController extends Controller
 {
     /**
-     * @Route("/{slug}", Defaults={"slug": ""}, name="mainPage")
+     * @Route("/{slug}", Defaults={"slug": "homepage"}, name="mainPage")
 	 * @Method({"GET"})
      */
     public function mainPageAction($slug)

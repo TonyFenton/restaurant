@@ -22,10 +22,10 @@ class PageType extends AbstractType
 			$slug = $options['data']->getSlug();
 		}else{
 			$id = 0;
-			$slug = 'not empty';
+			$slug = null;
 		}
 		
-		if (!empty($slug)) {
+		if ($slug != 'homepage') {
 			$builder
 				->add('parent', EntityType::class, array(
 					'class' => 'AppBundle:Page',
@@ -33,7 +33,7 @@ class PageType extends AbstractType
 						return $er->createQueryBuilder('p')
 							->where('p.id != ?1')
 							->andwhere('p.parent is null')
-							->andwhere("p.slug != ''")
+							->andwhere("p.slug != 'homepage'")
 							->setParameter(1, $id)
 						;
 					},

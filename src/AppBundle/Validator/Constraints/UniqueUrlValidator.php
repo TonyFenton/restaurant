@@ -17,15 +17,18 @@ class UniqueUrlValidator extends ConstraintValidator
     public function validate($page, Constraint $constraint)
     {
 		if ($page->getParent()) {
-			$parent = $page->getParent()->getId();
+			$parent = '= '.$page->getParent()->getId();
 		}else{
-			$parent = null;
+			$parent = 'is NULL';
 		}
 		
-		$url = $this->em->getRepository('AppBundle:Page')->findOneBy(array(
-			'slug' => $page->getSlug(),
-			'parent' => $parent,
-		));
+		if ($page->getId()) {
+			$id = $page->getId();
+		}else{ // new_admin_page
+			$id = 0;
+		}
+		
+		$url = $this->em->getRepository('AppBundle:Page')->uniqueUrl($page->getSlug(), $parent, $id);
 		
         if ($url) {
             $this->context->buildViolation($constraint->message)

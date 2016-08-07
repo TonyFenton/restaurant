@@ -27,4 +27,39 @@ class PageRepository extends EntityRepository
 				'parentSlug' => $parentSlug))
 			->getOneOrNullResult();
 	}
+	
+	public function uniqueUrl($slug, $parent, $id) 
+	{
+		return $this->getEntityManager()
+			->createQuery(
+				"SELECT p
+				FROM AppBundle:Page p
+				WHERE p.slug = :slug
+					AND p.parent $parent
+					AND p.id != :id"
+			)->setParameters(array(
+				'slug' => $slug,
+				'id' => $id,
+			))
+			->getResult();
+	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
