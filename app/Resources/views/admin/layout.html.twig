@@ -1,5 +1,36 @@
 {% extends '::base.html.twig' %}
 
-{% block body %}
+{% block title %}
+{% endblock %}
 
+{% block stylesheets %}
+	{{ parent() }}
+	<link href="{{asset('css/cms.css')}}" rel="stylesheet" />
+{% endblock %}
+
+{% block body %}
+	<div id="wrapper">
+		<div id="header">
+			<h1>Najlepsiejszy CMS</h1>
+		</div>
+		<div id="nav">
+			<ul>
+				<li><a href="{{ path('admin_page_index') }}">Strony</a></li>
+				<li><a href="{{ path('admin_footer_index') }}">Stopki</a></li>
+				<li><a href="#">Wyloguj</a></li>
+			</ul>
+		</div>
+		<div id="content">
+			<div id="breadcrumb">
+				<a href=#>Panel</a>
+				{% block breadcrumb %}{% endblock %}
+			</div>
+			{% block content %}content{% endblock %}
+		</div>
+		<div id="footer">
+		</div>
+	</div>
+{% endblock %}
+
+{% block javascripts %}
 {% endblock %}

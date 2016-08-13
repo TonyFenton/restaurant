@@ -62,7 +62,7 @@ class DefaultControllerTest extends WebTestCase
 		//parentPage
 		$crawler = $client->request('GET', '/menu');
 		
-		$this->assertNotEmpty($crawler->filter('#secondaryNav li a')->text());
+		$this->assertNotEmpty($crawler->filter('#secondary_nav li a')->text());
 	}
 	
 	public function testMainMenu()
@@ -70,9 +70,9 @@ class DefaultControllerTest extends WebTestCase
 	    $client = self::createClient();
 		$crawler = $client->request('GET', '/');
 		
-		$this->assertNotEmpty($crawler->filter('#nav li a')->text());
+		$this->assertNotEmpty($crawler->filter('#main_nav li a')->text());
 		
-		$this->assertEquals(1, $crawler->filter('#nav li.current')->count());	
+		$this->assertEquals(1, $crawler->filter('#main_nav li.active')->count());	
 	}
 	
 	public function testchildPage()
@@ -80,7 +80,7 @@ class DefaultControllerTest extends WebTestCase
 	    $client = self::createClient();
 		$crawler = $client->request('GET', '/menu/obiad');
 		
-		$this->assertNotEmpty($crawler->filter('#secondaryNav li.current a')->text());
+		$this->assertNotEmpty($crawler->filter('#secondary_nav li.active a')->text());
 	}
 }
 

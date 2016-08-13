@@ -17,29 +17,38 @@ class PageType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
+
 		if ($options['data']->getId()) {
 			$id = $options['data']->getId();
 			$slug = $options['data']->getSlug();
+			$withoutChildren = $options['data']->getChildren()->isEmpty();
 		}else{
 			$id = 0;
 			$slug = null;
+			$withoutChildren = true;
 		}
 		
+	
 		if ($slug != 'homepage') {
+			if ($withoutChildren) {
+				$builder
+					->add('parent', EntityType::class, array(
+						'class' => 'AppBundle:Page',
+						'query_builder' => function (EntityRepository $er) use($id) {	
+							return $er->createQueryBuilder('p')
+								->where('p.id != ?1')
+								->andwhere('p.parent is null')
+								->andwhere("p.slug != 'homepage'")
+								->setParameter(1, $id)
+							;
+						},
+						'placeholder' => '',
+						'required' => false,
+					))
+				;
+			}
+			
 			$builder
-				->add('parent', EntityType::class, array(
-					'class' => 'AppBundle:Page',
-					'query_builder' => function (EntityRepository $er) use($id) {	
-						return $er->createQueryBuilder('p')
-							->where('p.id != ?1')
-							->andwhere('p.parent is null')
-							->andwhere("p.slug != 'homepage'")
-							->setParameter(1, $id)
-						;
-					},
-					'placeholder' => '',
-					'required' => false,
-				))
 				->add('slug')
 			;
 		}

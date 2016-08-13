@@ -37,7 +37,7 @@
 	<div id="main_photo_container">
 		<img id="main_photo" class="img-responsive" src="{{asset('images/' ~ page.picture )}}" alt=""/>
 	</div>
-	<div class="container">	
+	<div class="container" id="content">	
 		{% block content %}{% endblock %}
 	</div>
 	{% if page.footer.footer is defined %}
