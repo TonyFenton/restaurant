@@ -10,31 +10,73 @@
 	{% endif %}
 {% endblock %}
 
-{% block keywords %}
-{% endblock %}
-
 {% block stylesheets %}
 	{{ parent() }}
-	<link href="{{asset('css/style.css')}}" rel="stylesheet" />
+	<link href="{{asset('css/default/style.css')}}" rel="stylesheet" />
 {% endblock %}
 
 {% block body %}
-	<div id="header">
-		<a href="{{ path('mainPage') }}">
-			<img id="logo" src="{{asset('images/logo.png')}}" alt=""/>
-		</a>
-		{{ render(controller('AppBundle:Default:mainMenu', {"currentPage": page.slug })) }}
-		<img id="picture" src="{{asset('images/' ~ page.picture )}}" alt=""/>
+	<nav class="navbar navbar-default" id="main_nav">
+		<div class="container">
+			<div class="navbar-header">
+				<button aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse" class="navbar-toggle collapsed" type="button">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a href="{{ path('mainPage') }}" class="navbar-brand">
+					<img class="img-responsive" id="logo" src="{{asset('images/logo.png')}}" alt=""/>
+				</a>
+			</div>
+			<div class="navbar-collapse collapse navbar-right" id="navbar" >
+				{{ render(controller('AppBundle:Default:mainMenu', {"currentPage": page.slug })) }}
+			</div>
+		</div>
+	</nav>
+	<div id="main_photo_container">
+		<img id="main_photo" class="img-responsive" src="{{asset('images/' ~ page.picture )}}" alt=""/>
 	</div>
-	<div id="content">
+	<div class="container">	
 		{% block content %}{% endblock %}
 	</div>
 	{% if page.footer.footer is defined %}
-		<div id="footer">
-			{{ page.footer.footer | raw}}
+		<div id="footer" class="panel-footer">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12">
+						{{ page.footer.footer | raw}}
+					</div>
+				</div>
+			</div>
 		</div>
 	{% endif %}
+
 {% endblock %}
 
-{% block javascripts %}
-{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

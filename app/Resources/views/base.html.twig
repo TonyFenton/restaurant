@@ -2,15 +2,25 @@
 <html>
     <head>
         <meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
         <title>{% block title %}{% endblock %}</title>
 		<meta name="description" content="{% block description %}{% endblock %}" />
-		<meta name="keywords" content="{% block keywords %}{% endblock %}" />
-        {% block stylesheets %}{% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-		<link href='https://fonts.googleapis.com/css?family=Lato:400,900&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+        {% block stylesheets %}
+			<link href="{{ asset('bootstrap-3.3.7-dist/css/bootstrap.min.css') }}" rel="stylesheet">
+			<!--[if lt IE 9]>
+				<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+				<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+			<![endif]-->
+			<link href="{{asset('css/style.css')}}" rel="stylesheet" />
+		{% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('images/logo.png') }}" />
     </head>
     <body>
         {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+        {% block javascripts %}
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+			<script src="{{ asset('bootstrap-3.3.7-dist/js/bootstrap.min.js') }}"></script>
+		{% endblock %}
     </body>
 </html>

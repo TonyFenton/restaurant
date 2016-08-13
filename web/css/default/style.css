@@ -1,0 +1,53 @@
+body {
+	/* Background pattern from subtlepatterns.com */
+	background-image: url("../../images/sos.png");
+}
+#main_nav ul.navbar-nav > li:hover .dropdown-menu{
+	display: block;
+}
+#main_nav .navbar-right .dropdown-menu {
+	right: auto;
+}
+#main_nav {
+	margin:0px;
+}
+
+#main_photo {
+	display:block;
+	margin-left: auto;
+	margin-right: auto;
+}
+#main_photo_container {
+	background-color: #94b8b8;
+}
+
+#content {
+	margin-bottom: 10px;
+}
+
+
+#secondary_nav {
+	margin-top: 10px;
+}
+
+#secondary_nav .list-group-item {
+	padding: 0px;
+}
+
+#footer {
+	margin-top: 50px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

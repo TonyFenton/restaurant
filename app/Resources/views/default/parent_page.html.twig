@@ -1,23 +1,28 @@
 {% extends 'default/layout.html.twig' %}
 
-{% block stylesheets %}
-	 {{ parent() }}
-	<link rel="stylesheet" type="text/css" href="{{asset('css/pageWith-style.css')}}">
-	<link rel="stylesheet" media="(max-width: 640px)" href="{{asset('css/pageWith-style-max640px.css')}}" type="text/css" />
-{% endblock %}
-
 {% block content %}
-	<h1>{{page.name}}</h1>
-	<div id="secondaryNav">
-		<ul id="secondaryMenu">
-			{% for link in page.children %}
-				<li><a href=" {{ path('childPage', { 'parent': link.parent.slug, 'slug': link.slug }) }} ">{{ link.name }}</a></li>
-			{% endfor%}
-		</ul>
+	<div class="row">
+		<div class="col-xs-12">
+			<h1>{{page.name}}</h1>
+		</div>
 	</div>
-	<div id="article">
-		{{page.content | raw}}
+	<div class="row">
+		<div class="col-xs-12 col-sm-3">
+			<ul id="secondary_nav" class="nav nav-pills nav-stacked list-group">
+				{% for link in page.children %}
+					<li role="presentation" class="list-group-item
+						{% if(link.slug == page.slug) %}
+							active
+						{% endif %}
+						">
+							<a href="{{ path('childPage', { 'slug': link.slug, 'parent': page.slug }) }}">{{ link.name }}</a>
+					</li>
+				{% endfor %}
+			</ul>
+		</div>
+		<div class="col-xs-12 col-sm-9">
+			{{page.content | raw}}
+		</div>
 	</div>
-	<div style="clear: both"></div>
 {% endblock %}
 
