@@ -16,9 +16,9 @@ class FooterControllerTest extends WebTestCase
 		
 		$this->assertEquals(200, $client->getResponse()->getStatusCode(), "Unexpected HTTP status code for GET /admin/footer/");
 		
-		$crawler = $client->click($crawler->selectLink('Dodaj stopkę')->link());
+		$crawler = $client->click($crawler->selectLink('Dodaj nową')->link());
 		
-		$form = $crawler->selectButton('Create')->form(array(
+		$form = $crawler->selectButton('Utwórz')->form(array(
             'footer[name]'  => 'Test',
             'footer[footer]'  => 'Test',
 		));
@@ -33,7 +33,7 @@ class FooterControllerTest extends WebTestCase
 		
 		$crawler = $client->click($crawler->selectLink('Test')->link());
 		
-		$form = $crawler->selectButton('Edit')->form(array(
+		$form = $crawler->selectButton('Zapisz')->form(array(
             'footer[name]'  => 'Test2',
             'footer[footer]'  => 'Test2',
         ));
@@ -48,7 +48,7 @@ class FooterControllerTest extends WebTestCase
 		
 		$crawler = $client->click($crawler->selectLink('Test2')->link());
 		
-		$client->submit($crawler->selectButton('Delete')->form());
+		$client->submit($crawler->selectButton('Usuń')->form());
 		$crawler = $client->followRedirect();
 		
 		$this->assertEquals(1, $crawler->filter('html:contains("Stopka została usunięta")')->count());

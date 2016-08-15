@@ -1,38 +1,36 @@
 {% extends 'admin/layout.html.twig' %}
 
 {% block breadcrumb %}
-	/
-	<a href="{{ path('admin_footer_index') }}">Stopki</a>
+	<li class="active">
+		Stopki
+	</li>
 {% endblock %}
 	
 {% block content %}
-
 	{% for flash_message in app.session.flashBag.get('notice') %}
-		<div class="flash-notice">
+		<div class="alert alert-info" role="alert">
 			{{ flash_message }}
 		</div>
 	{% endfor %}
-	
-    <h1>Footer list</h1>
+	<div class="panel panel-default">
+		<div class="panel-heading" id="heading">
+			<h1>Stopki</h1>
+			<a class="btn btn-success" href="{{ path('admin_footer_new') }}" role="button">Dodaj nową</a>
+		</div>
+		<table class="table table-striped table-hover">
+			<thead>
+				<tr>
+					<th>Name</th>
+				</tr>
+			</thead>
+			<tbody>
+			{% for footer in footers %}
+				<tr>
+					<td><a href="{{ path('admin_footer_edit', { 'id': footer.id }) }}">{{ footer.name }}</a></td>
+				</tr>
+			{% endfor %}
+			</tbody>
+		</table>
+	</div>
 
-    <table>
-        <thead>
-            <tr>
-                <th>Name</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for footer in footers %}
-            <tr>
-                <td><a href="{{ path('admin_footer_edit', { 'id': footer.id }) }}">{{ footer.name }}</a></td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
-
-    <ul>
-        <li>
-            <a href="{{ path('admin_footer_new') }}">Dodaj stopkę</a>
-        </li>
-    </ul>
 {% endblock %}

@@ -1,34 +1,36 @@
 {% extends 'admin/layout.html.twig' %}
 
 {% block breadcrumb %}
-	/
-	<a href="{{ path('admin_footer_index') }}">Stopki</a>
-	/
-	<a href="{{ path('admin_footer_edit', { 'id': footer.id }) }}">{{ footer.name }}</a>
+	<li>
+		<a href="{{ path('admin_footer_index') }}">Stopki</a>
+	</li>
+	<li class="active">
+		{{ footer.name }}
+	</li>
 {% endblock %}
 
 {% block content %}
-    <h1>Footer edit</h1>
-	
 	{% for flash_message in app.session.flashBag.get('notice') %}
-		<div class="flash-notice">
+		<div class="alert alert-info" role="alert">
 			{{ flash_message }}
 		</div>
 	{% endfor %}
-
-    {{ form_start(edit_form) }}
-        {{ form_widget(edit_form) }}
-        <input type="submit" value="Edit" />
-    {{ form_end(edit_form) }}
-
-    <ul>
-        <li>
-            <a href="{{ path('admin_footer_index') }}">Back to the list</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
-        </li>
-    </ul>
+	<div class="panel panel-default">
+		<div class="panel-heading"><h1>Edycja stopki</h1></div>
+		<div class="panel-body">
+			
+				{{ form_start(edit_form) }}
+					{{ form_widget(edit_form) }}
+					<input class="btn btn-success" type="submit" value="Zapisz">
+				{{ form_end(edit_form) }}
+			
+				<a id="backtolist"class="btn btn-warning" href="{{ path('admin_footer_index') }}" role="button">Powrót do Listy</a>
+			
+				{% if delete_form is not null %}
+					{{ form_start(delete_form) }}
+						<input class="btn btn-danger" type="submit" value="Usuń">
+					{{ form_end(delete_form) }}
+				{% endif %}
+		</div>
+	</div>
 {% endblock %}

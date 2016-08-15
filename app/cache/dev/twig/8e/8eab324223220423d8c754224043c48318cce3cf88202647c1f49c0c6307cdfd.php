@@ -22,72 +22,70 @@ class __TwigTemplate_bb5c114a30818109df4e380218aae19f75dfcf7e04d598b00a441df8ed4
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_89911bd729b9e9fd99916a0f0901c5fbf43b9a597b7a216c6ad5faa19b11ed4a = $this->env->getExtension("native_profiler");
-        $__internal_89911bd729b9e9fd99916a0f0901c5fbf43b9a597b7a216c6ad5faa19b11ed4a->enter($__internal_89911bd729b9e9fd99916a0f0901c5fbf43b9a597b7a216c6ad5faa19b11ed4a_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "admin/page/new.html.twig"));
+        $__internal_c53af2fc61538b47f7f9ccbed69379cafc6c4ac0b5c2a98cd281ab019e5ed2a8 = $this->env->getExtension("native_profiler");
+        $__internal_c53af2fc61538b47f7f9ccbed69379cafc6c4ac0b5c2a98cd281ab019e5ed2a8->enter($__internal_c53af2fc61538b47f7f9ccbed69379cafc6c4ac0b5c2a98cd281ab019e5ed2a8_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "admin/page/new.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_89911bd729b9e9fd99916a0f0901c5fbf43b9a597b7a216c6ad5faa19b11ed4a->leave($__internal_89911bd729b9e9fd99916a0f0901c5fbf43b9a597b7a216c6ad5faa19b11ed4a_prof);
+        $__internal_c53af2fc61538b47f7f9ccbed69379cafc6c4ac0b5c2a98cd281ab019e5ed2a8->leave($__internal_c53af2fc61538b47f7f9ccbed69379cafc6c4ac0b5c2a98cd281ab019e5ed2a8_prof);
 
     }
 
     // line 3
     public function block_breadcrumb($context, array $blocks = array())
     {
-        $__internal_81559dc03d17ccdfd287b50b4718a46c391104545a5b294723e941e5ac629abe = $this->env->getExtension("native_profiler");
-        $__internal_81559dc03d17ccdfd287b50b4718a46c391104545a5b294723e941e5ac629abe->enter($__internal_81559dc03d17ccdfd287b50b4718a46c391104545a5b294723e941e5ac629abe_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "breadcrumb"));
+        $__internal_51588d0a60699f89a632e8a76e74fed5291e78d28b190140c08b5dd98ae02518 = $this->env->getExtension("native_profiler");
+        $__internal_51588d0a60699f89a632e8a76e74fed5291e78d28b190140c08b5dd98ae02518->enter($__internal_51588d0a60699f89a632e8a76e74fed5291e78d28b190140c08b5dd98ae02518_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "breadcrumb"));
 
         // line 4
-        echo "\t/
-\t<a href=\"";
+        echo "\t<li>
+\t\t<a href=\"";
         // line 5
         echo $this->env->getExtension('routing')->getPath("admin_page_index");
         echo "\">Strony</a>
-\t/
-\t<a href=\"";
-        // line 7
-        echo $this->env->getExtension('routing')->getPath("admin_page_new");
-        echo "\">Nowa</a>
+\t</li>
+\t<li class=\"active\">
+\t\tNowa
+\t</li>
 ";
         
-        $__internal_81559dc03d17ccdfd287b50b4718a46c391104545a5b294723e941e5ac629abe->leave($__internal_81559dc03d17ccdfd287b50b4718a46c391104545a5b294723e941e5ac629abe_prof);
+        $__internal_51588d0a60699f89a632e8a76e74fed5291e78d28b190140c08b5dd98ae02518->leave($__internal_51588d0a60699f89a632e8a76e74fed5291e78d28b190140c08b5dd98ae02518_prof);
 
     }
 
-    // line 10
+    // line 12
     public function block_content($context, array $blocks = array())
     {
-        $__internal_09bfbd8258d7c7b4872b4295eed1f5830e16acce9b1dd111948c6a56d760b445 = $this->env->getExtension("native_profiler");
-        $__internal_09bfbd8258d7c7b4872b4295eed1f5830e16acce9b1dd111948c6a56d760b445->enter($__internal_09bfbd8258d7c7b4872b4295eed1f5830e16acce9b1dd111948c6a56d760b445_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
+        $__internal_d961c999194241e7d4cbebeb6c80868df6be7b3d399d5aa2aceb6f2ef2717518 = $this->env->getExtension("native_profiler");
+        $__internal_d961c999194241e7d4cbebeb6c80868df6be7b3d399d5aa2aceb6f2ef2717518->enter($__internal_d961c999194241e7d4cbebeb6c80868df6be7b3d399d5aa2aceb6f2ef2717518_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
 
-        // line 11
-        echo "    <h1>Page creation</h1>
-
-    ";
         // line 13
+        echo "\t<div class=\"panel panel-default\">
+\t\t<div class=\"panel-heading\"><h1>Tworzenie strony</h1></div>
+\t\t<div class=\"panel-body\">\t\t
+\t\t\t";
+        // line 16
         echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'form_start');
         echo "
-        ";
-        // line 14
+\t\t\t\t";
+        // line 17
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'widget');
         echo "
-        <input type=\"submit\" value=\"Create\" />
-    ";
-        // line 16
+\t\t\t\t<input class=\"btn btn-success\" type=\"submit\" value=\"Utwórz\">
+\t\t\t";
+        // line 19
         echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'form_end');
         echo "
-
-    <ul>
-        <li>
-            <a href=\"";
-        // line 20
+\t\t
+\t\t\t<a id=\"backtolist\"class=\"btn btn-danger\" href=\"";
+        // line 21
         echo $this->env->getExtension('routing')->getPath("admin_page_index");
-        echo "\">Back to the list</a>
-        </li>
-    </ul>
+        echo "\" role=\"button\">Anuluj</a>\t\t
+\t\t</div>
+\t</div>
 ";
         
-        $__internal_09bfbd8258d7c7b4872b4295eed1f5830e16acce9b1dd111948c6a56d760b445->leave($__internal_09bfbd8258d7c7b4872b4295eed1f5830e16acce9b1dd111948c6a56d760b445_prof);
+        $__internal_d961c999194241e7d4cbebeb6c80868df6be7b3d399d5aa2aceb6f2ef2717518->leave($__internal_d961c999194241e7d4cbebeb6c80868df6be7b3d399d5aa2aceb6f2ef2717518_prof);
 
     }
 
@@ -103,30 +101,31 @@ class __TwigTemplate_bb5c114a30818109df4e380218aae19f75dfcf7e04d598b00a441df8ed4
 
     public function getDebugInfo()
     {
-        return array (  84 => 20,  77 => 16,  72 => 14,  68 => 13,  64 => 11,  58 => 10,  49 => 7,  44 => 5,  41 => 4,  35 => 3,  11 => 1,);
+        return array (  82 => 21,  77 => 19,  72 => 17,  68 => 16,  63 => 13,  57 => 12,  44 => 5,  41 => 4,  35 => 3,  11 => 1,);
     }
 }
 /* {% extends 'admin/layout.html.twig' %}*/
 /* */
 /* {% block breadcrumb %}*/
-/* 	/*/
-/* 	<a href="{{ path('admin_page_index') }}">Strony</a>*/
-/* 	/*/
-/* 	<a href="{{ path('admin_page_new') }}">Nowa</a>*/
+/* 	<li>*/
+/* 		<a href="{{ path('admin_page_index') }}">Strony</a>*/
+/* 	</li>*/
+/* 	<li class="active">*/
+/* 		Nowa*/
+/* 	</li>*/
 /* {% endblock %}*/
 /* */
 /* {% block content %}*/
-/*     <h1>Page creation</h1>*/
-/* */
-/*     {{ form_start(form) }}*/
-/*         {{ form_widget(form) }}*/
-/*         <input type="submit" value="Create" />*/
-/*     {{ form_end(form) }}*/
-/* */
-/*     <ul>*/
-/*         <li>*/
-/*             <a href="{{ path('admin_page_index') }}">Back to the list</a>*/
-/*         </li>*/
-/*     </ul>*/
+/* 	<div class="panel panel-default">*/
+/* 		<div class="panel-heading"><h1>Tworzenie strony</h1></div>*/
+/* 		<div class="panel-body">		*/
+/* 			{{ form_start(form) }}*/
+/* 				{{ form_widget(form) }}*/
+/* 				<input class="btn btn-success" type="submit" value="Utwórz">*/
+/* 			{{ form_end(form) }}*/
+/* 		*/
+/* 			<a id="backtolist"class="btn btn-danger" href="{{ path('admin_page_index') }}" role="button">Anuluj</a>		*/
+/* 		</div>*/
+/* 	</div>*/
 /* {% endblock %}*/
 /* */

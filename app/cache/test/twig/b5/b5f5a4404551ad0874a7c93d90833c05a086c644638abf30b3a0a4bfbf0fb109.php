@@ -22,56 +22,53 @@ class __TwigTemplate_86d1fff4dbeb53b772b6830607b2f3a4465b4926d9c1f514004f1f4c065
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_87e31d0ade1df1bca06248e455b1f77228bba4dc8ab0e1d226bfd73dcad47771 = $this->env->getExtension("native_profiler");
-        $__internal_87e31d0ade1df1bca06248e455b1f77228bba4dc8ab0e1d226bfd73dcad47771->enter($__internal_87e31d0ade1df1bca06248e455b1f77228bba4dc8ab0e1d226bfd73dcad47771_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "admin/footer/edit.html.twig"));
+        $__internal_a9246e2fe0517a98dbd5bcea72178fce285b07eed4c9ed340ad4b0d479d7abda = $this->env->getExtension("native_profiler");
+        $__internal_a9246e2fe0517a98dbd5bcea72178fce285b07eed4c9ed340ad4b0d479d7abda->enter($__internal_a9246e2fe0517a98dbd5bcea72178fce285b07eed4c9ed340ad4b0d479d7abda_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "admin/footer/edit.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_87e31d0ade1df1bca06248e455b1f77228bba4dc8ab0e1d226bfd73dcad47771->leave($__internal_87e31d0ade1df1bca06248e455b1f77228bba4dc8ab0e1d226bfd73dcad47771_prof);
+        $__internal_a9246e2fe0517a98dbd5bcea72178fce285b07eed4c9ed340ad4b0d479d7abda->leave($__internal_a9246e2fe0517a98dbd5bcea72178fce285b07eed4c9ed340ad4b0d479d7abda_prof);
 
     }
 
     // line 3
     public function block_breadcrumb($context, array $blocks = array())
     {
-        $__internal_56e05798ec9d438eea4e0673c75bac524de2a84fa09d7fbdb66417652a0e4669 = $this->env->getExtension("native_profiler");
-        $__internal_56e05798ec9d438eea4e0673c75bac524de2a84fa09d7fbdb66417652a0e4669->enter($__internal_56e05798ec9d438eea4e0673c75bac524de2a84fa09d7fbdb66417652a0e4669_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "breadcrumb"));
+        $__internal_13a533b7d60e73e2d240f5a1f0d3c7a53032e14829584db3778d31bab2102504 = $this->env->getExtension("native_profiler");
+        $__internal_13a533b7d60e73e2d240f5a1f0d3c7a53032e14829584db3778d31bab2102504->enter($__internal_13a533b7d60e73e2d240f5a1f0d3c7a53032e14829584db3778d31bab2102504_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "breadcrumb"));
 
         // line 4
-        echo "\t/
-\t<a href=\"";
+        echo "\t<li>
+\t\t<a href=\"";
         // line 5
         echo $this->env->getExtension('routing')->getPath("admin_footer_index");
         echo "\">Stopki</a>
-\t/
-\t<a href=\"";
-        // line 7
-        echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("admin_footer_edit", array("id" => $this->getAttribute((isset($context["footer"]) ? $context["footer"] : $this->getContext($context, "footer")), "id", array()))), "html", null, true);
-        echo "\">";
+\t</li>
+\t<li class=\"active\">
+\t\t";
+        // line 8
         echo twig_escape_filter($this->env, $this->getAttribute((isset($context["footer"]) ? $context["footer"] : $this->getContext($context, "footer")), "name", array()), "html", null, true);
-        echo "</a>
+        echo "
+\t</li>
 ";
         
-        $__internal_56e05798ec9d438eea4e0673c75bac524de2a84fa09d7fbdb66417652a0e4669->leave($__internal_56e05798ec9d438eea4e0673c75bac524de2a84fa09d7fbdb66417652a0e4669_prof);
+        $__internal_13a533b7d60e73e2d240f5a1f0d3c7a53032e14829584db3778d31bab2102504->leave($__internal_13a533b7d60e73e2d240f5a1f0d3c7a53032e14829584db3778d31bab2102504_prof);
 
     }
 
-    // line 10
+    // line 12
     public function block_content($context, array $blocks = array())
     {
-        $__internal_abc7108d7471893d48d01dd4777dd317cf256fc1d4b295c88289f5c024b19308 = $this->env->getExtension("native_profiler");
-        $__internal_abc7108d7471893d48d01dd4777dd317cf256fc1d4b295c88289f5c024b19308->enter($__internal_abc7108d7471893d48d01dd4777dd317cf256fc1d4b295c88289f5c024b19308_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
+        $__internal_1b481c5b12283ee87f8ea95dc5a2e9edb318e3cee8c2a31108727a8fa8dd9260 = $this->env->getExtension("native_profiler");
+        $__internal_1b481c5b12283ee87f8ea95dc5a2e9edb318e3cee8c2a31108727a8fa8dd9260->enter($__internal_1b481c5b12283ee87f8ea95dc5a2e9edb318e3cee8c2a31108727a8fa8dd9260_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
 
-        // line 11
-        echo "    <h1>Footer edit</h1>
-\t
-\t";
         // line 13
+        echo "\t";
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable($this->getAttribute($this->getAttribute($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "session", array()), "flashBag", array()), "get", array(0 => "notice"), "method"));
         foreach ($context['_seq'] as $context["_key"] => $context["flash_message"]) {
             // line 14
-            echo "\t\t<div class=\"flash-notice\">
+            echo "\t\t<div class=\"alert alert-info\" role=\"alert\">
 \t\t\t";
             // line 15
             echo twig_escape_filter($this->env, $context["flash_message"], "html", null, true);
@@ -83,43 +80,49 @@ class __TwigTemplate_86d1fff4dbeb53b772b6830607b2f3a4465b4926d9c1f514004f1f4c065
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['flash_message'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
         // line 18
-        echo "
-    ";
-        // line 19
+        echo "\t<div class=\"panel panel-default\">
+\t\t<div class=\"panel-heading\"><h1>Edycja stopki</h1></div>
+\t\t<div class=\"panel-body\">
+\t\t\t
+\t\t\t\t";
+        // line 22
         echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), 'form_start');
         echo "
-        ";
-        // line 20
+\t\t\t\t\t";
+        // line 23
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), 'widget');
         echo "
-        <input type=\"submit\" value=\"Edit\" />
-    ";
-        // line 22
+\t\t\t\t\t<input class=\"btn btn-success\" type=\"submit\" value=\"Zapisz\">
+\t\t\t\t";
+        // line 25
         echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), 'form_end');
         echo "
-
-    <ul>
-        <li>
-            <a href=\"";
-        // line 26
+\t\t\t
+\t\t\t\t<a id=\"backtolist\"class=\"btn btn-warning\" href=\"";
+        // line 27
         echo $this->env->getExtension('routing')->getPath("admin_footer_index");
-        echo "\">Back to the list</a>
-        </li>
-        <li>
-            ";
+        echo "\" role=\"button\">Powrót do Listy</a>
+\t\t\t
+\t\t\t\t";
         // line 29
-        echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["delete_form"]) ? $context["delete_form"] : $this->getContext($context, "delete_form")), 'form_start');
-        echo "
-                <input type=\"submit\" value=\"Delete\">
-            ";
-        // line 31
-        echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["delete_form"]) ? $context["delete_form"] : $this->getContext($context, "delete_form")), 'form_end');
-        echo "
-        </li>
-    </ul>
+        if ( !(null === (isset($context["delete_form"]) ? $context["delete_form"] : $this->getContext($context, "delete_form")))) {
+            // line 30
+            echo "\t\t\t\t\t";
+            echo             $this->env->getExtension('form')->renderer->renderBlock((isset($context["delete_form"]) ? $context["delete_form"] : $this->getContext($context, "delete_form")), 'form_start');
+            echo "
+\t\t\t\t\t\t<input class=\"btn btn-danger\" type=\"submit\" value=\"Usuń\">
+\t\t\t\t\t";
+            // line 32
+            echo             $this->env->getExtension('form')->renderer->renderBlock((isset($context["delete_form"]) ? $context["delete_form"] : $this->getContext($context, "delete_form")), 'form_end');
+            echo "
+\t\t\t\t";
+        }
+        // line 34
+        echo "\t\t</div>
+\t</div>
 ";
         
-        $__internal_abc7108d7471893d48d01dd4777dd317cf256fc1d4b295c88289f5c024b19308->leave($__internal_abc7108d7471893d48d01dd4777dd317cf256fc1d4b295c88289f5c024b19308_prof);
+        $__internal_1b481c5b12283ee87f8ea95dc5a2e9edb318e3cee8c2a31108727a8fa8dd9260->leave($__internal_1b481c5b12283ee87f8ea95dc5a2e9edb318e3cee8c2a31108727a8fa8dd9260_prof);
 
     }
 
@@ -135,41 +138,43 @@ class __TwigTemplate_86d1fff4dbeb53b772b6830607b2f3a4465b4926d9c1f514004f1f4c065
 
     public function getDebugInfo()
     {
-        return array (  116 => 31,  111 => 29,  105 => 26,  98 => 22,  93 => 20,  89 => 19,  86 => 18,  77 => 15,  74 => 14,  70 => 13,  66 => 11,  60 => 10,  49 => 7,  44 => 5,  41 => 4,  35 => 3,  11 => 1,);
+        return array (  121 => 34,  116 => 32,  110 => 30,  108 => 29,  103 => 27,  98 => 25,  93 => 23,  89 => 22,  83 => 18,  74 => 15,  71 => 14,  66 => 13,  60 => 12,  50 => 8,  44 => 5,  41 => 4,  35 => 3,  11 => 1,);
     }
 }
 /* {% extends 'admin/layout.html.twig' %}*/
 /* */
 /* {% block breadcrumb %}*/
-/* 	/*/
-/* 	<a href="{{ path('admin_footer_index') }}">Stopki</a>*/
-/* 	/*/
-/* 	<a href="{{ path('admin_footer_edit', { 'id': footer.id }) }}">{{ footer.name }}</a>*/
+/* 	<li>*/
+/* 		<a href="{{ path('admin_footer_index') }}">Stopki</a>*/
+/* 	</li>*/
+/* 	<li class="active">*/
+/* 		{{ footer.name }}*/
+/* 	</li>*/
 /* {% endblock %}*/
 /* */
 /* {% block content %}*/
-/*     <h1>Footer edit</h1>*/
-/* 	*/
 /* 	{% for flash_message in app.session.flashBag.get('notice') %}*/
-/* 		<div class="flash-notice">*/
+/* 		<div class="alert alert-info" role="alert">*/
 /* 			{{ flash_message }}*/
 /* 		</div>*/
 /* 	{% endfor %}*/
-/* */
-/*     {{ form_start(edit_form) }}*/
-/*         {{ form_widget(edit_form) }}*/
-/*         <input type="submit" value="Edit" />*/
-/*     {{ form_end(edit_form) }}*/
-/* */
-/*     <ul>*/
-/*         <li>*/
-/*             <a href="{{ path('admin_footer_index') }}">Back to the list</a>*/
-/*         </li>*/
-/*         <li>*/
-/*             {{ form_start(delete_form) }}*/
-/*                 <input type="submit" value="Delete">*/
-/*             {{ form_end(delete_form) }}*/
-/*         </li>*/
-/*     </ul>*/
+/* 	<div class="panel panel-default">*/
+/* 		<div class="panel-heading"><h1>Edycja stopki</h1></div>*/
+/* 		<div class="panel-body">*/
+/* 			*/
+/* 				{{ form_start(edit_form) }}*/
+/* 					{{ form_widget(edit_form) }}*/
+/* 					<input class="btn btn-success" type="submit" value="Zapisz">*/
+/* 				{{ form_end(edit_form) }}*/
+/* 			*/
+/* 				<a id="backtolist"class="btn btn-warning" href="{{ path('admin_footer_index') }}" role="button">Powrót do Listy</a>*/
+/* 			*/
+/* 				{% if delete_form is not null %}*/
+/* 					{{ form_start(delete_form) }}*/
+/* 						<input class="btn btn-danger" type="submit" value="Usuń">*/
+/* 					{{ form_end(delete_form) }}*/
+/* 				{% endif %}*/
+/* 		</div>*/
+/* 	</div>*/
 /* {% endblock %}*/
 /* */

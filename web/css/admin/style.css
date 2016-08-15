@@ -1,0 +1,13 @@
+#heading{
+	overflow:auto;
+}
+#heading h1{
+	float:left;
+}
+#heading a{
+	float:right;
+	margin-top: 23px;
+}
+#backtolist {
+	margin: 10px 0px 10px 0px;
+}

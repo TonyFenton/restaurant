@@ -16,9 +16,9 @@ class PageControllerTest extends WebTestCase
 		
 		$this->assertEquals(200, $client->getResponse()->getStatusCode(), "Unexpected HTTP status code for GET /admin/page/");
 		
-		$crawler = $client->click($crawler->selectLink('Dodaj stronę')->link());
+		$crawler = $client->click($crawler->selectLink('Dodaj nową')->link());
 		
-		$form = $crawler->selectButton('Create')->form(array(
+		$form = $crawler->selectButton('Utwórz')->form(array(
             'page[slug]'  => 'test',
             'page[name]'  => 'Test',
             'page[title]'  => 'Test',
@@ -34,9 +34,9 @@ class PageControllerTest extends WebTestCase
 		
 		// not unique url
 		$crawler = $client->request('GET', '/admin/page/');
-		$crawler = $client->click($crawler->selectLink('Dodaj stronę')->link());
+		$crawler = $client->click($crawler->selectLink('Dodaj nową')->link());
 		
-		$form = $crawler->selectButton('Create')->form(array(
+		$form = $crawler->selectButton('Utwórz')->form(array(
             'page[slug]'  => 'test',
             'page[name]'  => 'Test',
             'page[title]'  => 'Test',
@@ -54,7 +54,7 @@ class PageControllerTest extends WebTestCase
 		
 		$crawler = $client->click($crawler->selectLink('Test')->link());
 		
-		$form = $crawler->selectButton('Edit')->form(array(
+		$form = $crawler->selectButton('Zapisz')->form(array(
             'page[slug]'  => 'test2',
             'page[name]'  => 'Test2',
             'page[title]'  => 'Test2',
@@ -78,7 +78,7 @@ class PageControllerTest extends WebTestCase
 		
 		$crawler = $client->click($crawler->selectLink('Test2')->link());
 		
-		$client->submit($crawler->selectButton('Delete')->form());
+		$client->submit($crawler->selectButton('Usuń')->form());
 		$crawler = $client->followRedirect();
 		
 		$this->assertEquals(1, $crawler->filter('html:contains("Strona została usunięta")')->count());
