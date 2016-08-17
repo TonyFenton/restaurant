@@ -1,0 +1,19 @@
+{% extends "admin/layout.html.twig" %}
+
+{% block breadcrumb %}
+	<ol class="breadcrumb">
+		<li>
+			<a href="{{ path('admin_default_dashboard') }}">Panel</a>
+		</li>
+		<li>
+			<a href="{{ path('fos_user_profile_show') }}">Moje konto</a>
+		</li>		
+		<li class="active">
+			Edycja
+		</li>
+	</ol>
+{% endblock %}
+
+{% block content %}
+{% include "FOSUserBundle:Profile:edit_content.html.twig" %}
+{% endblock content %}

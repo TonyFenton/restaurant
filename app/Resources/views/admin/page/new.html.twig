@@ -1,12 +1,17 @@
 {% extends 'admin/layout.html.twig' %}
 
 {% block breadcrumb %}
-	<li>
-		<a href="{{ path('admin_page_index') }}">Strony</a>
-	</li>
-	<li class="active">
-		Nowa
-	</li>
+	<ol class="breadcrumb">
+		<li>
+			<a href="{{ path('admin_default_dashboard') }}">Panel</a>
+		</li>
+		<li>
+			<a href="{{ path('admin_page_index') }}">Strony</a>
+		</li>
+		<li class="active">
+			Nowa
+		</li>
+	</ol>
 {% endblock %}
 
 {% block content %}

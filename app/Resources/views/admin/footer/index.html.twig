@@ -1,9 +1,14 @@
 {% extends 'admin/layout.html.twig' %}
 
 {% block breadcrumb %}
-	<li class="active">
-		Stopki
-	</li>
+	<ol class="breadcrumb">
+		<li>
+			<a href="{{ path('admin_default_dashboard') }}">Panel</a>
+		</li>
+		<li class="active">
+			Stopki
+		</li>
+	</ol>
 {% endblock %}
 	
 {% block content %}

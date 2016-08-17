@@ -1,0 +1,10 @@
+<div class="panel panel-default">
+	<div class="panel-heading"><h1>Moje konto</h1></div>
+	<div class="panel-body">
+		<div class="fos_user_user_show">
+			<p>{{ 'profile.show.username'|trans({}, 'FOSUserBundle') }}: {{ user.username }}</p>
+			<p>{{ 'profile.show.email'|trans({}, 'FOSUserBundle') }}: {{ user.email }}</p>
+		</div>
+		<a class="btn btn-success" href="{{ path('fos_user_profile_edit') }}" role="button">Edytuj</a>
+	</div>
+</div>

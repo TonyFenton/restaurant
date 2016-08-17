@@ -1,3 +1,95 @@
+# -> from @FOSUserBundle/Resources/routing/change_password.xml
+
+fos_user_change_password:
+    path: /admin/profile/password-change
+    defaults: { _controller: FOSUserBundle:ChangePassword:changePassword }
+    requirements:
+        methods: GET|POST
+
+# -> from @FOSUserBundle/Resources/routing/profile.xml
+
+fos_user_profile_show:
+    path: /admin/profile/show
+    defaults: { _controller: FOSUserBundle:Profile:show }
+    requirements:
+        methods: GET
+
+fos_user_profile_edit:
+    path: /admin/profile/edit
+    defaults: { _controller: FOSUserBundle:Profile:edit }
+    requirements:
+        methods: GET|POST
+
+# -> from @FOSUserBundle/Resources/routing/registration.xml
+
+fos_user_registration_register:
+    path: /admin/registration
+    defaults: { _controller: FOSUserBundle:Registration:register }
+    requirements:
+        methods: GET|POST
+
+fos_user_registration_check_email:
+    path: /admin/registration/check-email
+    defaults: { _controller: FOSUserBundle:Registration:checkEmail }
+    requirements:
+        methods: GET
+
+fos_user_registration_confirm:
+    path: /admin/registration/confirm/{token}
+    defaults: { _controller: FOSUserBundle:Registration:confirm }
+    requirements:
+        methods: GET
+
+fos_user_registration_confirmed:
+    path: /admin/registration/confirmed
+    defaults: { _controller: FOSUserBundle:Registration:confirmed }
+    requirements:
+        methods: GET
+
+# -> from @FOSUserBundle/Resources/routing/resetting.xml
+
+fos_user_resetting_request:
+    path: /password-reset
+    defaults: { _controller: FOSUserBundle:Resetting:request }
+    requirements:
+        methods: GET
+
+fos_user_resetting_send_email:
+    path: /password-reset
+    defaults: { _controller: FOSUserBundle:Resetting:sendEmail }
+    requirements:
+        methods: POST
+
+fos_user_resetting_check_email:
+    path: /password-reset/check-email
+    defaults: { _controller: FOSUserBundle:Resetting:checkEmail }
+    requirements:
+        methods: GET
+
+fos_user_resetting_reset:
+    path: /password-reset/{token}
+    defaults: { _controller: FOSUserBundle:Resetting:reset }
+    requirements:
+        methods: GET|POST
+
+# -> from @FOSUserBundle/Resources/routing/security.xml
+
+fos_user_security_login:
+    path: /login
+    defaults: { _controller: FOSUserBundle:Security:login }
+    requirements:
+        methods: GET|POST
+
+fos_user_security_check:
+    path: /login_check
+    defaults: { _controller: FOSUserBundle:Security:check }
+
+fos_user_security_logout:
+    path: /logout
+    defaults: { _controller: FOSUserBundle:Security:logout }
+    requirements:
+        methods: GET|POST
+
 admin:
     resource: "@AppBundle/Controller/Admin/"
     type:     annotation
