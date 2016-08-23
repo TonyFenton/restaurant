@@ -2183,7 +2183,7 @@
         </argument>
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-            <argument>57b33139b4a727.42208131</argument>
+            <argument>57bb38ed2cf2a9.28229476</argument>
           </service>
         </argument>
       </argument>
@@ -2313,7 +2313,7 @@
                 <call method="add">
                   <argument type="service">
                     <service class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
-                      <argument>^/register</argument>
+                      <argument>^/password-reset</argument>
                     </service>
                   </argument>
                   <argument type="collection">
@@ -2324,11 +2324,11 @@
                 <call method="add">
                   <argument type="service">
                     <service class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
-                      <argument>^/resetting</argument>
+                      <argument>^/admin/user</argument>
                     </service>
                   </argument>
                   <argument type="collection">
-                    <argument>IS_AUTHENTICATED_ANONYMOUSLY</argument>
+                    <argument>ROLE_ADMIN</argument>
                   </argument>
                   <argument>null</argument>
                 </call>
@@ -2339,7 +2339,7 @@
                     </service>
                   </argument>
                   <argument type="collection">
-                    <argument>ROLE_ADMIN</argument>
+                    <argument>ROLE_USER</argument>
                   </argument>
                   <argument>null</argument>
                 </call>
@@ -2422,7 +2422,7 @@
                 <call method="setOptions">
                   <argument type="collection">
                     <argument key="always_use_default_target_path">false</argument>
-                    <argument key="default_target_path">/</argument>
+                    <argument key="default_target_path">/admin</argument>
                     <argument key="login_path">/login</argument>
                     <argument key="target_path_parameter">_target_path</argument>
                     <argument key="use_referer">false</argument>
@@ -2472,7 +2472,7 @@
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.token_storage"/>
-            <argument>57b33139b4a727.42208131</argument>
+            <argument>57bb38ed2cf2a9.28229476</argument>
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
             <argument type="service" id="security.authentication.manager"/>
           </service>
@@ -2498,7 +2498,7 @@
                 <call method="add">
                   <argument type="service">
                     <service class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
-                      <argument>^/register</argument>
+                      <argument>^/password-reset</argument>
                     </service>
                   </argument>
                   <argument type="collection">
@@ -2509,11 +2509,11 @@
                 <call method="add">
                   <argument type="service">
                     <service class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
-                      <argument>^/resetting</argument>
+                      <argument>^/admin/user</argument>
                     </service>
                   </argument>
                   <argument type="collection">
-                    <argument>IS_AUTHENTICATED_ANONYMOUSLY</argument>
+                    <argument>ROLE_ADMIN</argument>
                   </argument>
                   <argument>null</argument>
                 </call>
@@ -2524,7 +2524,7 @@
                     </service>
                   </argument>
                   <argument type="collection">
-                    <argument>ROLE_ADMIN</argument>
+                    <argument>ROLE_USER</argument>
                   </argument>
                   <argument>null</argument>
                 </call>
@@ -3462,6 +3462,10 @@
       <call method="addPath">
         <argument>C:\xampp\htdocs\restaurant4\vendor\symfony\symfony\src\Symfony\Bundle\SecurityBundle/Resources/views</argument>
         <argument>Security</argument>
+      </call>
+      <call method="addPath">
+        <argument>C:\xampp\htdocs\restaurant4\app/Resources/TwigBundle/views</argument>
+        <argument>Twig</argument>
       </call>
       <call method="addPath">
         <argument>C:\xampp\htdocs\restaurant4\vendor\symfony\symfony\src\Symfony\Bundle\TwigBundle/Resources/views</argument>

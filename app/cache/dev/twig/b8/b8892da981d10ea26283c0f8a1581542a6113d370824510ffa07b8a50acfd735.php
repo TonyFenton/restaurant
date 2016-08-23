@@ -15,8 +15,8 @@ class __TwigTemplate_7f4fa0e8a7abecca9acc07aeb566e6b8b6b7b490bff34b21c0c7d39db8c
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_043b46342198300ddee66ba600c1b517fc660293911d7e7a9d0182c5237088e9 = $this->env->getExtension("native_profiler");
-        $__internal_043b46342198300ddee66ba600c1b517fc660293911d7e7a9d0182c5237088e9->enter($__internal_043b46342198300ddee66ba600c1b517fc660293911d7e7a9d0182c5237088e9_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "FOSUserBundle:Profile:edit_content.html.twig"));
+        $__internal_e8febca2b03321309aff72f2e9e76d612b7342139ec654fb9be9d3487ab52cc2 = $this->env->getExtension("native_profiler");
+        $__internal_e8febca2b03321309aff72f2e9e76d612b7342139ec654fb9be9d3487ab52cc2->enter($__internal_e8febca2b03321309aff72f2e9e76d612b7342139ec654fb9be9d3487ab52cc2_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "FOSUserBundle:Profile:edit_content.html.twig"));
 
         // line 1
         echo "<div class=\"panel panel-default\">
@@ -42,12 +42,11 @@ class __TwigTemplate_7f4fa0e8a7abecca9acc07aeb566e6b8b6b7b490bff34b21c0c7d39db8c
         echo $this->env->getExtension('routing')->getPath("fos_user_profile_show");
         echo "\" role=\"button\">Anuluj</a>
 \t\t</div>
-\t</form>
-\t\t
+\t</form>\t
 \t</div>
 </div>";
         
-        $__internal_043b46342198300ddee66ba600c1b517fc660293911d7e7a9d0182c5237088e9->leave($__internal_043b46342198300ddee66ba600c1b517fc660293911d7e7a9d0182c5237088e9_prof);
+        $__internal_e8febca2b03321309aff72f2e9e76d612b7342139ec654fb9be9d3487ab52cc2->leave($__internal_e8febca2b03321309aff72f2e9e76d612b7342139ec654fb9be9d3487ab52cc2_prof);
 
     }
 
@@ -75,7 +74,6 @@ class __TwigTemplate_7f4fa0e8a7abecca9acc07aeb566e6b8b6b7b490bff34b21c0c7d39db8c
 /* 			<input type="submit" class="btn btn-success"  value="{{ 'profile.edit.submit'|trans({}, 'FOSUserBundle') }}" />*/
 /* 			<a class="btn btn-danger" href="{{ path('fos_user_profile_show') }}" role="button">Anuluj</a>*/
 /* 		</div>*/
-/* 	</form>*/
-/* 		*/
+/* 	</form>	*/
 /* 	</div>*/
 /* </div>*/

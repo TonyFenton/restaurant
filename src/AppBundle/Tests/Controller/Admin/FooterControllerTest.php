@@ -3,55 +3,112 @@
 namespace AppBundle\Tests\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
+use AppBundle\Tests\Controller\myTestHelper;
+
 
 class FooterControllerTest extends WebTestCase
 {
+	public $my;
 	
-	public function testCompleteScenario()
+	function __construct()
+	{
+		parent::__construct();
+		$this->my = new myTestHelper();
+		// login as a user
+		$this->my->login($this->my->getUser());
+	}
+	
+	public function testIndex()
     {
-		$client = static::createClient();
+		// view test
+		$crawler = $this->my->checkStatusCodeUrl(200, 'GET', '/admin/footer/');
+		$this->assertEquals('Stopki', $crawler->filter('body .container #heading h1')->text());
+	}
+	
+	public function createNew($formData)
+	{
+		$crawler = $this->my->client->request('GET', '/admin/footer/');
+		$crawler = $this->my->client->click($crawler->selectLink('Dodaj nową')->link());
 		
-		// creat a footer
-		$crawler = $client->request('GET', '/admin/footer/');
+		$this->assertRegExp('@/admin/footer/new$@', $this->my->client->getRequest()->getUri());
 		
-		$this->assertEquals(200, $client->getResponse()->getStatusCode(), "Unexpected HTTP status code for GET /admin/footer/");
+		$form = $crawler->selectButton('Utwórz')->form($formData);
 		
-		$crawler = $client->click($crawler->selectLink('Dodaj nową')->link());
-		
-		$form = $crawler->selectButton('Utwórz')->form(array(
-            'footer[name]'  => 'Test',
-            'footer[footer]'  => 'Test',
-		));
-		
-		$client->submit($form);
-		$crawler = $client->followRedirect();
+		$this->my->client->submit($form);
+		$crawler = $this->my->client->followRedirect();
 		
 		$this->assertEquals(1, $crawler->filter('html:contains("Stopka została utworzona")')->count());
+	}
+	
+	public function testNew()
+	{
+		// view test
+		$crawler = $this->my->checkStatusCodeUrl(200, 'GET', '/admin/footer/new');
+		$this->assertEquals('Tworzenie stopki', $crawler->filter('body .container h1')->text());
 		
-		// edit the footer
-		$crawler = $client->request('GET', '/admin/footer/');
+		// creat a new footer test
+		$this->createNew(array(
+            'footer[name]'  => 'Test',
+            'footer[footer]'  => 'Test',	
+		));
+	}
+	
+	public function edit($name, $formData)
+	{
+		$crawler = $this->my->client->request('GET', '/admin/footer/');
 		
-		$crawler = $client->click($crawler->selectLink('Test')->link());
+		$crawler = $this->my->client->click($crawler->selectLink($name)->link());
 		
-		$form = $crawler->selectButton('Zapisz')->form(array(
-            'footer[name]'  => 'Test2',
-            'footer[footer]'  => 'Test2',
-        ));
+		$form = $crawler->selectButton('Zapisz')->form($formData);
 
-        $client->submit($form);
-        $crawler = $client->followRedirect();
+        $this->my->client->submit($form);
+        $crawler = $this->my->client->followRedirect();
 
 		$this->assertEquals(1, $crawler->filter('html:contains("Zmiany zostały zapisane")')->count());
+	}
+	
+	public function testEdit()
+	{
+		// view test
+		$crawler = $this->my->checkStatusCodeUrlByClick(200, 'GET', '/admin/footer/', 'Test');
+		$this->assertEquals('Edycja stopki', $crawler->filter('body .container h1')->text());
 		
-		// delete the footer
-		$crawler = $client->request('GET', '/admin/footer/');
+		// edit test
+		$this->edit(
+			'Test',
+			array(
+				'footer[name]'  => 'Test2',
+				'footer[footer]'  => 'Test2',
+			)
+		);
+	}
+	
+	public function deleteFooter($name)
+	{	
+		$crawler = $this->my->client->request('GET', '/admin/footer/');
 		
-		$crawler = $client->click($crawler->selectLink('Test2')->link());
+		$crawler = $this->my->client->click($crawler->selectLink($name)->link());
 		
-		$client->submit($crawler->selectButton('Usuń')->form());
-		$crawler = $client->followRedirect();
+		$this->my->client->submit($crawler->selectButton('Usuń')->form());
+		$crawler = $this->my->client->followRedirect();
 		
 		$this->assertEquals(1, $crawler->filter('html:contains("Stopka została usunięta")')->count());
 		$this->assertEquals(0, $crawler->filter('html:contains("Test2")')->count());
 	}
+	
+	public function testDelete()
+	{
+		$this->deleteFooter('Test2');
+	}
 }
+
+
+
+
+
+
+
+
+
+
+

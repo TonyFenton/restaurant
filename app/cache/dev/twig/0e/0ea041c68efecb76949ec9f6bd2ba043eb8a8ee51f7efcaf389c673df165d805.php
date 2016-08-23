@@ -15,8 +15,8 @@ class __TwigTemplate_0dc46c05557edf7324f9809b47537fcd1a639349b4789676436b665ffe3
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_fecd2d460a344469435331486e524502dcc2040b18c9831cb4f7920d052ceede = $this->env->getExtension("native_profiler");
-        $__internal_fecd2d460a344469435331486e524502dcc2040b18c9831cb4f7920d052ceede->enter($__internal_fecd2d460a344469435331486e524502dcc2040b18c9831cb4f7920d052ceede_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "default/_main_menu.html.twig"));
+        $__internal_1e1eb2c976b7acbd2d2030e15385bdc6735339b72be4fcfbae38fc18adeab4c1 = $this->env->getExtension("native_profiler");
+        $__internal_1e1eb2c976b7acbd2d2030e15385bdc6735339b72be4fcfbae38fc18adeab4c1->enter($__internal_1e1eb2c976b7acbd2d2030e15385bdc6735339b72be4fcfbae38fc18adeab4c1_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "default/_main_menu.html.twig"));
 
         // line 1
         echo "<ul class=\"nav navbar-nav\">
@@ -91,17 +91,9 @@ class __TwigTemplate_0dc46c05557edf7324f9809b47537fcd1a639349b4789676436b665ffe3
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['link'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
         // line 27
-        echo "</ul>
-
-
-
-
-
-
-
-";
+        echo "</ul>";
         
-        $__internal_fecd2d460a344469435331486e524502dcc2040b18c9831cb4f7920d052ceede->leave($__internal_fecd2d460a344469435331486e524502dcc2040b18c9831cb4f7920d052ceede_prof);
+        $__internal_1e1eb2c976b7acbd2d2030e15385bdc6735339b72be4fcfbae38fc18adeab4c1->leave($__internal_1e1eb2c976b7acbd2d2030e15385bdc6735339b72be4fcfbae38fc18adeab4c1_prof);
 
     }
 
@@ -147,25 +139,3 @@ class __TwigTemplate_0dc46c05557edf7324f9809b47537fcd1a639349b4789676436b665ffe3
 /* 		</li>*/
 /* 	{% endfor %}*/
 /* </ul>*/
-/* */
-/* */
-/* */
-/* */
-/* */
-/* */
-/* */
-/* {#*/
-/* <ul class="nav navbar-nav">*/
-/* 	{% for link in menu %}*/
-/* 		<li class="dropdown*/
-/* 			{% if(link.slug == currentPage) %}*/
-/* 				active*/
-/* 			{% endif %}*/
-/* 			"><a href="{{ path('mainPage', { 'slug': link.slug }) }}">{{ link.name }}</a>*/
-/* 			{% if (link.children is not empty) %}*/
-/* 			*/
-/* 			{% endif %}*/
-/* 		</li>*/
-/* 	{% endfor %}*/
-/* </ul>*/
-/* #}*/

@@ -3,19 +3,78 @@
 namespace AppBundle\Tests\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
+use AppBundle\Tests\Controller\myTestHelper;
 
 class DefaultControllerTest extends WebTestCase
 {
 	
-	/**
-	 * @dataProvider get404Urls
-	 */
-	public function test404Urls($url)
+	public $my;
+	
+	function __construct()
 	{
-		$client = static::createClient();
-		$crawler = $client->request('GET', $url);
+		parent::__construct();
+		$this->my = new myTestHelper();
+	}
+	
+	public function test404checkStatusCodeUrls() 
+	{
+		$this->my->checkStatusCodeUrls(
+			404, 
+			array(
+				'/hdfmdfnxcf',
+				'/obiad',
+				'/kjhgskdj/sdfhgkjsfg',
+				'/menu/sdfhgkjsfg',
+				'/hgskdj/sdfhgkjsdh/ajrtnclje',
+			)
+		);
+	}
+	
+	public function test200checkStatusCodeUrls() 
+	{
+		$this->my->checkStatusCodeUrls(
+			200, 
+			array(
+				'/o-nas',
+				'/menu/obiad',
+			)
+		);
+	}
+	
+	public function testMainPage()
+    {
+		$crawler = $this->my->checkStatusCodeUrl(200, 'GET', '/');
+		$this->assertNotEmpty($crawler->filter('body #content h1')->text());
 		
-		$this->assertEquals(404, $client->getResponse()->getStatusCode());
+		//parentPage
+		$crawler = $this->my->checkStatusCodeUrl(200, 'GET', '/menu');
+		$this->assertNotEmpty($crawler->filter('body #secondary_nav li a')->text());
+	}
+	
+	public function testMainMenu()
+    {
+		$crawler = $this->my->client->request('GET', '/');
+
+		$this->assertEquals(1, $crawler->filter('#main_nav li.active')->count());
+		
+		$this->assertNotEmpty($crawler->filter('#main_nav li a')->text());
+	}	
+	
+	public function testChildPage()
+    {
+		$crawler = $this->my->checkStatusCodeUrl(200,'GET', '/menu/obiad');
+		
+		$this->assertNotEmpty($crawler->filter('body #secondary_nav li.active a')->text());
+	}
+	
+	
+	   /*
+
+	public function test404Url($url)
+	{
+		$crawler = $this->my->client->request('GET', $url);
+		
+		$this->assertEquals(404, $crawler->getResponse()->getStatusCode());
 	}
 	
 	// nie istniejące strony
@@ -30,15 +89,12 @@ class DefaultControllerTest extends WebTestCase
         );
     }
 	
-	/**
-     * @dataProvider getSuccessfulUrls
-     */
+
     public function testSuccessfulUrls($url)
 	{
-        $client = self::createClient();
-        $client->request('GET', $url);
+        $crawler = $this->my->client->request('GET', $url);
 
-        $this->assertTrue($client->getResponse()->isSuccessful());
+        $this->assertTrue($crawler->getResponse()->isSuccessful());
 	}
 	
 	// istniejace strony
@@ -75,13 +131,14 @@ class DefaultControllerTest extends WebTestCase
 		$this->assertEquals(1, $crawler->filter('#main_nav li.active')->count());	
 	}
 	
-	public function testchildPage()
+	public function testChildPage()
     {
 	    $client = self::createClient();
 		$crawler = $client->request('GET', '/menu/obiad');
 		
 		$this->assertNotEmpty($crawler->filter('#secondary_nav li.active a')->text());
 	}
+	*/
 }
 
 

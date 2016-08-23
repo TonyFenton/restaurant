@@ -8,4 +8,7 @@
     <div>
         <input class="btn btn-success login_button" type="submit" value="{{ 'resetting.request.submit'|trans({}, 'FOSUserBundle') }}" />
     </div>
+	<div>
+		<a class="btn btn-danger login_button" href="{{ path('fos_user_security_login') }}" role="button">Anuluj</a>
+	</div>
 </form>

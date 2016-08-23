@@ -15,8 +15,8 @@ class __TwigTemplate_a578c0145f6cb4c74a20f26a3538264316f474339c1c885bed43e1482c0
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_f1debbc205222e1871236196513aa9da09f7b0dfe5c7a1d251f312828c805105 = $this->env->getExtension("native_profiler");
-        $__internal_f1debbc205222e1871236196513aa9da09f7b0dfe5c7a1d251f312828c805105->enter($__internal_f1debbc205222e1871236196513aa9da09f7b0dfe5c7a1d251f312828c805105_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "FOSUserBundle:Profile:show_content.html.twig"));
+        $__internal_dd5d89d8067b0533dfefb0f510f4927629e7abd2855bd8237b06c86a077e7923 = $this->env->getExtension("native_profiler");
+        $__internal_dd5d89d8067b0533dfefb0f510f4927629e7abd2855bd8237b06c86a077e7923->enter($__internal_dd5d89d8067b0533dfefb0f510f4927629e7abd2855bd8237b06c86a077e7923_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "FOSUserBundle:Profile:show_content.html.twig"));
 
         // line 1
         echo "<div class=\"panel panel-default\">
@@ -40,11 +40,15 @@ class __TwigTemplate_a578c0145f6cb4c74a20f26a3538264316f474339c1c885bed43e1482c0
         // line 8
         echo $this->env->getExtension('routing')->getPath("fos_user_profile_edit");
         echo "\" role=\"button\">Edytuj</a>
+\t\t<a class=\"btn btn-success\" href=\"";
+        // line 9
+        echo $this->env->getExtension('routing')->getPath("fos_user_change_password");
+        echo "\" role=\"button\">Zmień hasło</a>
 \t</div>
 </div>
 ";
         
-        $__internal_f1debbc205222e1871236196513aa9da09f7b0dfe5c7a1d251f312828c805105->leave($__internal_f1debbc205222e1871236196513aa9da09f7b0dfe5c7a1d251f312828c805105_prof);
+        $__internal_dd5d89d8067b0533dfefb0f510f4927629e7abd2855bd8237b06c86a077e7923->leave($__internal_dd5d89d8067b0533dfefb0f510f4927629e7abd2855bd8237b06c86a077e7923_prof);
 
     }
 
@@ -60,7 +64,7 @@ class __TwigTemplate_a578c0145f6cb4c74a20f26a3538264316f474339c1c885bed43e1482c0
 
     public function getDebugInfo()
     {
-        return array (  41 => 8,  34 => 6,  28 => 5,  22 => 1,);
+        return array (  45 => 9,  41 => 8,  34 => 6,  28 => 5,  22 => 1,);
     }
 }
 /* <div class="panel panel-default">*/
@@ -71,6 +75,7 @@ class __TwigTemplate_a578c0145f6cb4c74a20f26a3538264316f474339c1c885bed43e1482c0
 /* 			<p>{{ 'profile.show.email'|trans({}, 'FOSUserBundle') }}: {{ user.email }}</p>*/
 /* 		</div>*/
 /* 		<a class="btn btn-success" href="{{ path('fos_user_profile_edit') }}" role="button">Edytuj</a>*/
+/* 		<a class="btn btn-success" href="{{ path('fos_user_change_password') }}" role="button">Zmień hasło</a>*/
 /* 	</div>*/
 /* </div>*/
 /* */

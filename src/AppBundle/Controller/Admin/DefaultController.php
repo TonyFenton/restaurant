@@ -14,7 +14,6 @@ class DefaultController extends Controller
      */
     public function dashboardAction()
     {	
-        return $this->render('admin/default/index.html.twig', array(
-        ));
+        return $this->render('admin/default/index.html.twig', array());
     }
 }

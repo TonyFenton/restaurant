@@ -11,3 +11,7 @@
 #backtolist {
 	margin: 10px 0px 10px 0px;
 }
+.action-buttons form{
+	float: left;
+	margin-right: 10px;
+}

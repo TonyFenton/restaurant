@@ -124,27 +124,27 @@ class appTestUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirecta
 
             }
 
-            if (0 === strpos($pathinfo, '/admin/registration')) {
+            if (0 === strpos($pathinfo, '/admin/user/registration')) {
                 // fos_user_registration_register
-                if ($pathinfo === '/admin/registration') {
-                    return array (  '_controller' => 'FOS\\UserBundle\\Controller\\RegistrationController::registerAction',  '_route' => 'fos_user_registration_register',);
+                if ($pathinfo === '/admin/user/registration') {
+                    return array (  '_controller' => 'AppBundle\\Controller\\RegistrationController::registerAction',  '_route' => 'fos_user_registration_register',);
                 }
 
-                if (0 === strpos($pathinfo, '/admin/registration/c')) {
+                if (0 === strpos($pathinfo, '/admin/user/registration/c')) {
                     // fos_user_registration_check_email
-                    if ($pathinfo === '/admin/registration/check-email') {
-                        return array (  '_controller' => 'FOS\\UserBundle\\Controller\\RegistrationController::checkEmailAction',  '_route' => 'fos_user_registration_check_email',);
+                    if ($pathinfo === '/admin/user/registration/check-email') {
+                        return array (  '_controller' => 'AppBundle\\Controller\\RegistrationController::checkEmailAction',  '_route' => 'fos_user_registration_check_email',);
                     }
 
-                    if (0 === strpos($pathinfo, '/admin/registration/confirm')) {
+                    if (0 === strpos($pathinfo, '/admin/user/registration/confirm')) {
                         // fos_user_registration_confirm
-                        if (preg_match('#^/admin/registration/confirm/(?P<token>[^/]++)$#s', $pathinfo, $matches)) {
-                            return $this->mergeDefaults(array_replace($matches, array('_route' => 'fos_user_registration_confirm')), array (  '_controller' => 'FOS\\UserBundle\\Controller\\RegistrationController::confirmAction',));
+                        if (preg_match('#^/admin/user/registration/confirm/(?P<token>[^/]++)$#s', $pathinfo, $matches)) {
+                            return $this->mergeDefaults(array_replace($matches, array('_route' => 'fos_user_registration_confirm')), array (  '_controller' => 'AppBundle\\Controller\\RegistrationController::confirmAction',));
                         }
 
                         // fos_user_registration_confirmed
-                        if ($pathinfo === '/admin/registration/confirmed') {
-                            return array (  '_controller' => 'FOS\\UserBundle\\Controller\\RegistrationController::confirmedAction',  '_route' => 'fos_user_registration_confirmed',);
+                        if ($pathinfo === '/admin/user/registration/confirmed') {
+                            return array (  '_controller' => 'AppBundle\\Controller\\RegistrationController::confirmedAction',  '_route' => 'fos_user_registration_confirmed',);
                         }
 
                     }
@@ -329,6 +329,46 @@ class appTestUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirecta
         // childPage
         if (preg_match('#^/(?P<parent>[^/]++)/(?P<slug>[^/]++)$#s', $pathinfo, $matches)) {
             return $this->mergeDefaults(array_replace($matches, array('_route' => 'childPage')), array (  '_controller' => 'AppBundle\\Controller\\DefaultController::childPageAction',));
+        }
+
+        if (0 === strpos($pathinfo, '/admin/user')) {
+            // admin_user_index
+            if (rtrim($pathinfo, '/') === '/admin/user') {
+                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'HEAD'));
+                    goto not_admin_user_index;
+                }
+
+                if (substr($pathinfo, -1) !== '/') {
+                    return $this->redirect($pathinfo.'/', 'admin_user_index');
+                }
+
+                return array (  '_controller' => 'AppBundle\\Controller\\UserController::indexAction',  '_route' => 'admin_user_index',);
+            }
+            not_admin_user_index:
+
+            // admin_user_delete
+            if (preg_match('#^/admin/user/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                if ($this->context->getMethod() != 'DELETE') {
+                    $allow[] = 'DELETE';
+                    goto not_admin_user_delete;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'admin_user_delete')), array (  '_controller' => 'AppBundle\\Controller\\UserController::deleteAction',));
+            }
+            not_admin_user_delete:
+
+            // admin_user_enabled
+            if (preg_match('#^/admin/user/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                if ($this->context->getMethod() != 'POST') {
+                    $allow[] = 'POST';
+                    goto not_admin_user_enabled;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'admin_user_enabled')), array (  '_controller' => 'AppBundle\\Controller\\UserController::enabledAction',));
+            }
+            not_admin_user_enabled:
+
         }
 
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();

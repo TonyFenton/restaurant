@@ -1,0 +1,9 @@
+{% if enabled_form is not null %}
+	{{ form_start(enabled_form) }}	
+		{% if enabled  %}
+			<input class="btn btn-success" type="submit" value="Aktywuj" />
+		{% else %}
+			<input class="btn btn-warning" type="submit" value="Dezaktywuj" />
+		{% endif %}
+	{{ form_end(enabled_form) }}
+{% endif %}

@@ -1,5 +1,19 @@
-{% extends "FOSUserBundle::layout.html.twig" %}
+{% extends "admin/layout.html.twig" %}
 
-{% block fos_user_content %}
+{% block breadcrumb %}
+	<ol class="breadcrumb">
+		<li>
+			<a href="{{ path('admin_default_dashboard') }}">Panel</a>
+		</li>
+		<li>
+			<a href="{{ path('admin_user_index') }}">użytkownicy</a>
+		</li>		
+		<li class="active">
+			Rejestracja
+		</li>
+	</ol>
+{% endblock %}
+
+{% block content %}
 {% include "FOSUserBundle:Registration:register_content.html.twig" %}
-{% endblock fos_user_content %}
+{% endblock content %}

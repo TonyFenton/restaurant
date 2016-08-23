@@ -109,85 +109,43 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             if (0 === strpos($pathinfo, '/admin/profile')) {
                 // fos_user_change_password
                 if ($pathinfo === '/admin/profile/password-change') {
-                    if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
-                        $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
-                        goto not_fos_user_change_password;
-                    }
-
                     return array (  '_controller' => 'FOS\\UserBundle\\Controller\\ChangePasswordController::changePasswordAction',  '_route' => 'fos_user_change_password',);
                 }
-                not_fos_user_change_password:
 
                 // fos_user_profile_show
                 if ($pathinfo === '/admin/profile/show') {
-                    if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
-                        $allow = array_merge($allow, array('GET', 'HEAD'));
-                        goto not_fos_user_profile_show;
-                    }
-
                     return array (  '_controller' => 'FOS\\UserBundle\\Controller\\ProfileController::showAction',  '_route' => 'fos_user_profile_show',);
                 }
-                not_fos_user_profile_show:
 
                 // fos_user_profile_edit
                 if ($pathinfo === '/admin/profile/edit') {
-                    if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
-                        $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
-                        goto not_fos_user_profile_edit;
-                    }
-
                     return array (  '_controller' => 'FOS\\UserBundle\\Controller\\ProfileController::editAction',  '_route' => 'fos_user_profile_edit',);
                 }
-                not_fos_user_profile_edit:
 
             }
 
-            if (0 === strpos($pathinfo, '/admin/registration')) {
+            if (0 === strpos($pathinfo, '/admin/user/registration')) {
                 // fos_user_registration_register
-                if ($pathinfo === '/admin/registration') {
-                    if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
-                        $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
-                        goto not_fos_user_registration_register;
-                    }
-
-                    return array (  '_controller' => 'FOS\\UserBundle\\Controller\\RegistrationController::registerAction',  '_route' => 'fos_user_registration_register',);
+                if ($pathinfo === '/admin/user/registration') {
+                    return array (  '_controller' => 'AppBundle\\Controller\\RegistrationController::registerAction',  '_route' => 'fos_user_registration_register',);
                 }
-                not_fos_user_registration_register:
 
-                if (0 === strpos($pathinfo, '/admin/registration/c')) {
+                if (0 === strpos($pathinfo, '/admin/user/registration/c')) {
                     // fos_user_registration_check_email
-                    if ($pathinfo === '/admin/registration/check-email') {
-                        if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
-                            $allow = array_merge($allow, array('GET', 'HEAD'));
-                            goto not_fos_user_registration_check_email;
-                        }
-
-                        return array (  '_controller' => 'FOS\\UserBundle\\Controller\\RegistrationController::checkEmailAction',  '_route' => 'fos_user_registration_check_email',);
+                    if ($pathinfo === '/admin/user/registration/check-email') {
+                        return array (  '_controller' => 'AppBundle\\Controller\\RegistrationController::checkEmailAction',  '_route' => 'fos_user_registration_check_email',);
                     }
-                    not_fos_user_registration_check_email:
 
-                    if (0 === strpos($pathinfo, '/admin/registration/confirm')) {
+                    if (0 === strpos($pathinfo, '/admin/user/registration/confirm')) {
                         // fos_user_registration_confirm
-                        if (preg_match('#^/admin/registration/confirm/(?P<token>[^/]++)$#s', $pathinfo, $matches)) {
-                            if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
-                                $allow = array_merge($allow, array('GET', 'HEAD'));
-                                goto not_fos_user_registration_confirm;
-                            }
-
-                            return $this->mergeDefaults(array_replace($matches, array('_route' => 'fos_user_registration_confirm')), array (  '_controller' => 'FOS\\UserBundle\\Controller\\RegistrationController::confirmAction',));
+                        if (preg_match('#^/admin/user/registration/confirm/(?P<token>[^/]++)$#s', $pathinfo, $matches)) {
+                            return $this->mergeDefaults(array_replace($matches, array('_route' => 'fos_user_registration_confirm')), array (  '_controller' => 'AppBundle\\Controller\\RegistrationController::confirmAction',));
                         }
-                        not_fos_user_registration_confirm:
 
                         // fos_user_registration_confirmed
-                        if ($pathinfo === '/admin/registration/confirmed') {
-                            if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
-                                $allow = array_merge($allow, array('GET', 'HEAD'));
-                                goto not_fos_user_registration_confirmed;
-                            }
-
-                            return array (  '_controller' => 'FOS\\UserBundle\\Controller\\RegistrationController::confirmedAction',  '_route' => 'fos_user_registration_confirmed',);
+                        if ($pathinfo === '/admin/user/registration/confirmed') {
+                            return array (  '_controller' => 'AppBundle\\Controller\\RegistrationController::confirmedAction',  '_route' => 'fos_user_registration_confirmed',);
                         }
-                        not_fos_user_registration_confirmed:
 
                     }
 
@@ -200,47 +158,23 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
         if (0 === strpos($pathinfo, '/password-reset')) {
             // fos_user_resetting_request
             if ($pathinfo === '/password-reset') {
-                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
-                    $allow = array_merge($allow, array('GET', 'HEAD'));
-                    goto not_fos_user_resetting_request;
-                }
-
                 return array (  '_controller' => 'FOS\\UserBundle\\Controller\\ResettingController::requestAction',  '_route' => 'fos_user_resetting_request',);
             }
-            not_fos_user_resetting_request:
 
             // fos_user_resetting_send_email
             if ($pathinfo === '/password-reset') {
-                if ($this->context->getMethod() != 'POST') {
-                    $allow[] = 'POST';
-                    goto not_fos_user_resetting_send_email;
-                }
-
                 return array (  '_controller' => 'FOS\\UserBundle\\Controller\\ResettingController::sendEmailAction',  '_route' => 'fos_user_resetting_send_email',);
             }
-            not_fos_user_resetting_send_email:
 
             // fos_user_resetting_check_email
             if ($pathinfo === '/password-reset/check-email') {
-                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
-                    $allow = array_merge($allow, array('GET', 'HEAD'));
-                    goto not_fos_user_resetting_check_email;
-                }
-
                 return array (  '_controller' => 'FOS\\UserBundle\\Controller\\ResettingController::checkEmailAction',  '_route' => 'fos_user_resetting_check_email',);
             }
-            not_fos_user_resetting_check_email:
 
             // fos_user_resetting_reset
             if (preg_match('#^/password\\-reset/(?P<token>[^/]++)$#s', $pathinfo, $matches)) {
-                if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
-                    $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
-                    goto not_fos_user_resetting_reset;
-                }
-
                 return $this->mergeDefaults(array_replace($matches, array('_route' => 'fos_user_resetting_reset')), array (  '_controller' => 'FOS\\UserBundle\\Controller\\ResettingController::resetAction',));
             }
-            not_fos_user_resetting_reset:
 
         }
 
@@ -248,14 +182,8 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             if (0 === strpos($pathinfo, '/login')) {
                 // fos_user_security_login
                 if ($pathinfo === '/login') {
-                    if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
-                        $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
-                        goto not_fos_user_security_login;
-                    }
-
                     return array (  '_controller' => 'FOS\\UserBundle\\Controller\\SecurityController::loginAction',  '_route' => 'fos_user_security_login',);
                 }
-                not_fos_user_security_login:
 
                 // fos_user_security_check
                 if ($pathinfo === '/login_check') {
@@ -266,14 +194,8 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
             // fos_user_security_logout
             if ($pathinfo === '/logout') {
-                if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
-                    $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
-                    goto not_fos_user_security_logout;
-                }
-
                 return array (  '_controller' => 'FOS\\UserBundle\\Controller\\SecurityController::logoutAction',  '_route' => 'fos_user_security_logout',);
             }
-            not_fos_user_security_logout:
 
         }
 
@@ -407,6 +329,46 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
         // childPage
         if (preg_match('#^/(?P<parent>[^/]++)/(?P<slug>[^/]++)$#s', $pathinfo, $matches)) {
             return $this->mergeDefaults(array_replace($matches, array('_route' => 'childPage')), array (  '_controller' => 'AppBundle\\Controller\\DefaultController::childPageAction',));
+        }
+
+        if (0 === strpos($pathinfo, '/admin/user')) {
+            // admin_user_index
+            if (rtrim($pathinfo, '/') === '/admin/user') {
+                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                    $allow = array_merge($allow, array('GET', 'HEAD'));
+                    goto not_admin_user_index;
+                }
+
+                if (substr($pathinfo, -1) !== '/') {
+                    return $this->redirect($pathinfo.'/', 'admin_user_index');
+                }
+
+                return array (  '_controller' => 'AppBundle\\Controller\\UserController::indexAction',  '_route' => 'admin_user_index',);
+            }
+            not_admin_user_index:
+
+            // admin_user_delete
+            if (preg_match('#^/admin/user/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                if ($this->context->getMethod() != 'DELETE') {
+                    $allow[] = 'DELETE';
+                    goto not_admin_user_delete;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'admin_user_delete')), array (  '_controller' => 'AppBundle\\Controller\\UserController::deleteAction',));
+            }
+            not_admin_user_delete:
+
+            // admin_user_enabled
+            if (preg_match('#^/admin/user/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                if ($this->context->getMethod() != 'POST') {
+                    $allow[] = 'POST';
+                    goto not_admin_user_enabled;
+                }
+
+                return $this->mergeDefaults(array_replace($matches, array('_route' => 'admin_user_enabled')), array (  '_controller' => 'AppBundle\\Controller\\UserController::enabledAction',));
+            }
+            not_admin_user_enabled:
+
         }
 
         throw 0 < count($allow) ? new MethodNotAllowedException(array_unique($allow)) : new ResourceNotFoundException();

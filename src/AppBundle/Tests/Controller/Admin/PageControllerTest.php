@@ -1,87 +1,126 @@
 <?php
 
-namespace AppBundle\Tests\Controller;
+namespace AppBundle\Tests\Controller\Admin;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
+use AppBundle\Tests\Controller\myTestHelper;
 
 class PageControllerTest extends WebTestCase
 {
-    
-	public function testCompleteScenario()
+	public $my;
+	
+	function __construct()
+	{
+		parent::__construct();
+		$this->my = new myTestHelper();
+		// login as a user
+		$this->my->login($this->my->getUser());
+	}
+	
+	public function testIndex()
     {
-	    $client = static::createClient();
+		// view test
+		$crawler = $this->my->checkStatusCodeUrl(200, 'GET', '/admin/page/');
+		$this->assertEquals('Strony', $crawler->filter('body .container #heading h1')->text());	
+	}
+	
+	public function createNew($formData)
+	{
+		$crawler = $this->my->client->request('GET', '/admin/page/');
+		$crawler = $this->my->client->click($crawler->selectLink('Dodaj nową')->link());
 		
-		// creat a page
-		$crawler = $client->request('GET', '/admin/page/');
+		$this->assertRegExp('@/admin/page/new$@', $this->my->client->getRequest()->getUri());
 		
-		$this->assertEquals(200, $client->getResponse()->getStatusCode(), "Unexpected HTTP status code for GET /admin/page/");
+		$form = $crawler->selectButton('Utwórz')->form($formData);
 		
-		$crawler = $client->click($crawler->selectLink('Dodaj nową')->link());
+		$this->my->client->submit($form);
+		$crawler = $this->my->client->followRedirect();
 		
-		$form = $crawler->selectButton('Utwórz')->form(array(
+		$this->assertEquals(1, $crawler->filter('html:contains("Strona została utworzona")')->count());
+	}
+	
+	public function testNew()
+	{
+		// view test
+		$crawler = $this->my->checkStatusCodeUrl(200, 'GET', '/admin/page/new');
+		$this->assertEquals('Tworzenie strony', $crawler->filter('body .container h1')->text());
+		
+		// creat a new page test
+		$formData = array(
             'page[slug]'  => 'test',
             'page[name]'  => 'Test',
             'page[title]'  => 'Test',
             'page[description][description]'  => 'Test',
             'page[picture]'  => 'Test',
-            'page[content]'  => 'Test',
-		));
+            'page[content]'  => 'Test',	
+		);
+		$this->createNew($formData);
 		
-		$client->submit($form);
-		$crawler = $client->followRedirect();
+		// unique url
+		$crawler = $this->my->client->request('GET', '/admin/page/');
+		$crawler = $this->my->client->click($crawler->selectLink('Dodaj nową')->link());
+				
+		$form = $crawler->selectButton('Utwórz')->form($formData);
 		
-		$this->assertEquals(1, $crawler->filter('html:contains("Strona została utworzona")')->count());
+		$crawler = $this->my->client->submit($form);
 		
-		// not unique url
-		$crawler = $client->request('GET', '/admin/page/');
-		$crawler = $client->click($crawler->selectLink('Dodaj nową')->link());
-		
-		$form = $crawler->selectButton('Utwórz')->form(array(
-            'page[slug]'  => 'test',
-            'page[name]'  => 'Test',
-            'page[title]'  => 'Test',
-            'page[description][description]'  => 'test',
-            'page[picture]'  => 'Test',
-            'page[content]'  => 'Test',
-		));
-		
-		$crawler = $client->submit($form);
-
 		$this->assertEquals(1, $crawler->filter('html:contains("Strona o podanym adresie już istnieje")')->count());
+	}
+	
+	public function edit($name, $formData)
+	{
+		$crawler = $this->my->client->request('GET', '/admin/page/');
 		
-		// edit the page
-		$crawler = $client->request('GET', '/admin/page/');
+		$crawler = $this->my->client->click($crawler->selectLink($name)->link());
 		
-		$crawler = $client->click($crawler->selectLink('Test')->link());
-		
-		$form = $crawler->selectButton('Zapisz')->form(array(
-            'page[slug]'  => 'test2',
-            'page[name]'  => 'Test2',
-            'page[title]'  => 'Test2',
-            'page[description][description]'  => '',
-            'page[picture]'  => 'Test2',
-            'page[content]'  => 'Test2',
-        ));
+		$form = $crawler->selectButton('Zapisz')->form($formData);
 
-        $client->submit($form);
-        $crawler = $client->followRedirect();
+        $this->my->client->submit($form);
+        $crawler = $this->my->client->followRedirect();
 
 		$this->assertEquals(1, $crawler->filter('html:contains("Zmiany zostały zapisane")')->count());
+	}
+	
+	public function testEdit()
+	{
+		// view test
+		$crawler = $this->my->checkStatusCodeUrlByClick(200, 'GET', '/admin/page/', 'Test');
+		$this->assertEquals('Edycja strony', $crawler->filter('body .container h1')->text());
+		
+		// edit test
+		$this->edit(
+			'Test',
+			array(
+				'page[slug]'  => 'test2',
+				'page[name]'  => 'Test2',
+				'page[title]'  => 'Test2',
+				'page[description][description]'  => '',
+				'page[picture]'  => 'Test2',
+				'page[content]'  => 'Test2',
+			)
+		);
 		
 		// check out the page 
-		$crawler = $client->request('GET', '/test');
+		$crawler = $this->my->client->request('GET', '/test');
 		
 		$this->assertGreaterThan(0, $crawler->filter('#content:contains("Test2")')->count());
+	}
+    
+	public function deletePage($name)
+	{	
+		$crawler = $this->my->client->request('GET', '/admin/page/');
 		
-		// delete the page
-		$crawler = $client->request('GET', '/admin/page/');
+		$crawler = $this->my->client->click($crawler->selectLink($name)->link());
 		
-		$crawler = $client->click($crawler->selectLink('Test2')->link());
-		
-		$client->submit($crawler->selectButton('Usuń')->form());
-		$crawler = $client->followRedirect();
+		$this->my->client->submit($crawler->selectButton('Usuń')->form());
+		$crawler = $this->my->client->followRedirect();
 		
 		$this->assertEquals(1, $crawler->filter('html:contains("Strona została usunięta")')->count());
 		$this->assertEquals(0, $crawler->filter('html:contains("Test2")')->count());
+	}
+	
+	public function testDelete()
+	{
+		$this->deletePage('Test2');
 	}
 }

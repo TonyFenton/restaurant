@@ -25,25 +25,3 @@
 		</li>
 	{% endfor %}
 </ul>
-
-
-
-
-
-
-
-{#
-<ul class="nav navbar-nav">
-	{% for link in menu %}
-		<li class="dropdown
-			{% if(link.slug == currentPage) %}
-				active
-			{% endif %}
-			"><a href="{{ path('mainPage', { 'slug': link.slug }) }}">{{ link.name }}</a>
-			{% if (link.children is not empty) %}
-			
-			{% endif %}
-		</li>
-	{% endfor %}
-</ul>
-#}

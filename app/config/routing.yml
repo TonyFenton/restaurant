@@ -23,25 +23,25 @@ fos_user_profile_edit:
 # -> from @FOSUserBundle/Resources/routing/registration.xml
 
 fos_user_registration_register:
-    path: /admin/registration
+    path: /admin/user/registration
     defaults: { _controller: FOSUserBundle:Registration:register }
     requirements:
         methods: GET|POST
 
 fos_user_registration_check_email:
-    path: /admin/registration/check-email
+    path: /admin/user/registration/check-email
     defaults: { _controller: FOSUserBundle:Registration:checkEmail }
     requirements:
         methods: GET
 
 fos_user_registration_confirm:
-    path: /admin/registration/confirm/{token}
+    path: /admin/user/registration/confirm/{token}
     defaults: { _controller: FOSUserBundle:Registration:confirm }
     requirements:
         methods: GET
 
 fos_user_registration_confirmed:
-    path: /admin/registration/confirmed
+    path: /admin/user/registration/confirmed
     defaults: { _controller: FOSUserBundle:Registration:confirmed }
     requirements:
         methods: GET
