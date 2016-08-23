@@ -60,7 +60,7 @@ class PageType extends AbstractType
 				'label' => false,
 			))
             ->add('picture')
-            ->add('content')
+            ->add('content', null, array('attr' => array('class' => 'tinymce')))
             ->add('footer')
         ;
     }

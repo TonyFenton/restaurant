@@ -16,7 +16,7 @@ class FooterType extends AbstractType
     {
         $builder
             ->add('name')
-            ->add('footer')
+            ->add('footer', null, array('attr' => array('class' => 'tinymce')))
         ;
     }
     
