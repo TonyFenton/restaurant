@@ -44,24 +44,39 @@ class PageType extends AbstractType
 						},
 						'placeholder' => '',
 						'required' => false,
+						'label' => 'Rodzic',
 					))
 				;
 			}
 			
 			$builder
-				->add('slug')
+				->add('slug', null, array(
+					'label' => 'Adres',
+				))
 			;
 		}
 			
 		$builder
-            ->add('name')
-            ->add('title')
+            ->add('name', null, array(
+				'label' => 'Nazwa',
+			))
+            ->add('title', null, array(
+				'label' => 'Tytuł',
+			))
 			->add('description', DescriptionType::class, array(
 				'label' => false,
 			))
-            ->add('picture')
-            ->add('content', null, array('attr' => array('class' => 'tinymce')))
-            ->add('footer')
+            ->add('picture', null, array(
+				'label' => 'Zdjęcie',
+			))
+            ->add('content', null, array(
+				'attr' => array('class' => 'tinymce'), 
+				'required' => false,
+				'label' => 'Treść',
+			))
+            ->add('footer', null, array(
+				'label' => 'Stopka',
+			))
         ;
     }
     

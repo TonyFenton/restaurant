@@ -16,7 +16,8 @@ class DescriptionType extends AbstractType
     {
         $builder
             ->add('description', null, array(
-				'required' => false
+				'required' => false,
+				'label' => 'Opis',
 			))
         ;
     }

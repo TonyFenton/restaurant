@@ -35,7 +35,7 @@ class myTestHelper extends WebTestCase
     {
 		$crawler = $this->client->request('GET', '/login');
 		
-		$form = $crawler->selectButton('Login')->form($formData);
+		$form = $crawler->selectButton('Zaloguj')->form($formData);
 		
 		$this->client->submit($form);
     }

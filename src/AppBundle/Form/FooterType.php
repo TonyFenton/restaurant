@@ -15,8 +15,13 @@ class FooterType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('name')
-            ->add('footer', null, array('attr' => array('class' => 'tinymce')))
+            ->add('name', null, array(
+				'label' => 'Nazwa',
+			))
+            ->add('footer', null, array(
+			'attr' => array('class' => 'tinymce'),
+			'label' => 'Stopka',
+			))
         ;
     }
     

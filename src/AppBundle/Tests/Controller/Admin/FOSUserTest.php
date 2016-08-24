@@ -33,12 +33,12 @@ class FOSUserTest extends WebTestCase
 	{
 		// view test
 		$crawler = $this->my->checkStatusCodeUrl(200, 'GET', '/admin/profile/edit');
-		$form = $crawler->selectButton('Update')->form($formData);
+		$form = $crawler->selectButton('Edytuj użytkownika')->form($formData);
 		
 		$this->my->client->submit($form);
 		$crawler = $this->my->client->followRedirect();
 		
-		$this->assertEquals(1, $crawler->filter('html:contains("The profile has been updated")')->count());
+		$this->assertEquals(1, $crawler->filter('html:contains("Zapisano zmiany w profilu")')->count());
 	}
 	
 	public function testMyAccountEdit() 
@@ -66,12 +66,12 @@ class FOSUserTest extends WebTestCase
 	{
 		// view test
 		$crawler = $this->my->checkStatusCodeUrl(200, 'GET', '/admin/profile/password-change');
-		$form = $crawler->selectButton('Change password')->form($formData);
+		$form = $crawler->selectButton('Zmień hasło')->form($formData);
 		
 		$this->my->client->submit($form);
 		$crawler = $this->my->client->followRedirect();
 		
-		$this->assertEquals(1, $crawler->filter('html:contains("The password has been changed")')->count());
+		$this->assertEquals(1, $crawler->filter('html:contains("Hasło zostało zmienione")')->count());
 	}
 	
 	public function testMyAccountPasswordChange() 
@@ -117,8 +117,6 @@ class FOSUserTest extends WebTestCase
 			)
 		);
 	}
-	
-
 }
 
 

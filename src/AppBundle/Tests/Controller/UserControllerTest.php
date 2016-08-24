@@ -36,12 +36,12 @@ class PageControllerTest extends WebTestCase
 		
 		$this->assertRegExp('@/admin/user/registration$@', $this->my->client->getRequest()->getUri());
 		
-		$form = $crawler->selectButton('Register')->form($formData);
+		$form = $crawler->selectButton('Zarejestruj')->form($formData);
 		
 		$this->my->client->submit($form);
 		$crawler = $this->my->client->followRedirect();
 		
-		$this->assertEquals(1, $crawler->filter('html:contains("The user has been created successfully")')->count());
+		$this->assertEquals(1, $crawler->filter('html:contains("Stworzono użytkownika")')->count());
 	}
 	
 	public function testNew()
@@ -63,11 +63,11 @@ class PageControllerTest extends WebTestCase
 		$crawler = $this->my->client->request('GET', '/admin/user/');
 		$crawler = $this->my->client->click($crawler->selectLink('Dodaj nowego')->link());
 		
-		$form = $crawler->selectButton('Register')->form($formData);
+		$form = $crawler->selectButton('Zarejestruj')->form($formData);
 		
 		$crawler = $this->my->client->submit($form);
 		
-		$this->assertEquals(1, $crawler->filter('html:contains("The username is already used")')->count());
+		$this->assertEquals(1, $crawler->filter('html:contains("Ta nazwa użytkownika jest już zajęta")')->count());
 	}
 
 	public function enabled($name, $button, $message)
