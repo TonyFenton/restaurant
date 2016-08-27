@@ -7,7 +7,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use AppBundle\Entity\Footer;
-use AppBundle\Form\FooterType;
+use AppBundle\Form\Type\FooterType;
 
 /**
  * Footer controller.
@@ -42,7 +42,7 @@ class FooterController extends Controller
     public function newAction(Request $request)
     {
         $footer = new Footer();
-        $form = $this->createForm('AppBundle\Form\FooterType', $footer);
+        $form = $this->createForm(FooterType::class, $footer);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -73,7 +73,7 @@ class FooterController extends Controller
     public function editAction(Request $request, Footer $footer)
     {
         $deleteForm = $this->createDeleteForm($footer);
-        $editForm = $this->createForm('AppBundle\Form\FooterType', $footer);
+        $editForm = $this->createForm(FooterType::class, $footer);
         $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {

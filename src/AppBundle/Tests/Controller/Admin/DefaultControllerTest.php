@@ -21,6 +21,6 @@ class DefaultControllerTest extends WebTestCase
     {
 		// view test
 		$crawler = $this->my->checkStatusCodeUrl(200, 'GET', '/admin');
-		$this->assertEquals('Witaj w panelu administracyjnym', $crawler->filter('body .container h1')->text());
+		$this->assertEquals('Panel administracyjny', $crawler->filter('body .container h1')->text());
     }
 }

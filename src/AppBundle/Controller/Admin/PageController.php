@@ -8,7 +8,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use AppBundle\Entity\Page;
 use AppBundle\Entity\Description;
-use AppBundle\Form\PageType;
+use AppBundle\Form\Type\PageType;
 
 /**
  * Page controller.
@@ -43,7 +43,7 @@ class PageController extends Controller
     public function newAction(Request $request)
     {
         $page = new Page();
-        $form = $this->createForm('AppBundle\Form\PageType', $page);
+        $form = $this->createForm(PageType::class, $page);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -86,7 +86,7 @@ class PageController extends Controller
 			$deleteForm= null;
 		}
         
-        $editForm = $this->createForm('AppBundle\Form\PageType', $page);
+        $editForm = $this->createForm(PageType::class, $page);
         $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
