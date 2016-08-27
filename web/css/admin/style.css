@@ -1,3 +1,7 @@
+body {
+	/* Background pattern from subtlepatterns.com */
+	background-image: url("../../images/mochaGrunge_@2X.png");
+}
 #heading{
 	overflow:auto;
 }
@@ -14,4 +18,8 @@
 .action-buttons form{
 	float: left;
 	margin-right: 10px;
+}
+
+.navbar-right {
+	margin: right;
 }

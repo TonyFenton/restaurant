@@ -23,19 +23,19 @@
 	<div class="panel panel-default">
 		<div class="panel-heading"><h1>Edycja stopki</h1></div>
 		<div class="panel-body">
+		
+			{{ form_start(edit_form) }}
+				{{ form_widget(edit_form) }}
+				<input class="btn btn-success" type="submit" value="Zapisz">
+			{{ form_end(edit_form) }}
+		
+			<a id="backtolist"class="btn btn-warning" href="{{ path('admin_footer_index') }}" role="button">Powrót do Listy</a>
 			
-				{{ form_start(edit_form) }}
-					{{ form_widget(edit_form) }}
-					<input class="btn btn-success" type="submit" value="Zapisz">
-				{{ form_end(edit_form) }}
-			
-				<a id="backtolist"class="btn btn-warning" href="{{ path('admin_footer_index') }}" role="button">Powrót do Listy</a>
-			
-				{% if delete_form is not null %}
-					{{ form_start(delete_form) }}
-						<input class="btn btn-danger" type="submit" value="Usuń">
-					{{ form_end(delete_form) }}
-				{% endif %}
+			{% if delete_form is not null %}
+				{{ form_start(delete_form) }}
+					<input class="btn btn-danger" type="submit" value="Usuń">
+				{{ form_end(delete_form) }}
+			{% endif %}
 		</div>
 	</div>
 {% endblock %}

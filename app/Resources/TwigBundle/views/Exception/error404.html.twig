@@ -1,1 +1,10 @@
-<p>404</p>
+{% extends "TwigBundle::Exception/layout.html.twig" %}
+
+{% block title %}
+	Błąd 404
+{% endblock %}
+
+{% block content %}
+	<h1>Nie znaleziono strony</h1>
+	<p>Błąd 404</p>
+{% endblock %}

@@ -20,6 +20,7 @@ class FooterType extends AbstractType
 			))
             ->add('footer', null, array(
 			'attr' => array('class' => 'tinymce'),
+			'required' => false,
 			'label' => 'Stopka',
 			))
         ;

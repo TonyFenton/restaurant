@@ -1,3 +1,7 @@
+body {
+	/* Background pattern from subtlepatterns.com */
+	background-image: url("../../images/mochaGrunge_@2X.png");
+}
 #form-login {
 	max-width: 300px;
 	margin: 0 auto;
