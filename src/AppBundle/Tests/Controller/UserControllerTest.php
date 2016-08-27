@@ -5,7 +5,7 @@ namespace AppBundle\Tests\Controller;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 use AppBundle\Tests\Controller\myTestHelper;
 
-class PageControllerTest extends WebTestCase
+class UserControllerTest extends WebTestCase
 {
 	public $my;
 	

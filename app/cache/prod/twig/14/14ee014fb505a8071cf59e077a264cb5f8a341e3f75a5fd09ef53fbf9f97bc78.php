@@ -39,7 +39,7 @@ class __TwigTemplate_99442b0ee96b7ea7fe9c4602f612ca569dccf3c67a4fafd518e81a95117
     public function block_content($context, array $blocks = array())
     {
         // line 8
-        echo "\t<h1>Zapraszamy póżniej</h1>
+        echo "\t<h1>Zapraszamy później</h1>
 \t<p>Błąd ";
         // line 9
         echo twig_escape_filter($this->env, (isset($context["status_code"]) ? $context["status_code"] : null), "html", null, true);
@@ -69,6 +69,6 @@ class __TwigTemplate_99442b0ee96b7ea7fe9c4602f612ca569dccf3c67a4fafd518e81a95117
 /* {% endblock %}*/
 /* */
 /* {% block content %}*/
-/* 	<h1>Zapraszamy póżniej</h1>*/
+/* 	<h1>Zapraszamy później</h1>*/
 /* 	<p>Błąd {{ status_code }}</p>*/
 /* {% endblock %}*/

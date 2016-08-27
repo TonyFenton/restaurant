@@ -1,0 +1,68 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+	{{ parent() }}
+	<link href="{{asset('css/admin.css')}}" rel="stylesheet" />
+{% endblock %}
+
+{% block body %}
+	<nav class="navbar navbar-default" id="main_admin_nav">
+		<div class="container">
+			<div class="row">
+				<div class="navbar-header col-xs-6">
+					<a class="navbar-brand" href="{{ path('admin_dashboard') }}">Super fajny CMS</a>
+				</div>
+				 <div class="col-xs-6">
+					<ul class="nav navbar-nav navbar-right">
+						<li><a class="text-right" href="{{ path('fos_user_security_logout') }}">Wyloguj się</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</nav>
+	
+	<div class="container">
+		<div class="row">
+			<div class="col-xs-12 col-sm-3">
+				<ul id="secondary_nav" class="nav nav-pills nav-stacked list-group">
+					<li role="presentation" class="list-group-item">
+						<a href="{{ path('page_index') }}">Strony</a>
+					</li>
+					<li role="presentation" class="list-group-item">
+						<a href="{{ path('footer_index') }}">Stopki</a>
+					</li>
+					<li role="presentation" class="list-group-item">
+						<a href="{{ path('fos_user_profile_show') }}">Moje konto</a>
+					</li>
+					{% if is_granted('ROLE_ADMIN') %}
+						<li role="presentation" class="list-group-item">
+							<a href="{{ path('user_index') }}">Użytkownicy</a>
+						</li>
+					{% endif %}
+				</ul>
+			</div>
+			<div class="col-xs-12 col-sm-9">
+				{% block breadcrumb %}{% endblock %}
+				{% block content %}{% endblock %}
+			</div>
+		</div>
+	</div>
+{% endblock %}
+
+{% block javascripts %}
+	{{ parent() }}
+	<script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
+	<script>tinymce.init({ 
+			selector:'textarea.tinymce',
+			plugins: "code",
+		});
+	</script>
+{% endblock %}
+
+
+
+
+
+
+
+

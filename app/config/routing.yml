@@ -90,10 +90,6 @@ fos_user_security_logout:
     requirements:
         methods: GET|POST
 
-admin:
-    resource: "@AppBundle/Controller/Admin/"
-    type:     annotation
-
 app:
     resource: "@AppBundle/Controller/"
     type:     annotation

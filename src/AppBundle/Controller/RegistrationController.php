@@ -43,7 +43,7 @@ class RegistrationController extends ContainerAware
                 $route = 'fos_user_registration_check_email';
             } else {
                 $authUser = true;
-                $route = 'admin_user_index';
+                $route = 'user_index';
             }
 
             $this->setFlash('fos_user_success', 'registration.flash.user_created');

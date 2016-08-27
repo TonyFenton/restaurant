@@ -1,0 +1,41 @@
+{% extends 'admin_layout.html.twig' %}
+
+{% block breadcrumb %}
+	<ol class="breadcrumb">
+		<li>
+			<a href="{{ path('admin_dashboard') }}">Panel</a>
+		</li>
+		<li>
+			<a href="{{ path('footer_index') }}">Stopki</a>
+		</li>
+		<li class="active">
+			{{ footer.name }}
+		</li>
+	</ol>
+{% endblock %}
+
+{% block content %}
+	{% for flash_message in app.session.flashBag.get('notice') %}
+		<div class="alert alert-info" role="alert">
+			{{ flash_message }}
+		</div>
+	{% endfor %}
+	<div class="panel panel-default">
+		<div class="panel-heading"><h1>Edycja stopki</h1></div>
+		<div class="panel-body">
+		
+			{{ form_start(edit_form) }}
+				{{ form_widget(edit_form) }}
+				<input class="btn btn-success" type="submit" value="Zapisz">
+			{{ form_end(edit_form) }}
+		
+			<a id="backtolist" class="btn btn-warning" href="{{ path('footer_index') }}" role="button">Powrót do Listy</a>
+			
+			{% if delete_form is not null %}
+				{{ form_start(delete_form) }}
+					<input class="btn btn-danger" type="submit" value="Usuń">
+				{{ form_end(delete_form) }}
+			{% endif %}
+		</div>
+	</div>
+{% endblock %}

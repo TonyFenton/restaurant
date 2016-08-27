@@ -15,8 +15,8 @@ class __TwigTemplate_04247a0554a288a37f78a0c3920545cbe9bc81ad5986c7c0b6ce4954e76
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_8d0f153af2414b24d22344ffb6f05a76edd9afef86c35a6247e151a91f3ddf91 = $this->env->getExtension("native_profiler");
-        $__internal_8d0f153af2414b24d22344ffb6f05a76edd9afef86c35a6247e151a91f3ddf91->enter($__internal_8d0f153af2414b24d22344ffb6f05a76edd9afef86c35a6247e151a91f3ddf91_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "FOSUserBundle:Registration:register_content.html.twig"));
+        $__internal_d69126a983d6553f78c1d86ae559e70e027e2fe78bf37811820779b459ed0c41 = $this->env->getExtension("native_profiler");
+        $__internal_d69126a983d6553f78c1d86ae559e70e027e2fe78bf37811820779b459ed0c41->enter($__internal_d69126a983d6553f78c1d86ae559e70e027e2fe78bf37811820779b459ed0c41_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "FOSUserBundle:Registration:register_content.html.twig"));
 
         // line 1
         echo "<div class=\"panel panel-default\">
@@ -39,7 +39,7 @@ class __TwigTemplate_04247a0554a288a37f78a0c3920545cbe9bc81ad5986c7c0b6ce4954e76
         echo "\" />
 \t\t\t\t<a class=\"btn btn-danger\" href=\"";
         // line 8
-        echo $this->env->getExtension('routing')->getPath("admin_user_index");
+        echo $this->env->getExtension('routing')->getPath("user_index");
         echo "\" role=\"button\">Anuluj</a>
 \t\t\t</div>
 \t\t</form>
@@ -47,7 +47,7 @@ class __TwigTemplate_04247a0554a288a37f78a0c3920545cbe9bc81ad5986c7c0b6ce4954e76
 </div>
 ";
         
-        $__internal_8d0f153af2414b24d22344ffb6f05a76edd9afef86c35a6247e151a91f3ddf91->leave($__internal_8d0f153af2414b24d22344ffb6f05a76edd9afef86c35a6247e151a91f3ddf91_prof);
+        $__internal_d69126a983d6553f78c1d86ae559e70e027e2fe78bf37811820779b459ed0c41->leave($__internal_d69126a983d6553f78c1d86ae559e70e027e2fe78bf37811820779b459ed0c41_prof);
 
     }
 
@@ -73,7 +73,7 @@ class __TwigTemplate_04247a0554a288a37f78a0c3920545cbe9bc81ad5986c7c0b6ce4954e76
 /* 			{{ form_widget(form) }}*/
 /* 			<div>*/
 /* 				<input type="submit" class="btn btn-success" value="{{ 'registration.submit'|trans({}, 'FOSUserBundle') }}" />*/
-/* 				<a class="btn btn-danger" href="{{ path('admin_user_index') }}" role="button">Anuluj</a>*/
+/* 				<a class="btn btn-danger" href="{{ path('user_index') }}" role="button">Anuluj</a>*/
 /* 			</div>*/
 /* 		</form>*/
 /* 	</div>*/

@@ -20,16 +20,16 @@ class UserController extends Controller
     /**
      * Lists all User entities.
      *
-     * @Route("/", name="admin_user_index")
+     * @Route("/", name="user_index")
      * @Method("GET")
      */
     public function indexAction()
     {		
         $em = $this->getDoctrine()->getManager();
 
-        $users = $em->getRepository('AppBundle:User')->findUsers();
+        $users = $em->getRepository(User::class)->findUsers();
 
-        return $this->render('admin/user/index.html.twig', array(
+        return $this->render('user/index.html.twig', array(
             'users' => $users,
         ));
     }
@@ -40,7 +40,7 @@ class UserController extends Controller
     private function createDeleteForm($id)
     {
 		return $this->createFormBuilder()
-			->setAction($this->generateUrl('admin_user_delete', array('id' => $id)))
+			->setAction($this->generateUrl('user_delete', array('id' => $id)))
 			->setMethod('DELETE')
 			->getForm()
 		;
@@ -51,7 +51,7 @@ class UserController extends Controller
 	{
 		$deleteForm = $this->createDeleteForm($id);
 		
-		return $this->render('admin/user/_delete_form.html.twig', array(
+		return $this->render('user/_delete_form.html.twig', array(
 			'delete_form' => $deleteForm->createView()
 		));
 	}
@@ -59,7 +59,7 @@ class UserController extends Controller
 	/**
      * Deletes a User entity.
      *
-     * @Route("/{id}", name="admin_user_delete")
+     * @Route("/{id}", name="user_delete")
      * @Method("DELETE")
      */
     public function deleteAction(Request $request, User $user)
@@ -79,13 +79,13 @@ class UserController extends Controller
 			);
         }
 
-        return $this->redirectToRoute('admin_user_index');
+        return $this->redirectToRoute('user_index');
     }
 	
 	private function createEnabledForm($id)
     {
 		$em = $this->getDoctrine()->getManager();
-        $user = $em->getRepository('AppBundle:User')->findOneById($id);
+        $user = $em->getRepository(User::class)->findOneById($id);
 		
 		if ($user->isEnabled()) {
 			$user->setEnabled(false);
@@ -97,7 +97,7 @@ class UserController extends Controller
 			->add('enabled', HiddenType::class, array(
 					'data' => $user->isEnabled()
 				))
-            ->setAction($this->generateUrl('admin_user_enabled', array('id' => $id)))
+            ->setAction($this->generateUrl('user_enabled', array('id' => $id)))
 			->getForm()
 		;
     }
@@ -106,7 +106,7 @@ class UserController extends Controller
 	{
 		$enabledForm = $this->createEnabledForm($id);
 		
-		return $this->render('admin/user/_enabled_form.html.twig', array(
+		return $this->render('user/_enabled_form.html.twig', array(
 			'enabled_form' => $enabledForm->createView(),
 			'enabled' => $enabledForm->getNormData()->isEnabled()
 		));
@@ -116,7 +116,7 @@ class UserController extends Controller
 	/**
      * Enabled a User entity.
      *
-     * @Route("/{id}", name="admin_user_enabled")
+     * @Route("/{id}", name="user_enabled")
      * @Method("Post")
      */
     public function enabledAction(Request $request, User $user)
@@ -143,7 +143,7 @@ class UserController extends Controller
 			}
         }
 
-        return $this->redirectToRoute('admin_user_index');
+        return $this->redirectToRoute('user_index');
     }
 }
 

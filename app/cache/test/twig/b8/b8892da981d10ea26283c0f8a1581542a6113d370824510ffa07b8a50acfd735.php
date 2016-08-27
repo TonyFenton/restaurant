@@ -15,8 +15,8 @@ class __TwigTemplate_7f4fa0e8a7abecca9acc07aeb566e6b8b6b7b490bff34b21c0c7d39db8c
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_f81c2ee1887312221d8566b0790e6c690edfa368d3d80fe76cb6c935c7f7df69 = $this->env->getExtension("native_profiler");
-        $__internal_f81c2ee1887312221d8566b0790e6c690edfa368d3d80fe76cb6c935c7f7df69->enter($__internal_f81c2ee1887312221d8566b0790e6c690edfa368d3d80fe76cb6c935c7f7df69_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "FOSUserBundle:Profile:edit_content.html.twig"));
+        $__internal_3424d384f6929e4944e43adfcc3274271bbc97fc8b753cca43b8e4638fc2d1d5 = $this->env->getExtension("native_profiler");
+        $__internal_3424d384f6929e4944e43adfcc3274271bbc97fc8b753cca43b8e4638fc2d1d5->enter($__internal_3424d384f6929e4944e43adfcc3274271bbc97fc8b753cca43b8e4638fc2d1d5_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "FOSUserBundle:Profile:edit_content.html.twig"));
 
         // line 1
         echo "<div class=\"panel panel-default\">
@@ -46,7 +46,7 @@ class __TwigTemplate_7f4fa0e8a7abecca9acc07aeb566e6b8b6b7b490bff34b21c0c7d39db8c
 \t</div>
 </div>";
         
-        $__internal_f81c2ee1887312221d8566b0790e6c690edfa368d3d80fe76cb6c935c7f7df69->leave($__internal_f81c2ee1887312221d8566b0790e6c690edfa368d3d80fe76cb6c935c7f7df69_prof);
+        $__internal_3424d384f6929e4944e43adfcc3274271bbc97fc8b753cca43b8e4638fc2d1d5->leave($__internal_3424d384f6929e4944e43adfcc3274271bbc97fc8b753cca43b8e4638fc2d1d5_prof);
 
     }
 

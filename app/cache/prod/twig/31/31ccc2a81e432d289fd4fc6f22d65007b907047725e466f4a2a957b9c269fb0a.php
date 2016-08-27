@@ -88,7 +88,7 @@ class __TwigTemplate_4cdb1f806752ebfecdd9359b1a6ececc5c8111f964c0e575c869ae19f4b
 \t\t\t<![endif]-->
 \t\t\t<link href=\"";
         // line 15
-        echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("css/style.css"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("css/base.css"), "html", null, true);
         echo "\" rel=\"stylesheet\" />
 \t\t";
     }
@@ -139,7 +139,7 @@ class __TwigTemplate_4cdb1f806752ebfecdd9359b1a6ececc5c8111f964c0e575c869ae19f4b
 /* 				<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>*/
 /* 				<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>*/
 /* 			<![endif]-->*/
-/* 			<link href="{{asset('css/style.css')}}" rel="stylesheet" />*/
+/* 			<link href="{{asset('css/base.css')}}" rel="stylesheet" />*/
 /* 		{% endblock %}*/
 /*         <link rel="icon" type="image/x-icon" href="{{ asset('images/logo.png') }}" />*/
 /* 		*/

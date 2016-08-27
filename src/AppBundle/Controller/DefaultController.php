@@ -5,6 +5,7 @@ namespace AppBundle\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
+use AppBundle\Entity\Page;
 
 class DefaultController extends Controller
 {
@@ -15,7 +16,7 @@ class DefaultController extends Controller
     public function mainPageAction($slug)
     {
 		$page = $this->getDoctrine()
-			->getRepository('AppBundle:Page')
+			->getRepository(Page::class)
 			->findOneBy(array(
 				'slug' => $slug,
 				'parent' => null,
@@ -41,7 +42,7 @@ class DefaultController extends Controller
     public function childPageAction($parent, $slug)
 	{
 		$page = $this->getDoctrine()
-			->getRepository('AppBundle:Page')
+			->getRepository(Page::class)
 			->findChildPage($parent, $slug);
 		
 		if (!$page) {
@@ -54,7 +55,7 @@ class DefaultController extends Controller
 	public function mainMenuAction($currentPage) 
 	{
 		$menu = $this->getDoctrine()
-			->getRepository('AppBundle:Page')
+			->getRepository(Page::class)
 			->findBy(
 				array('parent' => null),
 				array('sequence' => 'ASC')
