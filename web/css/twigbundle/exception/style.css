@@ -1,13 +1,11 @@
 body {
 	background-color: #d1e0e0;
 }
-
 #panel-exception {
 	margin: 120px auto 0;
 	max-width: 500px;
 	border: none;
 }
-
 #panel-exception .panel-heading {
 	background-color: #94b8b8;
 	color: #fff;

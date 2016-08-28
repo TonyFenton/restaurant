@@ -69,13 +69,3 @@ class myTestHelper extends WebTestCase
 		return $crawler;		
 	}
 }
-
-
-
-
-
-
-
-
-
-

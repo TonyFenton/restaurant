@@ -100,14 +100,3 @@ class FooterControllerTest extends WebTestCase
 		$this->deleteFooter('Test2');
 	}
 }
-
-
-
-
-
-
-
-
-
-
-

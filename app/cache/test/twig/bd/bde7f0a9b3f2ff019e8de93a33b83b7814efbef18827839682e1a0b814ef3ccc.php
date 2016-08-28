@@ -21,20 +21,20 @@ class __TwigTemplate_0e733985a07e25d3a41f71e8f5fde5ce0c5fdb468ed54ec046ed3da90e2
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_7247670d1915a5913f8693558f0e6e5ee7b8693270afb04917d9c8cb2026f810 = $this->env->getExtension("native_profiler");
-        $__internal_7247670d1915a5913f8693558f0e6e5ee7b8693270afb04917d9c8cb2026f810->enter($__internal_7247670d1915a5913f8693558f0e6e5ee7b8693270afb04917d9c8cb2026f810_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "default/child_page.html.twig"));
+        $__internal_05e043dfe424efc9f651ad62e8e457958d508da8060c3ad3bac8fa0e928addcd = $this->env->getExtension("native_profiler");
+        $__internal_05e043dfe424efc9f651ad62e8e457958d508da8060c3ad3bac8fa0e928addcd->enter($__internal_05e043dfe424efc9f651ad62e8e457958d508da8060c3ad3bac8fa0e928addcd_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "default/child_page.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_7247670d1915a5913f8693558f0e6e5ee7b8693270afb04917d9c8cb2026f810->leave($__internal_7247670d1915a5913f8693558f0e6e5ee7b8693270afb04917d9c8cb2026f810_prof);
+        $__internal_05e043dfe424efc9f651ad62e8e457958d508da8060c3ad3bac8fa0e928addcd->leave($__internal_05e043dfe424efc9f651ad62e8e457958d508da8060c3ad3bac8fa0e928addcd_prof);
 
     }
 
     // line 3
     public function block_content($context, array $blocks = array())
     {
-        $__internal_e7215183b8f47fba14e8a6120e3c288e9774ab892928d6d417f7ccb0c7cdebbb = $this->env->getExtension("native_profiler");
-        $__internal_e7215183b8f47fba14e8a6120e3c288e9774ab892928d6d417f7ccb0c7cdebbb->enter($__internal_e7215183b8f47fba14e8a6120e3c288e9774ab892928d6d417f7ccb0c7cdebbb_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
+        $__internal_14000b694659599f6ca7cf8f69ec14749f653c3792e80023173df7b4b6b8ecc3 = $this->env->getExtension("native_profiler");
+        $__internal_14000b694659599f6ca7cf8f69ec14749f653c3792e80023173df7b4b6b8ecc3->enter($__internal_14000b694659599f6ca7cf8f69ec14749f653c3792e80023173df7b4b6b8ecc3_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
 
         // line 4
         echo "\t<div class=\"row\">
@@ -56,7 +56,7 @@ class __TwigTemplate_0e733985a07e25d3a41f71e8f5fde5ce0c5fdb468ed54ec046ed3da90e2
             }
             // line 12
             echo "\t\t\t\t\t\t\">
-\t\t\t\t\t\t\t<a href=\"";
+\t\t\t\t\t\t<a href=\"";
             // line 13
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("childPage", array("slug" => $this->getAttribute($context["link"], "slug", array()), "parent" => $this->getAttribute($this->getAttribute((isset($context["page"]) ? $context["page"] : $this->getContext($context, "page")), "parent", array()), "slug", array()))), "html", null, true);
             echo "\">";
@@ -84,7 +84,7 @@ class __TwigTemplate_0e733985a07e25d3a41f71e8f5fde5ce0c5fdb468ed54ec046ed3da90e2
 \t</div>
 ";
         
-        $__internal_e7215183b8f47fba14e8a6120e3c288e9774ab892928d6d417f7ccb0c7cdebbb->leave($__internal_e7215183b8f47fba14e8a6120e3c288e9774ab892928d6d417f7ccb0c7cdebbb_prof);
+        $__internal_14000b694659599f6ca7cf8f69ec14749f653c3792e80023173df7b4b6b8ecc3->leave($__internal_14000b694659599f6ca7cf8f69ec14749f653c3792e80023173df7b4b6b8ecc3_prof);
 
     }
 
@@ -115,14 +115,14 @@ class __TwigTemplate_0e733985a07e25d3a41f71e8f5fde5ce0c5fdb468ed54ec046ed3da90e2
 /* 							active*/
 /* 						{% endif %}*/
 /* 						">*/
-/* 							<a href="{{ path('childPage', { 'slug': link.slug, 'parent': page.parent.slug }) }}">{{ link.name }}</a>*/
+/* 						<a href="{{ path('childPage', { 'slug': link.slug, 'parent': page.parent.slug }) }}">{{ link.name }}</a>*/
 /* 					</li>*/
 /* 				{% endfor %}*/
 /* 			</ul>*/
 /* 		</div>*/
 /* 		<div class="col-xs-12 col-sm-9">*/
-/* 			<h1>{{page.name}}</h1>*/
-/* 			{{page.content | raw}}*/
+/* 			<h1>{{ page.name }}</h1>*/
+/* 			{{ page.content | raw }}*/
 /* 		</div>*/
 /* 	</div>*/
 /* {% endblock %}*/

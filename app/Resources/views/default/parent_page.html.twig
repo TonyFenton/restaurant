@@ -15,7 +15,7 @@
 							active
 						{% endif %}
 						">
-							<a href="{{ path('childPage', { 'slug': link.slug, 'parent': page.slug }) }}">{{ link.name }}</a>
+						<a href="{{ path('childPage', { 'slug': link.slug, 'parent': page.slug }) }}">{{ link.name }}</a>
 					</li>
 				{% endfor %}
 			</ul>
@@ -25,4 +25,3 @@
 		</div>
 	</div>
 {% endblock %}
-

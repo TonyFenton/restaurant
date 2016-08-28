@@ -15,8 +15,8 @@ class __TwigTemplate_8b46e5ab357fb4454d5ba4a7437e8e09cf9113a1d0d9f2a2514065920c2
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_cd71a0186f0f2cdda69acf699a76fae3939460bdd8726c210ae82eaad136f391 = $this->env->getExtension("native_profiler");
-        $__internal_cd71a0186f0f2cdda69acf699a76fae3939460bdd8726c210ae82eaad136f391->enter($__internal_cd71a0186f0f2cdda69acf699a76fae3939460bdd8726c210ae82eaad136f391_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "FOSUserBundle:Resetting:request_content.html.twig"));
+        $__internal_cf69d5f380add70da9e19b34638fd5502cb6a06e4225186378306059f7fbc655 = $this->env->getExtension("native_profiler");
+        $__internal_cf69d5f380add70da9e19b34638fd5502cb6a06e4225186378306059f7fbc655->enter($__internal_cf69d5f380add70da9e19b34638fd5502cb6a06e4225186378306059f7fbc655_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "FOSUserBundle:Resetting:request_content.html.twig"));
 
         // line 1
         echo "<form action=\"";
@@ -49,10 +49,9 @@ class __TwigTemplate_8b46e5ab357fb4454d5ba4a7437e8e09cf9113a1d0d9f2a2514065920c2
         echo $this->env->getExtension('routing')->getPath("fos_user_security_login");
         echo "\" role=\"button\">Anuluj</a>
 \t</div>
-</form>
-";
+</form>";
         
-        $__internal_cd71a0186f0f2cdda69acf699a76fae3939460bdd8726c210ae82eaad136f391->leave($__internal_cd71a0186f0f2cdda69acf699a76fae3939460bdd8726c210ae82eaad136f391_prof);
+        $__internal_cf69d5f380add70da9e19b34638fd5502cb6a06e4225186378306059f7fbc655->leave($__internal_cf69d5f380add70da9e19b34638fd5502cb6a06e4225186378306059f7fbc655_prof);
 
     }
 
@@ -85,4 +84,3 @@ class __TwigTemplate_8b46e5ab357fb4454d5ba4a7437e8e09cf9113a1d0d9f2a2514065920c2
 /* 		<a class="btn btn-danger login_button" href="{{ path('fos_user_security_login') }}" role="button">Anuluj</a>*/
 /* 	</div>*/
 /* </form>*/
-/* */

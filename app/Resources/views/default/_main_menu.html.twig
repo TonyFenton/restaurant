@@ -6,22 +6,22 @@
 			{% endif %}
 			">
 			<a href="{{ path('mainPage', { 'slug': link.slug }) }}">{{ link.name }}
-		{% if (link.children is not empty) %}
-				<span class="glyphicon glyphicon-menu-down hidden-xs"></span>
-			</a>
-			<ul class="dropdown-menu hidden-xs">
-				{% for child_link in link.children %}	
-					<li class="
-						{% if(child_link.slug == currentPage) %}
-							active
-						{% endif %}
-						"><a href=" {{ path('childPage', {'parent': link.slug, 'slug': child_link.slug}) }} ">{{ child_link.name }}</a>
-					</li>
-				{% endfor %}
-			</ul>
-		{% else %}
-			</a>
-		{% endif %}
+			{% if (link.children is not empty) %}
+					<span class="glyphicon glyphicon-menu-down hidden-xs"></span>
+				</a>
+				<ul class="dropdown-menu hidden-xs">
+					{% for child_link in link.children %}	
+						<li class="
+							{% if(child_link.slug == currentPage) %}
+								active
+							{% endif %}
+							"><a href=" {{ path('childPage', {'parent': link.slug, 'slug': child_link.slug}) }} ">{{ child_link.name }}</a>
+						</li>
+					{% endfor %}
+				</ul>
+			{% else %}
+				</a>
+			{% endif %}
 		</li>
 	{% endfor %}
 </ul>

@@ -34,7 +34,6 @@ class DefaultController extends Controller
 		
 		return $this->render('default/'.$viewFile.'.html.twig', array('page' => $page));
     }
-
 	
 	/**
      * @Route("/{parent}/{slug}", name="childPage")
@@ -43,7 +42,8 @@ class DefaultController extends Controller
 	{
 		$page = $this->getDoctrine()
 			->getRepository(Page::class)
-			->findChildPage($parent, $slug);
+			->findChildPage($parent, $slug)
+		;
 		
 		if (!$page) {
 			throw $this->createNotFoundException();
@@ -67,20 +67,3 @@ class DefaultController extends Controller
 		));
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

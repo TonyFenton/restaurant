@@ -22,20 +22,20 @@ class __TwigTemplate_a8eb22b35aba5ba11a14bf94fba1d145b8d58b12bbdc2012c2d2b0e1385
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_06698871e43374476c2694077a94a8d17d6291dbe510d21521fbac120c3471e1 = $this->env->getExtension("native_profiler");
-        $__internal_06698871e43374476c2694077a94a8d17d6291dbe510d21521fbac120c3471e1->enter($__internal_06698871e43374476c2694077a94a8d17d6291dbe510d21521fbac120c3471e1_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "page/new.html.twig"));
+        $__internal_79fef498e59a3cfb1dcb30e1b76ee1419e9eef7b5b959dbed8ca70cfc7d1454d = $this->env->getExtension("native_profiler");
+        $__internal_79fef498e59a3cfb1dcb30e1b76ee1419e9eef7b5b959dbed8ca70cfc7d1454d->enter($__internal_79fef498e59a3cfb1dcb30e1b76ee1419e9eef7b5b959dbed8ca70cfc7d1454d_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "page/new.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_06698871e43374476c2694077a94a8d17d6291dbe510d21521fbac120c3471e1->leave($__internal_06698871e43374476c2694077a94a8d17d6291dbe510d21521fbac120c3471e1_prof);
+        $__internal_79fef498e59a3cfb1dcb30e1b76ee1419e9eef7b5b959dbed8ca70cfc7d1454d->leave($__internal_79fef498e59a3cfb1dcb30e1b76ee1419e9eef7b5b959dbed8ca70cfc7d1454d_prof);
 
     }
 
     // line 3
     public function block_breadcrumb($context, array $blocks = array())
     {
-        $__internal_5a8cd639f3700c54220677a8b2121116bbc0a8a7f142521fdddc2b7cb544320a = $this->env->getExtension("native_profiler");
-        $__internal_5a8cd639f3700c54220677a8b2121116bbc0a8a7f142521fdddc2b7cb544320a->enter($__internal_5a8cd639f3700c54220677a8b2121116bbc0a8a7f142521fdddc2b7cb544320a_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "breadcrumb"));
+        $__internal_7f21b66bf497a72e9f72775c8d7895476f10717a94045ca3f4901b49ac51bb6d = $this->env->getExtension("native_profiler");
+        $__internal_7f21b66bf497a72e9f72775c8d7895476f10717a94045ca3f4901b49ac51bb6d->enter($__internal_7f21b66bf497a72e9f72775c8d7895476f10717a94045ca3f4901b49ac51bb6d_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "breadcrumb"));
 
         // line 4
         echo "\t<ol class=\"breadcrumb\">
@@ -57,43 +57,45 @@ class __TwigTemplate_a8eb22b35aba5ba11a14bf94fba1d145b8d58b12bbdc2012c2d2b0e1385
 \t</ol>
 ";
         
-        $__internal_5a8cd639f3700c54220677a8b2121116bbc0a8a7f142521fdddc2b7cb544320a->leave($__internal_5a8cd639f3700c54220677a8b2121116bbc0a8a7f142521fdddc2b7cb544320a_prof);
+        $__internal_7f21b66bf497a72e9f72775c8d7895476f10717a94045ca3f4901b49ac51bb6d->leave($__internal_7f21b66bf497a72e9f72775c8d7895476f10717a94045ca3f4901b49ac51bb6d_prof);
 
     }
 
     // line 17
     public function block_content($context, array $blocks = array())
     {
-        $__internal_49014de5e399fa2a634d582d1ca46c06ba2e5a1facfd1fd0905a19103d4b57d6 = $this->env->getExtension("native_profiler");
-        $__internal_49014de5e399fa2a634d582d1ca46c06ba2e5a1facfd1fd0905a19103d4b57d6->enter($__internal_49014de5e399fa2a634d582d1ca46c06ba2e5a1facfd1fd0905a19103d4b57d6_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
+        $__internal_0dea92a8cf237c1bdc60c0c7197fa0b8039b4cc36eecfd72caa34319ed4f274e = $this->env->getExtension("native_profiler");
+        $__internal_0dea92a8cf237c1bdc60c0c7197fa0b8039b4cc36eecfd72caa34319ed4f274e->enter($__internal_0dea92a8cf237c1bdc60c0c7197fa0b8039b4cc36eecfd72caa34319ed4f274e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
 
         // line 18
         echo "\t<div class=\"panel panel-default\">
-\t\t<div class=\"panel-heading\"><h1>Tworzenie strony</h1></div>
+\t\t<div class=\"panel-heading\">
+\t\t\t<h1>Tworzenie strony</h1>
+\t\t</div>
 \t\t<div class=\"panel-body\">\t\t
 \t\t\t";
-        // line 21
+        // line 23
         echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'form_start');
         echo "
 \t\t\t\t";
-        // line 22
+        // line 24
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'widget');
         echo "
 \t\t\t\t<input class=\"btn btn-success\" type=\"submit\" value=\"Utwórz\">
 \t\t\t";
-        // line 24
+        // line 26
         echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'form_end');
         echo "
 \t\t
 \t\t\t<a id=\"backtolist\"class=\"btn btn-danger\" href=\"";
-        // line 26
+        // line 28
         echo $this->env->getExtension('routing')->getPath("page_index");
         echo "\" role=\"button\">Anuluj</a>\t\t
 \t\t</div>
 \t</div>
 ";
         
-        $__internal_49014de5e399fa2a634d582d1ca46c06ba2e5a1facfd1fd0905a19103d4b57d6->leave($__internal_49014de5e399fa2a634d582d1ca46c06ba2e5a1facfd1fd0905a19103d4b57d6_prof);
+        $__internal_0dea92a8cf237c1bdc60c0c7197fa0b8039b4cc36eecfd72caa34319ed4f274e->leave($__internal_0dea92a8cf237c1bdc60c0c7197fa0b8039b4cc36eecfd72caa34319ed4f274e_prof);
 
     }
 
@@ -109,7 +111,7 @@ class __TwigTemplate_a8eb22b35aba5ba11a14bf94fba1d145b8d58b12bbdc2012c2d2b0e1385
 
     public function getDebugInfo()
     {
-        return array (  90 => 26,  85 => 24,  80 => 22,  76 => 21,  71 => 18,  65 => 17,  51 => 9,  45 => 6,  41 => 4,  35 => 3,  11 => 1,);
+        return array (  92 => 28,  87 => 26,  82 => 24,  78 => 23,  71 => 18,  65 => 17,  51 => 9,  45 => 6,  41 => 4,  35 => 3,  11 => 1,);
     }
 }
 /* {% extends 'admin_layout.html.twig' %}*/
@@ -130,7 +132,9 @@ class __TwigTemplate_a8eb22b35aba5ba11a14bf94fba1d145b8d58b12bbdc2012c2d2b0e1385
 /* */
 /* {% block content %}*/
 /* 	<div class="panel panel-default">*/
-/* 		<div class="panel-heading"><h1>Tworzenie strony</h1></div>*/
+/* 		<div class="panel-heading">*/
+/* 			<h1>Tworzenie strony</h1>*/
+/* 		</div>*/
 /* 		<div class="panel-body">		*/
 /* 			{{ form_start(form) }}*/
 /* 				{{ form_widget(form) }}*/
@@ -141,4 +145,3 @@ class __TwigTemplate_a8eb22b35aba5ba11a14bf94fba1d145b8d58b12bbdc2012c2d2b0e1385
 /* 		</div>*/
 /* 	</div>*/
 /* {% endblock %}*/
-/* */

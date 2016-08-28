@@ -32,13 +32,15 @@
 			<tbody>
 			{% for page in pages %}
 				<tr>
-					<td><a href="{{ path('page_edit', { 'id': page.id }) }}">{{ page.name }}</a></td>
 					<td>
-								{% if page.parent is not empty %}
-									{{ path('childPage', { 'slug': page.slug, 'parent': page.parent.slug }) }}
-								{% else %}
-									{{ path('mainPage', { 'slug': page.slug }) }}
-								{% endif %}
+						<a href="{{ path('page_edit', { 'id': page.id }) }}">{{ page.name }}</a>
+					</td>
+					<td>
+						{% if page.parent is not empty %}
+							{{ path('childPage', { 'slug': page.slug, 'parent': page.parent.slug }) }}
+						{% else %}
+							{{ path('mainPage', { 'slug': page.slug }) }}
+						{% endif %}
 					</td>
 				</tr>
 			{% endfor %}

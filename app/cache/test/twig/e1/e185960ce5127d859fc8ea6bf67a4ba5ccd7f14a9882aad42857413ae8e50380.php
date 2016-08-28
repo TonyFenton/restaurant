@@ -22,20 +22,20 @@ class __TwigTemplate_10e8cf27eba79c7dcf3397eb3a8bec6909e67bc776be25879ac3ba9c9a4
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_6f6ccba4d4a0fa74f64d00336a8527ccfdeb8e8fc34f5abd5d52a68fe7745d32 = $this->env->getExtension("native_profiler");
-        $__internal_6f6ccba4d4a0fa74f64d00336a8527ccfdeb8e8fc34f5abd5d52a68fe7745d32->enter($__internal_6f6ccba4d4a0fa74f64d00336a8527ccfdeb8e8fc34f5abd5d52a68fe7745d32_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "page/index.html.twig"));
+        $__internal_fdb78916141147dccc38bfda4fde1e292b6c8ee68fcd8580c66a6a5a65b3d467 = $this->env->getExtension("native_profiler");
+        $__internal_fdb78916141147dccc38bfda4fde1e292b6c8ee68fcd8580c66a6a5a65b3d467->enter($__internal_fdb78916141147dccc38bfda4fde1e292b6c8ee68fcd8580c66a6a5a65b3d467_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "page/index.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_6f6ccba4d4a0fa74f64d00336a8527ccfdeb8e8fc34f5abd5d52a68fe7745d32->leave($__internal_6f6ccba4d4a0fa74f64d00336a8527ccfdeb8e8fc34f5abd5d52a68fe7745d32_prof);
+        $__internal_fdb78916141147dccc38bfda4fde1e292b6c8ee68fcd8580c66a6a5a65b3d467->leave($__internal_fdb78916141147dccc38bfda4fde1e292b6c8ee68fcd8580c66a6a5a65b3d467_prof);
 
     }
 
     // line 3
     public function block_breadcrumb($context, array $blocks = array())
     {
-        $__internal_5646d34343bcce8a813bd7f4e52739a5e24c00e87cb05c40fd37aad3660b20e4 = $this->env->getExtension("native_profiler");
-        $__internal_5646d34343bcce8a813bd7f4e52739a5e24c00e87cb05c40fd37aad3660b20e4->enter($__internal_5646d34343bcce8a813bd7f4e52739a5e24c00e87cb05c40fd37aad3660b20e4_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "breadcrumb"));
+        $__internal_2608abfd6961eacf1c7e456a6eadf74e22dc5b7a9242e7fdf2c85cf947bf18c4 = $this->env->getExtension("native_profiler");
+        $__internal_2608abfd6961eacf1c7e456a6eadf74e22dc5b7a9242e7fdf2c85cf947bf18c4->enter($__internal_2608abfd6961eacf1c7e456a6eadf74e22dc5b7a9242e7fdf2c85cf947bf18c4_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "breadcrumb"));
 
         // line 4
         echo "\t<ol class=\"breadcrumb\">
@@ -51,15 +51,15 @@ class __TwigTemplate_10e8cf27eba79c7dcf3397eb3a8bec6909e67bc776be25879ac3ba9c9a4
 \t</ol>
 ";
         
-        $__internal_5646d34343bcce8a813bd7f4e52739a5e24c00e87cb05c40fd37aad3660b20e4->leave($__internal_5646d34343bcce8a813bd7f4e52739a5e24c00e87cb05c40fd37aad3660b20e4_prof);
+        $__internal_2608abfd6961eacf1c7e456a6eadf74e22dc5b7a9242e7fdf2c85cf947bf18c4->leave($__internal_2608abfd6961eacf1c7e456a6eadf74e22dc5b7a9242e7fdf2c85cf947bf18c4_prof);
 
     }
 
     // line 14
     public function block_content($context, array $blocks = array())
     {
-        $__internal_80bcc669d9a808f134470931f6431b1a42b33e9165b67997926a6ebf65df64b5 = $this->env->getExtension("native_profiler");
-        $__internal_80bcc669d9a808f134470931f6431b1a42b33e9165b67997926a6ebf65df64b5->enter($__internal_80bcc669d9a808f134470931f6431b1a42b33e9165b67997926a6ebf65df64b5_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
+        $__internal_23df9457d42b34a6b082dffb177e9243e1d7fc0d61753799086f7fa7feb62fa4 = $this->env->getExtension("native_profiler");
+        $__internal_23df9457d42b34a6b082dffb177e9243e1d7fc0d61753799086f7fa7feb62fa4->enter($__internal_23df9457d42b34a6b082dffb177e9243e1d7fc0d61753799086f7fa7feb62fa4_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
 
         // line 15
         echo "\t";
@@ -102,29 +102,31 @@ class __TwigTemplate_10e8cf27eba79c7dcf3397eb3a8bec6909e67bc776be25879ac3ba9c9a4
         foreach ($context['_seq'] as $context["_key"] => $context["page"]) {
             // line 34
             echo "\t\t\t\t<tr>
-\t\t\t\t\t<td><a href=\"";
-            // line 35
+\t\t\t\t\t<td>
+\t\t\t\t\t\t<a href=\"";
+            // line 36
             echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("page_edit", array("id" => $this->getAttribute($context["page"], "id", array()))), "html", null, true);
             echo "\">";
             echo twig_escape_filter($this->env, $this->getAttribute($context["page"], "name", array()), "html", null, true);
-            echo "</a></td>
+            echo "</a>
+\t\t\t\t\t</td>
 \t\t\t\t\t<td>
-\t\t\t\t\t\t\t\t";
-            // line 37
+\t\t\t\t\t\t";
+            // line 39
             if ( !twig_test_empty($this->getAttribute($context["page"], "parent", array()))) {
-                // line 38
-                echo "\t\t\t\t\t\t\t\t\t";
+                // line 40
+                echo "\t\t\t\t\t\t\t";
                 echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("childPage", array("slug" => $this->getAttribute($context["page"], "slug", array()), "parent" => $this->getAttribute($this->getAttribute($context["page"], "parent", array()), "slug", array()))), "html", null, true);
                 echo "
-\t\t\t\t\t\t\t\t";
+\t\t\t\t\t\t";
             } else {
-                // line 40
-                echo "\t\t\t\t\t\t\t\t\t";
+                // line 42
+                echo "\t\t\t\t\t\t\t";
                 echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("mainPage", array("slug" => $this->getAttribute($context["page"], "slug", array()))), "html", null, true);
                 echo "
-\t\t\t\t\t\t\t\t";
+\t\t\t\t\t\t";
             }
-            // line 42
+            // line 44
             echo "\t\t\t\t\t</td>
 \t\t\t\t</tr>
 \t\t\t";
@@ -132,13 +134,13 @@ class __TwigTemplate_10e8cf27eba79c7dcf3397eb3a8bec6909e67bc776be25879ac3ba9c9a4
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['page'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 45
+        // line 47
         echo "\t\t\t</tbody>
 \t\t</table>
 \t</div>
 ";
         
-        $__internal_80bcc669d9a808f134470931f6431b1a42b33e9165b67997926a6ebf65df64b5->leave($__internal_80bcc669d9a808f134470931f6431b1a42b33e9165b67997926a6ebf65df64b5_prof);
+        $__internal_23df9457d42b34a6b082dffb177e9243e1d7fc0d61753799086f7fa7feb62fa4->leave($__internal_23df9457d42b34a6b082dffb177e9243e1d7fc0d61753799086f7fa7feb62fa4_prof);
 
     }
 
@@ -154,7 +156,7 @@ class __TwigTemplate_10e8cf27eba79c7dcf3397eb3a8bec6909e67bc776be25879ac3ba9c9a4
 
     public function getDebugInfo()
     {
-        return array (  136 => 45,  128 => 42,  122 => 40,  116 => 38,  114 => 37,  107 => 35,  104 => 34,  100 => 33,  87 => 23,  82 => 20,  73 => 17,  70 => 16,  65 => 15,  59 => 14,  45 => 6,  41 => 4,  35 => 3,  11 => 1,);
+        return array (  138 => 47,  130 => 44,  124 => 42,  118 => 40,  116 => 39,  108 => 36,  104 => 34,  100 => 33,  87 => 23,  82 => 20,  73 => 17,  70 => 16,  65 => 15,  59 => 14,  45 => 6,  41 => 4,  35 => 3,  11 => 1,);
     }
 }
 /* {% extends 'admin_layout.html.twig' %}*/
@@ -191,13 +193,15 @@ class __TwigTemplate_10e8cf27eba79c7dcf3397eb3a8bec6909e67bc776be25879ac3ba9c9a4
 /* 			<tbody>*/
 /* 			{% for page in pages %}*/
 /* 				<tr>*/
-/* 					<td><a href="{{ path('page_edit', { 'id': page.id }) }}">{{ page.name }}</a></td>*/
 /* 					<td>*/
-/* 								{% if page.parent is not empty %}*/
-/* 									{{ path('childPage', { 'slug': page.slug, 'parent': page.parent.slug }) }}*/
-/* 								{% else %}*/
-/* 									{{ path('mainPage', { 'slug': page.slug }) }}*/
-/* 								{% endif %}*/
+/* 						<a href="{{ path('page_edit', { 'id': page.id }) }}">{{ page.name }}</a>*/
+/* 					</td>*/
+/* 					<td>*/
+/* 						{% if page.parent is not empty %}*/
+/* 							{{ path('childPage', { 'slug': page.slug, 'parent': page.parent.slug }) }}*/
+/* 						{% else %}*/
+/* 							{{ path('mainPage', { 'slug': page.slug }) }}*/
+/* 						{% endif %}*/
 /* 					</td>*/
 /* 				</tr>*/
 /* 			{% endfor %}*/
@@ -205,4 +209,3 @@ class __TwigTemplate_10e8cf27eba79c7dcf3397eb3a8bec6909e67bc776be25879ac3ba9c9a4
 /* 		</table>*/
 /* 	</div>*/
 /* {% endblock %}*/
-/* */

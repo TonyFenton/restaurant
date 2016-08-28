@@ -1,0 +1,24 @@
+body {
+	/* Background pattern from subtlepatterns.com */
+	background-image: url("../../images/mochaGrunge_@2X.png");
+}
+#form-login {
+	max-width: 300px;
+	margin: 0 auto;
+	margin-top: 120px;
+}
+.form-group {
+	margin-bottom: 5px;
+}
+.checkbox input[type="checkbox"],
+.checkbox-inline input[type="checkbox"],
+.radio input[type="radio"],
+.radio-inline input[type="radio"] {
+	margin-left: auto;
+}
+.login_button {
+	display:block;
+	margin-top:10px;
+	margin-bottom:10px;
+	width: 268px;
+}

@@ -15,8 +15,8 @@ class __TwigTemplate_0dc46c05557edf7324f9809b47537fcd1a639349b4789676436b665ffe3
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_4815042333793c059cc5f13e420855019024fcbf5fd5547a2f32007a4318ea3a = $this->env->getExtension("native_profiler");
-        $__internal_4815042333793c059cc5f13e420855019024fcbf5fd5547a2f32007a4318ea3a->enter($__internal_4815042333793c059cc5f13e420855019024fcbf5fd5547a2f32007a4318ea3a_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "default/_main_menu.html.twig"));
+        $__internal_b834a24f1d90376800d0104816a300a962daafb7ff7df3919f58872e761b8b30 = $this->env->getExtension("native_profiler");
+        $__internal_b834a24f1d90376800d0104816a300a962daafb7ff7df3919f58872e761b8b30->enter($__internal_b834a24f1d90376800d0104816a300a962daafb7ff7df3919f58872e761b8b30_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "default/_main_menu.html.twig"));
 
         // line 1
         echo "<ul class=\"nav navbar-nav\">
@@ -42,46 +42,46 @@ class __TwigTemplate_0dc46c05557edf7324f9809b47537fcd1a639349b4789676436b665ffe3
             echo "\">";
             echo twig_escape_filter($this->env, $this->getAttribute($context["link"], "name", array()), "html", null, true);
             echo "
-\t\t";
+\t\t\t";
             // line 9
             if ( !twig_test_empty($this->getAttribute($context["link"], "children", array()))) {
                 // line 10
-                echo "\t\t\t\t<span class=\"glyphicon glyphicon-menu-down hidden-xs\"></span>
-\t\t\t</a>
-\t\t\t<ul class=\"dropdown-menu hidden-xs\">
-\t\t\t\t";
+                echo "\t\t\t\t\t<span class=\"glyphicon glyphicon-menu-down hidden-xs\"></span>
+\t\t\t\t</a>
+\t\t\t\t<ul class=\"dropdown-menu hidden-xs\">
+\t\t\t\t\t";
                 // line 13
                 $context['_parent'] = $context;
                 $context['_seq'] = twig_ensure_traversable($this->getAttribute($context["link"], "children", array()));
                 foreach ($context['_seq'] as $context["_key"] => $context["child_link"]) {
                     echo "\t
-\t\t\t\t\t<li class=\"
-\t\t\t\t\t\t";
+\t\t\t\t\t\t<li class=\"
+\t\t\t\t\t\t\t";
                     // line 15
                     if (($this->getAttribute($context["child_link"], "slug", array()) == (isset($context["currentPage"]) ? $context["currentPage"] : $this->getContext($context, "currentPage")))) {
                         // line 16
-                        echo "\t\t\t\t\t\t\tactive
-\t\t\t\t\t\t";
+                        echo "\t\t\t\t\t\t\t\tactive
+\t\t\t\t\t\t\t";
                     }
                     // line 18
-                    echo "\t\t\t\t\t\t\"><a href=\" ";
+                    echo "\t\t\t\t\t\t\t\"><a href=\" ";
                     echo twig_escape_filter($this->env, $this->env->getExtension('routing')->getPath("childPage", array("parent" => $this->getAttribute($context["link"], "slug", array()), "slug" => $this->getAttribute($context["child_link"], "slug", array()))), "html", null, true);
                     echo " \">";
                     echo twig_escape_filter($this->env, $this->getAttribute($context["child_link"], "name", array()), "html", null, true);
                     echo "</a>
-\t\t\t\t\t</li>
-\t\t\t\t";
+\t\t\t\t\t\t</li>
+\t\t\t\t\t";
                 }
                 $_parent = $context['_parent'];
                 unset($context['_seq'], $context['_iterated'], $context['_key'], $context['child_link'], $context['_parent'], $context['loop']);
                 $context = array_intersect_key($context, $_parent) + $_parent;
                 // line 21
-                echo "\t\t\t</ul>
-\t\t";
+                echo "\t\t\t\t</ul>
+\t\t\t";
             } else {
                 // line 23
-                echo "\t\t\t</a>
-\t\t";
+                echo "\t\t\t\t</a>
+\t\t\t";
             }
             // line 25
             echo "\t\t</li>
@@ -93,7 +93,7 @@ class __TwigTemplate_0dc46c05557edf7324f9809b47537fcd1a639349b4789676436b665ffe3
         // line 27
         echo "</ul>";
         
-        $__internal_4815042333793c059cc5f13e420855019024fcbf5fd5547a2f32007a4318ea3a->leave($__internal_4815042333793c059cc5f13e420855019024fcbf5fd5547a2f32007a4318ea3a_prof);
+        $__internal_b834a24f1d90376800d0104816a300a962daafb7ff7df3919f58872e761b8b30->leave($__internal_b834a24f1d90376800d0104816a300a962daafb7ff7df3919f58872e761b8b30_prof);
 
     }
 
@@ -120,22 +120,22 @@ class __TwigTemplate_0dc46c05557edf7324f9809b47537fcd1a639349b4789676436b665ffe3
 /* 			{% endif %}*/
 /* 			">*/
 /* 			<a href="{{ path('mainPage', { 'slug': link.slug }) }}">{{ link.name }}*/
-/* 		{% if (link.children is not empty) %}*/
-/* 				<span class="glyphicon glyphicon-menu-down hidden-xs"></span>*/
-/* 			</a>*/
-/* 			<ul class="dropdown-menu hidden-xs">*/
-/* 				{% for child_link in link.children %}	*/
-/* 					<li class="*/
-/* 						{% if(child_link.slug == currentPage) %}*/
-/* 							active*/
-/* 						{% endif %}*/
-/* 						"><a href=" {{ path('childPage', {'parent': link.slug, 'slug': child_link.slug}) }} ">{{ child_link.name }}</a>*/
-/* 					</li>*/
-/* 				{% endfor %}*/
-/* 			</ul>*/
-/* 		{% else %}*/
-/* 			</a>*/
-/* 		{% endif %}*/
+/* 			{% if (link.children is not empty) %}*/
+/* 					<span class="glyphicon glyphicon-menu-down hidden-xs"></span>*/
+/* 				</a>*/
+/* 				<ul class="dropdown-menu hidden-xs">*/
+/* 					{% for child_link in link.children %}	*/
+/* 						<li class="*/
+/* 							{% if(child_link.slug == currentPage) %}*/
+/* 								active*/
+/* 							{% endif %}*/
+/* 							"><a href=" {{ path('childPage', {'parent': link.slug, 'slug': child_link.slug}) }} ">{{ child_link.name }}</a>*/
+/* 						</li>*/
+/* 					{% endfor %}*/
+/* 				</ul>*/
+/* 			{% else %}*/
+/* 				</a>*/
+/* 			{% endif %}*/
 /* 		</li>*/
 /* 	{% endfor %}*/
 /* </ul>*/

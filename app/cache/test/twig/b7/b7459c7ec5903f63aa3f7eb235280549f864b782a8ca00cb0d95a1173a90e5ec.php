@@ -22,20 +22,20 @@ class __TwigTemplate_b051510647c8c2668c60efe8a3c1814c44fd8c417fe2fc1b3f4d1c2bc39
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_41e8c0e3fe001fcea5ce66e3db7d675d4ece24d0e3355d363b80b23ad1972f19 = $this->env->getExtension("native_profiler");
-        $__internal_41e8c0e3fe001fcea5ce66e3db7d675d4ece24d0e3355d363b80b23ad1972f19->enter($__internal_41e8c0e3fe001fcea5ce66e3db7d675d4ece24d0e3355d363b80b23ad1972f19_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "page/edit.html.twig"));
+        $__internal_aded48b0ea7609508e097a66f7cfd960c1c172e5d013bea9640cd781b6e7b49a = $this->env->getExtension("native_profiler");
+        $__internal_aded48b0ea7609508e097a66f7cfd960c1c172e5d013bea9640cd781b6e7b49a->enter($__internal_aded48b0ea7609508e097a66f7cfd960c1c172e5d013bea9640cd781b6e7b49a_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "page/edit.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_41e8c0e3fe001fcea5ce66e3db7d675d4ece24d0e3355d363b80b23ad1972f19->leave($__internal_41e8c0e3fe001fcea5ce66e3db7d675d4ece24d0e3355d363b80b23ad1972f19_prof);
+        $__internal_aded48b0ea7609508e097a66f7cfd960c1c172e5d013bea9640cd781b6e7b49a->leave($__internal_aded48b0ea7609508e097a66f7cfd960c1c172e5d013bea9640cd781b6e7b49a_prof);
 
     }
 
     // line 3
     public function block_breadcrumb($context, array $blocks = array())
     {
-        $__internal_206b2e72e869530600895f818ea127c11e6f63da753646000d121cfe65a6b614 = $this->env->getExtension("native_profiler");
-        $__internal_206b2e72e869530600895f818ea127c11e6f63da753646000d121cfe65a6b614->enter($__internal_206b2e72e869530600895f818ea127c11e6f63da753646000d121cfe65a6b614_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "breadcrumb"));
+        $__internal_eab494b3398e32c2d2548289f342c13209da0d82d16cfb83f7357d94078004e9 = $this->env->getExtension("native_profiler");
+        $__internal_eab494b3398e32c2d2548289f342c13209da0d82d16cfb83f7357d94078004e9->enter($__internal_eab494b3398e32c2d2548289f342c13209da0d82d16cfb83f7357d94078004e9_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "breadcrumb"));
 
         // line 4
         echo "\t<ol class=\"breadcrumb\">
@@ -60,15 +60,15 @@ class __TwigTemplate_b051510647c8c2668c60efe8a3c1814c44fd8c417fe2fc1b3f4d1c2bc39
 \t</ol>
 ";
         
-        $__internal_206b2e72e869530600895f818ea127c11e6f63da753646000d121cfe65a6b614->leave($__internal_206b2e72e869530600895f818ea127c11e6f63da753646000d121cfe65a6b614_prof);
+        $__internal_eab494b3398e32c2d2548289f342c13209da0d82d16cfb83f7357d94078004e9->leave($__internal_eab494b3398e32c2d2548289f342c13209da0d82d16cfb83f7357d94078004e9_prof);
 
     }
 
     // line 17
     public function block_content($context, array $blocks = array())
     {
-        $__internal_81cfffdf84d0c4be51996150e6052479b5ce1e4df5bddcd6751d24c97c7f53eb = $this->env->getExtension("native_profiler");
-        $__internal_81cfffdf84d0c4be51996150e6052479b5ce1e4df5bddcd6751d24c97c7f53eb->enter($__internal_81cfffdf84d0c4be51996150e6052479b5ce1e4df5bddcd6751d24c97c7f53eb_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
+        $__internal_636e66e6888cda23f123a11033b0d226a2fe9f188b64c39ab3844b6ad074c966 = $this->env->getExtension("native_profiler");
+        $__internal_636e66e6888cda23f123a11033b0d226a2fe9f188b64c39ab3844b6ad074c966->enter($__internal_636e66e6888cda23f123a11033b0d226a2fe9f188b64c39ab3844b6ad074c966_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "content"));
 
         // line 18
         echo "\t";
@@ -89,47 +89,49 @@ class __TwigTemplate_b051510647c8c2668c60efe8a3c1814c44fd8c417fe2fc1b3f4d1c2bc39
         $context = array_intersect_key($context, $_parent) + $_parent;
         // line 23
         echo "\t<div class=\"panel panel-default\">
-\t\t<div class=\"panel-heading\"><h1>Edycja strony</h1></div>
+\t\t<div class=\"panel-heading\">
+\t\t\t<h1>Edycja strony</h1>
+\t\t</div>
 \t\t<div class=\"panel-body\">\t
 \t\t\t";
-        // line 26
+        // line 28
         echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), 'form_start');
         echo "
 \t\t\t\t";
-        // line 27
+        // line 29
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), 'widget');
         echo "
 \t\t\t\t<input class=\"btn btn-success\" type=\"submit\" value=\"Zapisz\">
 \t\t\t";
-        // line 29
+        // line 31
         echo         $this->env->getExtension('form')->renderer->renderBlock((isset($context["edit_form"]) ? $context["edit_form"] : $this->getContext($context, "edit_form")), 'form_end');
         echo "
 \t\t
 \t\t\t<a id=\"backtolist\"class=\"btn btn-warning\" href=\"";
-        // line 31
+        // line 33
         echo $this->env->getExtension('routing')->getPath("page_index");
         echo "\" role=\"button\">Powrót do Listy</a>
 \t\t
 \t\t\t";
-        // line 33
+        // line 35
         if ( !(null === (isset($context["delete_form"]) ? $context["delete_form"] : $this->getContext($context, "delete_form")))) {
-            // line 34
+            // line 36
             echo "\t\t\t\t";
             echo             $this->env->getExtension('form')->renderer->renderBlock((isset($context["delete_form"]) ? $context["delete_form"] : $this->getContext($context, "delete_form")), 'form_start');
             echo "
 \t\t\t\t\t<input class=\"btn btn-danger\" type=\"submit\" value=\"Usuń\">
 \t\t\t\t";
-            // line 36
+            // line 38
             echo             $this->env->getExtension('form')->renderer->renderBlock((isset($context["delete_form"]) ? $context["delete_form"] : $this->getContext($context, "delete_form")), 'form_end');
             echo "
 \t\t\t";
         }
-        // line 38
+        // line 40
         echo "\t\t</div>
 \t</div>
 ";
         
-        $__internal_81cfffdf84d0c4be51996150e6052479b5ce1e4df5bddcd6751d24c97c7f53eb->leave($__internal_81cfffdf84d0c4be51996150e6052479b5ce1e4df5bddcd6751d24c97c7f53eb_prof);
+        $__internal_636e66e6888cda23f123a11033b0d226a2fe9f188b64c39ab3844b6ad074c966->leave($__internal_636e66e6888cda23f123a11033b0d226a2fe9f188b64c39ab3844b6ad074c966_prof);
 
     }
 
@@ -145,7 +147,7 @@ class __TwigTemplate_b051510647c8c2668c60efe8a3c1814c44fd8c417fe2fc1b3f4d1c2bc39
 
     public function getDebugInfo()
     {
-        return array (  128 => 38,  123 => 36,  117 => 34,  115 => 33,  110 => 31,  105 => 29,  100 => 27,  96 => 26,  91 => 23,  82 => 20,  79 => 19,  74 => 18,  68 => 17,  57 => 12,  51 => 9,  45 => 6,  41 => 4,  35 => 3,  11 => 1,);
+        return array (  130 => 40,  125 => 38,  119 => 36,  117 => 35,  112 => 33,  107 => 31,  102 => 29,  98 => 28,  91 => 23,  82 => 20,  79 => 19,  74 => 18,  68 => 17,  57 => 12,  51 => 9,  45 => 6,  41 => 4,  35 => 3,  11 => 1,);
     }
 }
 /* {% extends 'admin_layout.html.twig' %}*/
@@ -171,7 +173,9 @@ class __TwigTemplate_b051510647c8c2668c60efe8a3c1814c44fd8c417fe2fc1b3f4d1c2bc39
 /* 		</div>*/
 /* 	{% endfor %}*/
 /* 	<div class="panel panel-default">*/
-/* 		<div class="panel-heading"><h1>Edycja strony</h1></div>*/
+/* 		<div class="panel-heading">*/
+/* 			<h1>Edycja strony</h1>*/
+/* 		</div>*/
 /* 		<div class="panel-body">	*/
 /* 			{{ form_start(edit_form) }}*/
 /* 				{{ form_widget(edit_form) }}*/
@@ -188,4 +192,3 @@ class __TwigTemplate_b051510647c8c2668c60efe8a3c1814c44fd8c417fe2fc1b3f4d1c2bc39
 /* 		</div>*/
 /* 	</div>*/
 /* {% endblock %}*/
-/* */

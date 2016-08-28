@@ -27,14 +27,13 @@ class PageType extends AbstractType
 			$slug = null;
 			$withoutChildren = true;
 		}
-		
 	
 		if ($slug != 'homepage') {
 			if ($withoutChildren) {
 				$builder
 					->add('parent', EntityType::class, array(
 						'class' => 'AppBundle:Page',
-						'query_builder' => function (EntityRepository $er) use($id) {	
+						'query_builder' => function (EntityRepository $er) use($id) {
 							return $er->createQueryBuilder('p')
 								->where('p.id != ?1')
 								->andwhere('p.parent is null')

@@ -121,7 +121,6 @@ class UserController extends Controller
      */
     public function enabledAction(Request $request, User $user)
     {
-		
         $form = $this->createEnabledForm($user->getId());
         $form->handleRequest($request);
 		
@@ -146,15 +145,3 @@ class UserController extends Controller
         return $this->redirectToRoute('user_index');
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-

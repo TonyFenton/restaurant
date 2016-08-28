@@ -7,7 +7,7 @@ use Symfony\Component\Validator\ConstraintValidator;
 use Doctrine\ORM\EntityManager;
 
 class UniqueUrlValidator extends ConstraintValidator
-{   
+{
 	private $em;
 
     public function __construct(EntityManager $entityManager) {
@@ -24,7 +24,7 @@ class UniqueUrlValidator extends ConstraintValidator
 		
 		if ($page->getId()) {
 			$id = $page->getId();
-		}else{ // new_admin_page
+		}else{ // new_page
 			$id = 0;
 		}
 		

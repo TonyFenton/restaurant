@@ -10,14 +10,14 @@
 							active
 						{% endif %}
 						">
-							<a href="{{ path('childPage', { 'slug': link.slug, 'parent': page.parent.slug }) }}">{{ link.name }}</a>
+						<a href="{{ path('childPage', { 'slug': link.slug, 'parent': page.parent.slug }) }}">{{ link.name }}</a>
 					</li>
 				{% endfor %}
 			</ul>
 		</div>
 		<div class="col-xs-12 col-sm-9">
-			<h1>{{page.name}}</h1>
-			{{page.content | raw}}
+			<h1>{{ page.name }}</h1>
+			{{ page.content | raw }}
 		</div>
 	</div>
 {% endblock %}

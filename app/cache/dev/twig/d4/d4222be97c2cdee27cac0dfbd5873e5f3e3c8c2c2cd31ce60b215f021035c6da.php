@@ -21,20 +21,20 @@ class __TwigTemplate_28d26d476c1249a247324f65ba28af4d64b1e19ecb6d814c1d8c112b673
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_5012373207a71fbdc78f9496b08bd657972b9e6df47fc80a0f9239bd566c90ac = $this->env->getExtension("native_profiler");
-        $__internal_5012373207a71fbdc78f9496b08bd657972b9e6df47fc80a0f9239bd566c90ac->enter($__internal_5012373207a71fbdc78f9496b08bd657972b9e6df47fc80a0f9239bd566c90ac_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "FOSUserBundle:Security:login.html.twig"));
+        $__internal_35f29566f8b13035ce006326b5cc449705fc1e63eb6f163ed7a95f2a6bc31bd4 = $this->env->getExtension("native_profiler");
+        $__internal_35f29566f8b13035ce006326b5cc449705fc1e63eb6f163ed7a95f2a6bc31bd4->enter($__internal_35f29566f8b13035ce006326b5cc449705fc1e63eb6f163ed7a95f2a6bc31bd4_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "FOSUserBundle:Security:login.html.twig"));
 
         $this->parent->display($context, array_merge($this->blocks, $blocks));
         
-        $__internal_5012373207a71fbdc78f9496b08bd657972b9e6df47fc80a0f9239bd566c90ac->leave($__internal_5012373207a71fbdc78f9496b08bd657972b9e6df47fc80a0f9239bd566c90ac_prof);
+        $__internal_35f29566f8b13035ce006326b5cc449705fc1e63eb6f163ed7a95f2a6bc31bd4->leave($__internal_35f29566f8b13035ce006326b5cc449705fc1e63eb6f163ed7a95f2a6bc31bd4_prof);
 
     }
 
     // line 3
     public function block_fos_user_content($context, array $blocks = array())
     {
-        $__internal_9b5b7404a2671271bbb2b8d59bb28dd88c1b863397fd2f09fd913d7634c42bf3 = $this->env->getExtension("native_profiler");
-        $__internal_9b5b7404a2671271bbb2b8d59bb28dd88c1b863397fd2f09fd913d7634c42bf3->enter($__internal_9b5b7404a2671271bbb2b8d59bb28dd88c1b863397fd2f09fd913d7634c42bf3_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "fos_user_content"));
+        $__internal_9907b417a21e7d5448e8e68ab874b1b9f727a7cd4dfd935a373d695aafd9939c = $this->env->getExtension("native_profiler");
+        $__internal_9907b417a21e7d5448e8e68ab874b1b9f727a7cd4dfd935a373d695aafd9939c->enter($__internal_9907b417a21e7d5448e8e68ab874b1b9f727a7cd4dfd935a373d695aafd9939c_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "fos_user_content"));
 
         // line 4
         echo "\t";
@@ -46,13 +46,13 @@ class __TwigTemplate_28d26d476c1249a247324f65ba28af4d64b1e19ecb6d814c1d8c112b673
 \t";
         }
         // line 7
-        echo "
+        echo "\t
 \t<form action=\"";
         // line 8
         echo $this->env->getExtension('routing')->getPath("fos_user_security_check");
         echo "\" method=\"post\">
 \t\t<h1>Logowanie</h1>
-\t\t\t<input type=\"hidden\" name=\"_csrf_token\" value=\"";
+\t\t<input type=\"hidden\" name=\"_csrf_token\" value=\"";
         // line 10
         echo twig_escape_filter($this->env, (isset($context["csrf_token"]) ? $context["csrf_token"] : $this->getContext($context, "csrf_token")), "html", null, true);
         echo "\" />
@@ -88,10 +88,10 @@ class __TwigTemplate_28d26d476c1249a247324f65ba28af4d64b1e19ecb6d814c1d8c112b673
         echo "\" class=\"btn btn-link btn-xs\">Przypomnij hasło</a>
 \t\t</div>
 \t</form>
-
+\t
 ";
         
-        $__internal_9b5b7404a2671271bbb2b8d59bb28dd88c1b863397fd2f09fd913d7634c42bf3->leave($__internal_9b5b7404a2671271bbb2b8d59bb28dd88c1b863397fd2f09fd913d7634c42bf3_prof);
+        $__internal_9907b417a21e7d5448e8e68ab874b1b9f727a7cd4dfd935a373d695aafd9939c->leave($__internal_9907b417a21e7d5448e8e68ab874b1b9f727a7cd4dfd935a373d695aafd9939c_prof);
 
     }
 
@@ -116,10 +116,10 @@ class __TwigTemplate_28d26d476c1249a247324f65ba28af4d64b1e19ecb6d814c1d8c112b673
 /* 	{% if error %}*/
 /* 		<div class="alert alert-danger">{{ error|trans({}, 'FOSUserBundle') }}</div>*/
 /* 	{% endif %}*/
-/* */
+/* 	*/
 /* 	<form action="{{ path("fos_user_security_check") }}" method="post">*/
 /* 		<h1>Logowanie</h1>*/
-/* 			<input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />*/
+/* 		<input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />*/
 /* 		<div class="form-group">*/
 /* 			<input type="text" id="username" class="form-control" name="_username" value="{{ last_username }}" required="required" placeholder="{{ 'security.login.username'|trans({}, 'FOSUserBundle') }}" />*/
 /* 		</div>*/
@@ -135,6 +135,5 @@ class __TwigTemplate_28d26d476c1249a247324f65ba28af4d64b1e19ecb6d814c1d8c112b673
 /* 			<a href="{{ path('fos_user_resetting_request') }}" class="btn btn-link btn-xs">Przypomnij hasło</a>*/
 /* 		</div>*/
 /* 	</form>*/
-/* */
+/* 	*/
 /* {% endblock fos_user_content %}*/
-/* */

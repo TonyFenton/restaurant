@@ -12,7 +12,6 @@ body {
 #main_nav {
 	margin:0px;
 }
-
 #main_photo {
 	display:block;
 	margin-left: auto;
@@ -21,12 +20,10 @@ body {
 #main_photo_container {
 	background-color: #d1e0e0;
 }
-
 #content {
 	margin-bottom: 10px;
 	color: #333;
 }
-
 #main_nav {
 	background-color: #94b8b8;
 	border-color: #94b8b8;
@@ -36,12 +33,14 @@ body {
 #main_nav a {
 	color: white;
 }
-
-#main_nav .active > a, #main_nav .active > a:focus, #main_nav a:hover, #main_nav .active, #main_nav .dropdown-menu > li > a:focus, #main_nav .dropdown-menu > li > a:hover  {
-
- background-color:#d1e0e0;
- color: #333;
- border-radius: 4px;
+#main_nav .active > a, 
+#main_nav .active > a:focus, 
+#main_nav a:hover, #main_nav .active, 
+#main_nav .dropdown-menu > li > a:focus, 
+#main_nav .dropdown-menu > li > a:hover  {
+	background-color:#d1e0e0;
+	color: #333;
+	border-radius: 4px;
 }
 
 #main_nav li {
@@ -57,7 +56,8 @@ body {
 	background-color: #94b8b8;	
 }
 
-#main_nav .navbar-header a:hover {
+#main_nav .navbar-header a:hover,
+#main_nav .navbar-header a:active {
 	 background-color: #94b8b8;
 }
 
@@ -83,11 +83,11 @@ body {
 #secondary_nav a {
 	color: white
 }
-#secondary_nav a:hover, #secondary_nav .dropdown-menu > li > a:hover, #secondary_nav li.active a  {
+#secondary_nav a:hover,
+#secondary_nav a:active,
+#secondary_nav .dropdown-menu > li > a:hover,
+#secondary_nav li.active a  {
 	 background-color:#d1e0e0;
 	 color: #333;
 	 border-radius: 4px;
 }
-
-
-

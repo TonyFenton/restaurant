@@ -16,13 +16,14 @@
 
 {% block content %}
 	<div class="panel panel-default">
-		<div class="panel-heading"><h1>Tworzenie stopki</h1></div>
+		<div class="panel-heading">
+			<h1>Tworzenie stopki</h1>
+		</div>
 		<div class="panel-body">		
 			{{ form_start(form) }}
 				{{ form_widget(form) }}
 				<input class="btn btn-success" type="submit" value="Utwórz">
 			{{ form_end(form) }}
-		
 			<a id="backtolist"class="btn btn-danger" href="{{ path('footer_index') }}" role="button">Anuluj</a>		
 		</div>
 	</div>
