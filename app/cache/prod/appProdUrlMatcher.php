@@ -150,144 +150,144 @@ class appProdUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirecta
 
         if (0 === strpos($pathinfo, '/admin')) {
             if (0 === strpos($pathinfo, '/admin/footer')) {
-                // admin_footer_index
+                // footer_index
                 if (rtrim($pathinfo, '/') === '/admin/footer') {
                     if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
                         $allow = array_merge($allow, array('GET', 'HEAD'));
-                        goto not_admin_footer_index;
+                        goto not_footer_index;
                     }
 
                     if (substr($pathinfo, -1) !== '/') {
-                        return $this->redirect($pathinfo.'/', 'admin_footer_index');
+                        return $this->redirect($pathinfo.'/', 'footer_index');
                     }
 
-                    return array (  '_controller' => 'AppBundle\\Controller\\FooterController::indexAction',  '_route' => 'admin_footer_index',);
+                    return array (  '_controller' => 'AppBundle\\Controller\\FooterController::indexAction',  '_route' => 'footer_index',);
                 }
-                not_admin_footer_index:
+                not_footer_index:
 
-                // admin_footer_new
+                // footer_new
                 if ($pathinfo === '/admin/footer/new') {
                     if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
                         $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
-                        goto not_admin_footer_new;
+                        goto not_footer_new;
                     }
 
-                    return array (  '_controller' => 'AppBundle\\Controller\\FooterController::newAction',  '_route' => 'admin_footer_new',);
+                    return array (  '_controller' => 'AppBundle\\Controller\\FooterController::newAction',  '_route' => 'footer_new',);
                 }
-                not_admin_footer_new:
+                not_footer_new:
 
-                // admin_footer_edit
+                // footer_edit
                 if (preg_match('#^/admin/footer/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
                     if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
                         $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
-                        goto not_admin_footer_edit;
+                        goto not_footer_edit;
                     }
 
-                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'admin_footer_edit')), array (  '_controller' => 'AppBundle\\Controller\\FooterController::editAction',));
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'footer_edit')), array (  '_controller' => 'AppBundle\\Controller\\FooterController::editAction',));
                 }
-                not_admin_footer_edit:
+                not_footer_edit:
 
-                // admin_footer_delete
+                // footer_delete
                 if (preg_match('#^/admin/footer/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
                     if ($this->context->getMethod() != 'DELETE') {
                         $allow[] = 'DELETE';
-                        goto not_admin_footer_delete;
+                        goto not_footer_delete;
                     }
 
-                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'admin_footer_delete')), array (  '_controller' => 'AppBundle\\Controller\\FooterController::deleteAction',));
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'footer_delete')), array (  '_controller' => 'AppBundle\\Controller\\FooterController::deleteAction',));
                 }
-                not_admin_footer_delete:
+                not_footer_delete:
 
             }
 
             if (0 === strpos($pathinfo, '/admin/page')) {
-                // admin_page_index
+                // page_index
                 if (rtrim($pathinfo, '/') === '/admin/page') {
                     if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
                         $allow = array_merge($allow, array('GET', 'HEAD'));
-                        goto not_admin_page_index;
+                        goto not_page_index;
                     }
 
                     if (substr($pathinfo, -1) !== '/') {
-                        return $this->redirect($pathinfo.'/', 'admin_page_index');
+                        return $this->redirect($pathinfo.'/', 'page_index');
                     }
 
-                    return array (  '_controller' => 'AppBundle\\Controller\\PageController::indexAction',  '_route' => 'admin_page_index',);
+                    return array (  '_controller' => 'AppBundle\\Controller\\PageController::indexAction',  '_route' => 'page_index',);
                 }
-                not_admin_page_index:
+                not_page_index:
 
-                // admin_page_new
+                // page_new
                 if ($pathinfo === '/admin/page/new') {
                     if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
                         $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
-                        goto not_admin_page_new;
+                        goto not_page_new;
                     }
 
-                    return array (  '_controller' => 'AppBundle\\Controller\\PageController::newAction',  '_route' => 'admin_page_new',);
+                    return array (  '_controller' => 'AppBundle\\Controller\\PageController::newAction',  '_route' => 'page_new',);
                 }
-                not_admin_page_new:
+                not_page_new:
 
-                // admin_page_edit
+                // page_edit
                 if (preg_match('#^/admin/page/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
                     if (!in_array($this->context->getMethod(), array('GET', 'POST', 'HEAD'))) {
                         $allow = array_merge($allow, array('GET', 'POST', 'HEAD'));
-                        goto not_admin_page_edit;
+                        goto not_page_edit;
                     }
 
-                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'admin_page_edit')), array (  '_controller' => 'AppBundle\\Controller\\PageController::editAction',));
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'page_edit')), array (  '_controller' => 'AppBundle\\Controller\\PageController::editAction',));
                 }
-                not_admin_page_edit:
+                not_page_edit:
 
-                // admin_page_delete
+                // page_delete
                 if (preg_match('#^/admin/page/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
                     if ($this->context->getMethod() != 'DELETE') {
                         $allow[] = 'DELETE';
-                        goto not_admin_page_delete;
+                        goto not_page_delete;
                     }
 
-                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'admin_page_delete')), array (  '_controller' => 'AppBundle\\Controller\\PageController::deleteAction',));
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'page_delete')), array (  '_controller' => 'AppBundle\\Controller\\PageController::deleteAction',));
                 }
-                not_admin_page_delete:
+                not_page_delete:
 
             }
 
             if (0 === strpos($pathinfo, '/admin/user')) {
-                // admin_user_index
+                // user_index
                 if (rtrim($pathinfo, '/') === '/admin/user') {
                     if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
                         $allow = array_merge($allow, array('GET', 'HEAD'));
-                        goto not_admin_user_index;
+                        goto not_user_index;
                     }
 
                     if (substr($pathinfo, -1) !== '/') {
-                        return $this->redirect($pathinfo.'/', 'admin_user_index');
+                        return $this->redirect($pathinfo.'/', 'user_index');
                     }
 
-                    return array (  '_controller' => 'AppBundle\\Controller\\UserController::indexAction',  '_route' => 'admin_user_index',);
+                    return array (  '_controller' => 'AppBundle\\Controller\\UserController::indexAction',  '_route' => 'user_index',);
                 }
-                not_admin_user_index:
+                not_user_index:
 
-                // admin_user_delete
+                // user_delete
                 if (preg_match('#^/admin/user/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
                     if ($this->context->getMethod() != 'DELETE') {
                         $allow[] = 'DELETE';
-                        goto not_admin_user_delete;
+                        goto not_user_delete;
                     }
 
-                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'admin_user_delete')), array (  '_controller' => 'AppBundle\\Controller\\UserController::deleteAction',));
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'user_delete')), array (  '_controller' => 'AppBundle\\Controller\\UserController::deleteAction',));
                 }
-                not_admin_user_delete:
+                not_user_delete:
 
-                // admin_user_enabled
+                // user_enabled
                 if (preg_match('#^/admin/user/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
                     if ($this->context->getMethod() != 'POST') {
                         $allow[] = 'POST';
-                        goto not_admin_user_enabled;
+                        goto not_user_enabled;
                     }
 
-                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'admin_user_enabled')), array (  '_controller' => 'AppBundle\\Controller\\UserController::enabledAction',));
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'user_enabled')), array (  '_controller' => 'AppBundle\\Controller\\UserController::enabledAction',));
                 }
-                not_admin_user_enabled:
+                not_user_enabled:
 
             }
 

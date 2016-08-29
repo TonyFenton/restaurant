@@ -35,34 +35,36 @@ class __TwigTemplate_4cdb1f806752ebfecdd9359b1a6ececc5c8111f964c0e575c869ae19f4b
         // line 8
         $this->displayBlock('description', $context, $blocks);
         echo "\" />
+\t\t
         ";
-        // line 9
+        // line 10
         $this->displayBlock('stylesheets', $context, $blocks);
-        // line 17
-        echo "        <link rel=\"icon\" type=\"image/x-icon\" href=\"";
+        // line 18
+        echo "\t\t
+        <link rel=\"icon\" type=\"image/x-icon\" href=\"";
+        // line 19
         echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("images/logo.png"), "html", null, true);
         echo "\" />
 \t\t
 \t\t<!-- Begin Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->
-\t\t<script type=\"text/javascript\">
-\t\t\twindow.cookieconsent_options = {\"message\":\"Strona korzysta z plików cookies w celu realizacji usług i zgodnie z Polityką Plików Cookies.\",\"dismiss\":\"Rozumiem\",\"learnMore\":\"Dowiedz się więcej\",\"link\":null,\"theme\":\"dark-floating\"};
-\t\t</script>
+\t\t\t<script type=\"text/javascript\">
+\t\t\t\twindow.cookieconsent_options = {\"message\":\"Strona korzysta z plików cookies w celu realizacji usług i zgodnie z Polityką Plików Cookies.\",\"dismiss\":\"Rozumiem\",\"learnMore\":\"Dowiedz się więcej\",\"link\":null,\"theme\":\"dark-floating\"};
+\t\t\t</script>
 
-\t\t<script type=\"text/javascript\" src=\"//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/1.0.10/cookieconsent.min.js\"></script>
+\t\t\t<script type=\"text/javascript\" src=\"//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/1.0.10/cookieconsent.min.js\"></script>
 \t\t<!-- End Cookie Consent plugin -->
 
     </head>
     <body>
         ";
-        // line 29
+        // line 31
         $this->displayBlock('body', $context, $blocks);
-        // line 30
+        // line 32
         echo "        ";
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 34
+        // line 36
         echo "    </body>
-</html>
-";
+</html>";
     }
 
     // line 7
@@ -75,10 +77,10 @@ class __TwigTemplate_4cdb1f806752ebfecdd9359b1a6ececc5c8111f964c0e575c869ae19f4b
     {
     }
 
-    // line 9
+    // line 10
     public function block_stylesheets($context, array $blocks = array())
     {
-        // line 10
+        // line 11
         echo "\t\t\t<link href=\"";
         echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("bootstrap-3.3.7-dist/css/bootstrap.min.css"), "html", null, true);
         echo "\" rel=\"stylesheet\">
@@ -87,24 +89,24 @@ class __TwigTemplate_4cdb1f806752ebfecdd9359b1a6ececc5c8111f964c0e575c869ae19f4b
 \t\t\t\t<script src=\"https://oss.maxcdn.com/respond/1.4.2/respond.min.js\"></script>
 \t\t\t<![endif]-->
 \t\t\t<link href=\"";
-        // line 15
+        // line 16
         echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("css/base.css"), "html", null, true);
         echo "\" rel=\"stylesheet\" />
 \t\t";
     }
 
-    // line 29
+    // line 31
     public function block_body($context, array $blocks = array())
     {
     }
 
-    // line 30
+    // line 32
     public function block_javascripts($context, array $blocks = array())
     {
-        // line 31
+        // line 33
         echo "\t\t\t<script src=\"https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js\"></script>
 \t\t\t<script src=\"";
-        // line 32
+        // line 34
         echo twig_escape_filter($this->env, $this->env->getExtension('asset')->getAssetUrl("bootstrap-3.3.7-dist/js/bootstrap.min.js"), "html", null, true);
         echo "\"></script>
 \t\t";
@@ -122,7 +124,7 @@ class __TwigTemplate_4cdb1f806752ebfecdd9359b1a6ececc5c8111f964c0e575c869ae19f4b
 
     public function getDebugInfo()
     {
-        return array (  108 => 32,  105 => 31,  102 => 30,  97 => 29,  91 => 15,  82 => 10,  79 => 9,  74 => 8,  69 => 7,  63 => 34,  60 => 30,  58 => 29,  42 => 17,  40 => 9,  36 => 8,  32 => 7,  24 => 1,);
+        return array (  110 => 34,  107 => 33,  104 => 32,  99 => 31,  93 => 16,  84 => 11,  81 => 10,  76 => 8,  71 => 7,  66 => 36,  63 => 32,  61 => 31,  46 => 19,  43 => 18,  41 => 10,  36 => 8,  32 => 7,  24 => 1,);
     }
 }
 /* <!DOCTYPE html>*/
@@ -133,6 +135,7 @@ class __TwigTemplate_4cdb1f806752ebfecdd9359b1a6ececc5c8111f964c0e575c869ae19f4b
 /* 		<meta name="viewport" content="width=device-width, initial-scale=1">*/
 /*         <title>{% block title %}{% endblock %}</title>*/
 /* 		<meta name="description" content="{% block description %}{% endblock %}" />*/
+/* 		*/
 /*         {% block stylesheets %}*/
 /* 			<link href="{{ asset('bootstrap-3.3.7-dist/css/bootstrap.min.css') }}" rel="stylesheet">*/
 /* 			<!--[if lt IE 9]>*/
@@ -141,14 +144,15 @@ class __TwigTemplate_4cdb1f806752ebfecdd9359b1a6ececc5c8111f964c0e575c869ae19f4b
 /* 			<![endif]-->*/
 /* 			<link href="{{asset('css/base.css')}}" rel="stylesheet" />*/
 /* 		{% endblock %}*/
+/* 		*/
 /*         <link rel="icon" type="image/x-icon" href="{{ asset('images/logo.png') }}" />*/
 /* 		*/
 /* 		<!-- Begin Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->*/
-/* 		<script type="text/javascript">*/
-/* 			window.cookieconsent_options = {"message":"Strona korzysta z plików cookies w celu realizacji usług i zgodnie z Polityką Plików Cookies.","dismiss":"Rozumiem","learnMore":"Dowiedz się więcej","link":null,"theme":"dark-floating"};*/
-/* 		</script>*/
+/* 			<script type="text/javascript">*/
+/* 				window.cookieconsent_options = {"message":"Strona korzysta z plików cookies w celu realizacji usług i zgodnie z Polityką Plików Cookies.","dismiss":"Rozumiem","learnMore":"Dowiedz się więcej","link":null,"theme":"dark-floating"};*/
+/* 			</script>*/
 /* */
-/* 		<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/1.0.10/cookieconsent.min.js"></script>*/
+/* 			<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/1.0.10/cookieconsent.min.js"></script>*/
 /* 		<!-- End Cookie Consent plugin -->*/
 /* */
 /*     </head>*/
@@ -160,4 +164,3 @@ class __TwigTemplate_4cdb1f806752ebfecdd9359b1a6ececc5c8111f964c0e575c869ae19f4b
 /* 		{% endblock %}*/
 /*     </body>*/
 /* </html>*/
-/* */
