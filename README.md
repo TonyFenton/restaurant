@@ -1,4 +1,9 @@
-restaurant4
-===========
+Website with CMS made to learn Symfony.
 
-A Symfony project created on August 2, 2016, 8:17 pm.
+- Symfony 2.8 (annotation, Doctrine, Twig, FOSUser...)
+- HTML, CSS, Bootstrap
+- PHPUnit
+
+
+Wszystkie uwag mile widziane 
+e-mail

@@ -35,8 +35,9 @@ class DefaultControllerTest extends WebTestCase
 		$this->my->checkStatusCodeUrls(
 			200, 
 			array(
-				'/o-nas',
 				'/menu/obiad',
+				'/menu/kolacja',
+				'/lokalizacja',
 			)
 		);
 	}
