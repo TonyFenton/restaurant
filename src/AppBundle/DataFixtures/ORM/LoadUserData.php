@@ -62,15 +62,16 @@ class LoadUserData implements FixtureInterface, ContainerAwareInterface
 				
 		foreach ($users as $user) {
 			$data = new User();
-			$data->setUsername($user['name']);
 			
 			$encoder = $this->container->get('security.password_encoder');
 			$password = $encoder->encodePassword($data, $user['password']);
 			$data->setPassword($password);
 			
-			$data->setEmail($user['email']);
-			$data->setEnabled($user['enabled']);
-			$data->setRoles($user['role']);
+			$data
+				->setUsername($user['name'])
+				->setEmail($user['email'])
+				->setEnabled($user['enabled'])
+				->setRoles($user['role']);
 		
 			$manager->persist($data);
 		}

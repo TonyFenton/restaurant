@@ -2,11 +2,12 @@
 
 namespace AppBundle\DataFixtures\ORM;
 
-use Doctrine\Common\DataFixtures\FixtureInterface;
+use Doctrine\Common\DataFixtures\AbstractFixture;
+use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 use AppBundle\Entity\Footer;
 
-class LoadFooterData implements FixtureInterface
+class LoadFooterData extends AbstractFixture implements OrderedFixtureInterface
 {
 	
     public function load(ObjectManager $manager)
@@ -24,12 +25,20 @@ class LoadFooterData implements FixtureInterface
 				
 		foreach ($footers as $footer) {
 			$data = new Footer();
-			$data->setName($footer['name']);
-			$data->setFooter($footer['footer']);
+			$data
+				->setName($footer['name'])
+				->setFooter($footer['footer']);
 		
 			$manager->persist($data);
+			
+			$this->addReference($footer['name'], $data);
 		}
 		
         $manager->flush();
+    }
+
+    public function getOrder()
+    {
+        return 1;
     }
 }
