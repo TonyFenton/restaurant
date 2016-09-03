@@ -66,7 +66,7 @@ class PageController extends Controller
             return $this->redirectToRoute('page_edit', array('id' => $page->getId()));
         }
 
-        return $this->render('page/new.html.twig', array(
+        return $this->render('page/new_customize_an_individual_field.html.twig', array(
             'page' => $page,
             'form' => $form->createView(),
         ));
@@ -112,7 +112,7 @@ class PageController extends Controller
             return $this->redirectToRoute('page_edit', array('id' => $page->getId()));
         }
 
-        return $this->render('page/edit.html.twig', array(
+        return $this->render('page/edit_customize_an_individual_field.html.twig', array(
             'page' => $page,
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm,

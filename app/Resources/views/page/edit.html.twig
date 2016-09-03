@@ -24,9 +24,22 @@
 		<div class="panel-heading">
 			<h1>Edycja strony</h1>
 		</div>
-		<div class="panel-body">	
+		<div class="panel-body">
+		
+			{% form_theme edit_form _self %}
+			{% block _page_slug_widget %}
+				<div id="address" class="form-group">
+					<div>{{ app.request.host }}</div>
+					<div class="slash"> / </div>
+					<div>menu</div>
+					<div class="slash"> / </div>
+					{{ block('form_widget_simple') }}
+				</div>
+			{% endblock %}	
+		
 			{{ form_start(edit_form) }}
 				{{ form_widget(edit_form) }}
+				
 				<input class="btn btn-success" type="submit" value="Zapisz">
 			{{ form_end(edit_form) }}
 		
