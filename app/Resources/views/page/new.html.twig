@@ -19,7 +19,17 @@
 		<div class="panel-heading">
 			<h1>Tworzenie strony</h1>
 		</div>
-		<div class="panel-body">		
+		<div class="panel-body">	
+
+			{% form_theme form _self %}
+			{% block _page_slug_widget %}
+				<div id="address" class="form-group">
+					<div id="domain">{{ app.request.host }}</div>
+					<div class="slash"> / </div>
+					{{ block('form_widget_simple') }}
+				</div>
+			{% endblock %}	
+		
 			{{ form_start(form) }}
 				{{ form_widget(form) }}
 				<input class="btn btn-success" type="submit" value="Utwórz">

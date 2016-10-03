@@ -29,9 +29,7 @@
 			{% form_theme edit_form _self %}
 			{% block _page_slug_widget %}
 				<div id="address" class="form-group">
-					<div>{{ app.request.host }}</div>
-					<div class="slash"> / </div>
-					<div>menu</div>
+					<div id="domain">{{ app.request.host }}</div>
 					<div class="slash"> / </div>
 					{{ block('form_widget_simple') }}
 				</div>

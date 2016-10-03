@@ -25,11 +25,10 @@ body {
 #address {
 	overflow:auto;
 }
-#address div:first-of-type,
-#address div:nth-of-type(3) {
+#address #domain,
+#address .parent_slug {
 	float: left;
-	margin-top: 8px;
-
+	margin-top: 7px;
 }
 #address input{
 	float: left;
