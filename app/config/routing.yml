@@ -89,7 +89,6 @@ fos_user_security_logout:
     defaults: { _controller: FOSUserBundle:Security:logout }
     requirements:
         methods: GET|POST
-
 app:
     resource: "@AppBundle/Controller/"
     type:     annotation

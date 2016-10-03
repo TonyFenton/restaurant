@@ -52,6 +52,10 @@ class ComposerStaticInitb82f97cdf82207d6cccfcbd6127982e6
         array (
             'Incenteev\\ParameterHandler\\' => 27,
         ),
+        'F' => 
+        array (
+            'FOS\\JsRoutingBundle\\' => 20,
+        ),
         'D' => 
         array (
             'Doctrine\\Common\\Cache\\' => 22,
@@ -150,6 +154,10 @@ class ComposerStaticInitb82f97cdf82207d6cccfcbd6127982e6
         array (
             0 => __DIR__ . '/..' . '/incenteev/composer-parameter-handler',
         ),
+        'FOS\\JsRoutingBundle\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/friendsofsymfony/jsrouting-bundle',
+        ),
         'Doctrine\\Common\\Cache\\' => 
         array (
             0 => __DIR__ . '/..' . '/doctrine/cache/lib/Doctrine/Common/Cache',
@@ -192,6 +200,13 @@ class ComposerStaticInitb82f97cdf82207d6cccfcbd6127982e6
             'Psr\\Log\\' => 
             array (
                 0 => __DIR__ . '/..' . '/psr/log',
+            ),
+        ),
+        'J' => 
+        array (
+            'JsonpCallbackValidator' => 
+            array (
+                0 => __DIR__ . '/..' . '/willdurand/jsonp-callback-validator/src',
             ),
         ),
         'F' => 

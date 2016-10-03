@@ -6,10 +6,10 @@ body {
 	overflow:auto;
 }
 #heading h1{
-	float:left;
+	float: left;
 }
 #heading a{
-	float:right;
+	float: right;
 	margin-top: 23px;
 }
 #backtolist {
@@ -21,4 +21,25 @@ body {
 }
 .navbar-right {
 	margin: right;
+}
+#address {
+	overflow:auto;
+}
+#address #domain,
+#address .parent_slug {
+	float: left;
+	margin-top: 7px;
+}
+#address input{
+	float: left;
+	width: 30%;
+}
+
+#address .slash{
+	padding-left: 3px;
+	padding-right: 3px;
+	
+	float: left;
+	font-size: 20px;
+	margin-top: 5px;
 }
